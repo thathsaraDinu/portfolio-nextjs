@@ -25,12 +25,8 @@ const Projects: React.FC = () => {
       <div className="flex flex-col items-center gap-10 py-20 px-5 max-w-screen-xl mx-auto">
         <div className="flex flex-col items-center max-w-screen-xl text-start gap-10">
           <div className="flex flex-col gap-2 text-center justify-center">
-            <div className="custom-top-topic">
-              PROJECTS
-            </div>
-            <div className="custom-second-topic">
-              My Projects
-            </div>
+            <div className="custom-top-topic">PROJECTS</div>
+            <div className="custom-second-topic">My Projects</div>
             <div className="custom-third-topic">
               A few projects I've worked on
             </div>
@@ -43,7 +39,7 @@ const Projects: React.FC = () => {
             </>
           </div>
           <div>
-            <button className="bg-slate-200 rounded text-slate-800 px-4 py-2 mt-4 hover:bg-slate-300">
+            <button className="transition-all duration-200 bg-blue-200 rounded text-blue-800 px-4 py-2 mt-4 hover:bg-blue-400 font-semibold text-sm">
               View all
             </button>
           </div>
