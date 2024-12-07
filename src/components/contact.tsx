@@ -1,4 +1,5 @@
 import { ScrollAnimation } from "@/animation/animation";
+import LottieComponent from "@/animation/lottie";
 
 export default function Contact() {
   return (
@@ -20,14 +21,10 @@ export default function Contact() {
         <div className="grid grid-cols-4 md:gap-32 gap-5 mx-auto font-inter">
           <ScrollAnimation
             initial={{ opacity: 0, x: -50 }}
-            className="col-span-4 md:col-span-2 flex justify-center flex-col items-center gap-10"
+            className="col-span-4 md:col-span-2 flex justify-center flex-col items-center gap-"
           >
-            <img
-              src="/images/pexels-olly-846741.jpg"
-              alt="about"
-              className="hidden md:block w-full object-cover rounded-lg max-w-[400px]"
-            ></img>
-            <hr className="   hidden md:block md:w-1/2 "></hr>
+            <LottieComponent/>
+            <hr className="   hidden md:block md:w-full  pb-5"></hr>
             <div className="flex gap-10 justify-center items-center">
               <img className="w-10" src="icons/whatsapp-svgrepo-com.svg" />
               <img className="w-10" src="icons/linkedin-svgrepo-com.svg" />
