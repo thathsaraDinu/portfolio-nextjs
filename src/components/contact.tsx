@@ -2,17 +2,26 @@ import { ScrollAnimation } from "@/animation/animation";
 
 export default function Contact() {
   return (
-    <section id="contact" className="flex flex-col items-center gap-10 py-20 px-5 max-w-screen-xl mx-auto">
+    <section
+      id="contact"
+      className="flex flex-col items-center gap-10 py-20 md:px-10 px-5 max-w-screen-xl mx-auto"
+    >
       <div className="flex flex-col items-center max-w-screen-xl text-start gap-10 ">
-        <ScrollAnimation initial={{opacity: 0, y: 50}} className="flex flex-col gap-2 text-center justify-center">
+        <ScrollAnimation
+          initial={{ opacity: 0, y: 50 }}
+          className="flex flex-col gap-2 text-center justify-center"
+        >
           <div className="custom-top-topic">Contact</div>
           <div className="custom-second-topic">Get in touch</div>
           <div className="custom-third-topic">
             I&apos;m always open to new opportunities
           </div>
         </ScrollAnimation>
-        <div className="grid grid-cols-5 gap-5 mx-auto font-inter">
-          <ScrollAnimation initial={{opacity: 0, x: -100}} className="col-span-5 md:col-span-3 flex justify-center flex-col items-center gap-10">
+        <div className="grid grid-cols-4 md:gap-32 gap-5 mx-auto font-inter">
+          <ScrollAnimation
+            initial={{ opacity: 0, x: -50 }}
+            className="col-span-4 md:col-span-2 flex justify-center flex-col items-center gap-10"
+          >
             <img
               src="/images/pexels-olly-846741.jpg"
               alt="about"
@@ -25,8 +34,11 @@ export default function Contact() {
               <img className="w-12" src="icons/github-142-svgrepo-com.svg" />
             </div>
           </ScrollAnimation>
-          <ScrollAnimation initial={{opacity: 0, x: 100}} className="col-span-5 md:col-span-2">
-            <form className=" space-y-4">
+          <ScrollAnimation
+            initial={{ opacity: 0, x: 50 }}
+            className="col-span-4 md:col-span-2"
+          >
+            <form className="flex flex-col gap-4 ">
               <input
                 type="text"
                 placeholder="Name"

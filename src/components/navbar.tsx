@@ -85,7 +85,7 @@ export default function NavBar() {
       {/* desktop */}
       <nav
         id="desktop"
-        className="hidden sm:flex justify-between px-5 bg-slate-950 bg-opacity-95 sticky top-0 z-100"
+        className="hidden sm:flex justify-between px-5 bg-slate-950 bg-opacity-95 sticky top-0 z-50"
       >
         <div className="bg-transparent h-full text-blue-200 flex justify-between items-center w-full max-w-screen-xl mx-auto">
           <div className="text-xl font-bold">Logo</div>

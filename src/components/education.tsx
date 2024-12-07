@@ -2,16 +2,22 @@ import { ScrollAnimation } from "@/animation/animation";
 
 export default function Education() {
   return (
-    <section id="education" className="py-20 px-5">
+    <section id="education" className="py-20 md:px-10 px-5">
       <div className="max-w-screen-xl mx-auto flex flex-col gap-10">
-        <ScrollAnimation initial={{opacity: 0, y: 50}} className="flex flex-col justify-center items-center gap-2">
+        <ScrollAnimation
+          initial={{ opacity: 0, y: 50 }}
+          className="flex flex-col justify-center items-center gap-2"
+        >
           <div className="custom-top-topic">EDUCATION</div>
           <div className="custom-second-topic">My Education</div>
           <div className="custom-third-topic">My academic background</div>
         </ScrollAnimation>
 
         <div className="flex flex-col md:px-10 items-start gap-10 ">
-          <ScrollAnimation initial={{opacity : 0, x: -100}} className="flex gap-5 md:gap-10">
+          <ScrollAnimation
+            initial={{ opacity: 0, x: -50 }}
+            className="flex gap-5 md:gap-10"
+          >
             <div className="flex flex-col items-center justify-start gap-2">
               <img
                 src="icons/graduate-cap-svgrepo-com.svg"

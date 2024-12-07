@@ -3,13 +3,15 @@ import { ScrollAnimation } from "@/animation/animation";
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-20 px-5">
+    <section id="about" className="py-20 md:px-10 px-5">
       <div className="flex justify-center items-center lg:gap-10 max-w-screen-xl mx-auto">
-        <ScrollAnimation initial={{
-          opacity: 0,
-          x: -100,
-
-        }} className="flex flex-col items-start max-w-[500px]   text-start gap-5 ">
+        <ScrollAnimation
+          initial={{
+            opacity: 0,
+            x: -50,
+          }}
+          className="flex flex-col items-start max-w-[500px]   text-start gap-5 "
+        >
           <div className="flex flex-col gap-2">
             <div className="custom-top-topic text-left">ABOUT ME</div>
             <div className="custom-second-topic text-left">Know who am I</div>
@@ -17,7 +19,7 @@ const About: React.FC = () => {
               My Journey in few words
             </div>
           </div>
-          <div className=" font-thin text-white ">
+          <div className=" text-white ">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum
             saepe quasi architecto recusandae aperiam hic molestiae, iusto
             cupiditate ipsam voluptas, quas maxime sequi sed? Quas, nemo, id
@@ -30,7 +32,7 @@ const About: React.FC = () => {
           </button>
           <hr className="max-w-screen-xl mx-auto h-2 border-white bg-white" />
         </ScrollAnimation>
-        <ScrollAnimation initial={{opacity: 0, x: 100}}>
+        <ScrollAnimation initial={{ opacity: 0, x: 50 }}>
           <img
             src="/images/pexels-olly-846741.jpg"
             alt="about"

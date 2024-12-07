@@ -9,7 +9,7 @@ import Skills from "@/components/skills";
 
 export default function Home() {
   return (
-    <div className="bg-[url('/images/back.svg')] bg-cover ">
+    <div className="bg-[url('/images/back.svg')] bg-fixed bg-center bg-no-repeat bg-cover bg-slate-900">
       <div className="font-inter">
         <NavBar />
 
