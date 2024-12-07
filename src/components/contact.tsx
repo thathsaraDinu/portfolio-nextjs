@@ -26,9 +26,9 @@ export default function Contact() {
             <LottieComponent/>
             <hr className="   hidden md:block md:w-full  pb-5"></hr>
             <div className="flex gap-10 justify-center items-center">
-              <img className="w-10" src="icons/whatsapp-svgrepo-com.svg" />
+              <img className="w-8" src="icons/whatsapp-svgrepo-com.svg" />
               <img className="w-10" src="icons/linkedin-svgrepo-com.svg" />
-              <img className="w-12" src="icons/github-142-svgrepo-com.svg" />
+              <img className="w-10" src="icons/github-142-svgrepo-com.svg" />
             </div>
           </ScrollAnimation>
           <ScrollAnimation
@@ -60,7 +60,7 @@ export default function Contact() {
                 type="button"
                 className="transition-all duration-200 text-white border border-black  font-semibold bg-blue-900 hover:bg-blue-950 tracking-wide rounded-md text-sm px-4 py-3 w-full"
               >
-                Send
+                Send message
               </button>
             </form>
           </ScrollAnimation>
