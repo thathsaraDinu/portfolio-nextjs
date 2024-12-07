@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,8 +18,44 @@ export default function NavBar() {
   const links = ["home", "about", "skills", "education", "projects", "contact"];
 
   const handleItemClick = (item: string) => {
-    setSelectedItem(item); // Update the selected item state
+    // Scroll to the section with smooth animation
+    const section = document.getElementById(item);
+    section?.scrollIntoView({
+      behavior: "smooth", // Smooth scroll
+      block: "start", // Align the top of the section with the top of the viewport
+    });
+
+    // Add a delay to change the selected item after scroll
+    setTimeout(() => {
+      setSelectedItem(item); // Update the selected item after the scroll completes
+    }, 500); // Adjust this delay (in milliseconds) to match your scroll animation time
   };
+
+  // Function to set the selected section based on scroll position
+  const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setSelectedItem(entry.target.id); // Set the selected item when the section is in view
+      }
+    });
+  };
+
+  useEffect(() => {
+    // Create the intersection observer
+    const observer = new IntersectionObserver(handleIntersection, {
+      rootMargin: "0px",
+      threshold: 0.5, // Trigger when at least 50% of the section is visible
+    });
+
+    // Observe each section
+    const sections = document.querySelectorAll("section");
+    sections.forEach((section) => observer.observe(section));
+
+    // Cleanup observer on component unmount
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
 
   return (
     <>

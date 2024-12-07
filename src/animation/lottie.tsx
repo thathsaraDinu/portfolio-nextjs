@@ -2,7 +2,13 @@
 import React, { useEffect, useRef } from "react";
 import lottie from "lottie-web";
 
-const LottieComponent = () => {
+// Define the component props
+type LottieComponentProps = {
+  width: number;
+  height: number;
+}
+
+export default function LottieComponent ({width, height}: LottieComponentProps) : JSX.Element {
   const animationContainer = useRef<HTMLDivElement | null>(null); // Add proper typing
 
   useEffect(() => {
@@ -24,8 +30,7 @@ const LottieComponent = () => {
   }, []);
 
   return (
-    <div ref={animationContainer} style={{ width: "300px", height: "300px" }} />
+    <div ref={animationContainer} style={{ width: `${width}px`, height: `${height}px` }} />
   );
 };
 
-export default LottieComponent;

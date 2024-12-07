@@ -7,6 +7,7 @@ interface GitHubProject {
   name: string;
   description: string;
   html_url: string;
+  language: string; // Add the language property
 }
 
 const Projects: React.FC = () => {
@@ -24,7 +25,7 @@ const Projects: React.FC = () => {
       const data = await response.json();
 
       if (response.ok) {
-        const filteredProjects = data.map((project: any) => ({
+        const filteredProjects = data.map((project: GitHubProject) => ({
           name: project.name,
           description: project.description || "No description available",
           html_url: project.html_url,
@@ -97,7 +98,7 @@ const Projects: React.FC = () => {
             {/* Render fetched projects */}
             {!loading &&
               !error &&
-              projectsToShow.map((project: any) => {
+              projectsToShow.map((project: GitHubProject) => {
                 // Constructing the image URL for each project from GitHub
                 const imageUrl = `https://raw.githubusercontent.com/<your-github-username>/${project.name}/main/project-image.jpg`;
                 return (
@@ -117,7 +118,7 @@ const Projects: React.FC = () => {
         {/* View All Button */}
         <ScrollAnimation>
           <button
-            className="transition-all duration-200 bg-blue-200 rounded text-blue-800 px-4 py-2 mt-4 hover:bg-blue-400 font-semibold text-sm"
+            className="transition-all text-sm font-semibold duration-200 bg-blue-100 rounded text-blue-800 hover:text-blue-950 px-4 py-2 mt-4 hover:bg-blue-300"
             onClick={() => setShowAll((prevState) => !prevState)} // Toggle the showAll state
           >
             {showAll ? "View less" : "View all"}

@@ -1,5 +1,6 @@
 import React from "react";
 import { ScrollAnimation } from "@/animation/animation";
+import LottieComponent from "@/animation/lottie";
 
 const About: React.FC = () => {
   return (
@@ -20,24 +21,21 @@ const About: React.FC = () => {
             </div>
           </div>
           <div className=" text-white ">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum
-            saepe quasi architecto recusandae aperiam hic molestiae, iusto
-            cupiditate ipsam voluptas, quas maxime sequi sed? Quas, nemo, id
-            ipsam voluptatibus exercitationem ipsa fuga iste culpa voluptas
-            blanditiis aperiam dicta sint sunt veritatis, autem aut fugiat
-            ullam!
+            I’m Thathssara Dinuwan, a 23-year-old software engineering student
+            at the Sri Lanka Institute of Technology. I specialize in full-stack
+            development with a passion for Flutter, Node.js, and Next.js. I’m
+            skilled in building both mobile and web apps, using languages like
+            Java, JavaScript, Python, and Dart. Always eager to learn and
+            explore new technologies, I aim to create impactful solutions and
+            enhance user experiences. Feel free to connect!
           </div>
-          <button className="transition-all duration-200 bg-blue-200 rounded text-blue-800 px-4 py-2 mt-4 hover:bg-blue-400 text-sm font-semibold border hover:border-blue-800">
+          <button className="transition-all text-sm font-semibold duration-200 bg-blue-100 rounded text-blue-800 hover:text-blue-950 px-4 py-2 mt-4 hover:bg-blue-300">
             Know more
           </button>
           <hr className="max-w-screen-xl mx-auto h-2 border-white bg-white" />
         </ScrollAnimation>
         <ScrollAnimation initial={{ opacity: 0, x: 50 }}>
-          <img
-            src="/images/pexels-olly-846741.jpg"
-            alt="about"
-            className="w-full hidden lg:block object-cover rounded-lg max-w-[400px]"
-          />
+          <LottieComponent height={500} width={500} />
         </ScrollAnimation>
       </div>
     </section>

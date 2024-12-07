@@ -27,7 +27,7 @@ export default function Education() {
             </div>
 
             <div className="flex flex-col justify-start items-start gap-5">
-              <div className="py-2 px-4 bg-blue-200 text-blue-800 rounded-lg text-base font-semibold">
+              <div className="py-2 px-4 transition-all text-base font-semibold duration-200 bg-blue-100 rounded-lg text-blue-800 hover:text-blue-950 hover:bg-blue-300">
                 Jul 2022 - Present
               </div>
               <div className="text-lg font-semibold text-white">
