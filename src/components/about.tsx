@@ -1,15 +1,21 @@
 import React from "react";
-import Skills from "./skills";
+import { ScrollAnimation } from "@/animation/animation";
 
 const About: React.FC = () => {
   return (
-    <div>
-      <div className="flex justify-center items-center lg:gap-10 py-20 px-5 max-w-screen-xl mx-auto">
-        <div className="flex flex-col items-start max-w-[500px]   text-start gap-5 ">
+    <section id="about" className="py-20 px-5">
+      <div className="flex justify-center items-center lg:gap-10 max-w-screen-xl mx-auto">
+        <ScrollAnimation initial={{
+          opacity: 0,
+          x: -100,
+
+        }} className="flex flex-col items-start max-w-[500px]   text-start gap-5 ">
           <div className="flex flex-col gap-2">
-            <div className="custom-top-topic">ABOUT ME</div>
-            <div className="custom-second-topic">Know who am I</div>
-            <div className="custom-third-topic">My Journey in few words</div>
+            <div className="custom-top-topic text-left">ABOUT ME</div>
+            <div className="custom-second-topic text-left">Know who am I</div>
+            <div className="custom-third-topic text-left">
+              My Journey in few words
+            </div>
           </div>
           <div className=" font-thin text-white ">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum
@@ -23,16 +29,16 @@ const About: React.FC = () => {
             Know more
           </button>
           <hr className="max-w-screen-xl mx-auto h-2 border-white bg-white" />
-        </div>
-        <div>
+        </ScrollAnimation>
+        <ScrollAnimation initial={{opacity: 0, x: 100}}>
           <img
             src="/images/pexels-olly-846741.jpg"
             alt="about"
             className="w-full hidden lg:block object-cover rounded-lg max-w-[400px]"
           />
-        </div>
+        </ScrollAnimation>
       </div>
-    </div>
+    </section>
   );
 };
 

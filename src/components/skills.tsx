@@ -3,6 +3,7 @@
 import React from "react";
 import { Doughnut } from "react-chartjs-2"; // Use Doughnut instead of Pie
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { ScrollAnimation } from "@/animation/animation";
 
 // Register Chart.js modules
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -39,10 +40,10 @@ const skills = [
 ];
 
 // Single color for the Donut Chart
-const SINGLE_COLOR = "#4CAF50"; // Green color (change it as needed)
+const SINGLE_COLOR = "#add8e6"; // Green color (change it as needed)
 
 // Generate Donut Chart Data
-const generateChartData = (skill) => ({
+const generateChartData = (skill: { name: string; level: number; description?: string; }) => ({
   labels: [skill.name], // No labels
   datasets: [
     {
@@ -64,7 +65,7 @@ const chartOptions = {
     tooltip: {
       enabled: true, // Enable tooltips
       callbacks: {
-        label: (context) => {
+        label: (context: { raw: unknown; }) => {
           // Custom tooltip content, showing the skill name and level
           const level = context.raw;
           return ` ${level}%`;
@@ -73,7 +74,7 @@ const chartOptions = {
     },
   },
   interaction: {
-    mode: "nearest", // Nearest point on hover
+    mode: "nearest" as const, // Nearest point on hover
     intersect: false, // Tooltip appears even if not directly on the slice
   },
   // Add the cutout property to make it a donut chart
@@ -84,15 +85,15 @@ const Skills: React.FC = () => {
   return (
     <section id="skills" className="py-20 px-5 ">
       <div className="max-w-screen-xl mx-auto flex flex-col gap-10">
-        <div className="flex flex-col justify-center items-center gap-2">
+        <ScrollAnimation initial={{opacity: 0, y: 50}} className="flex flex-col justify-center items-center gap-2">
           <div className="custom-top-topic">SKILLS</div>
           <div className="custom-second-topic">My Skills</div>
           <div className="custom-third-topic">
-            Technologies I'm proficient in
+            Technologies I&apos;m proficient in
           </div>
-        </div>
+        </ScrollAnimation>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-10">
+        <ScrollAnimation initial={{opacity: 0, y: 50}} className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-10">
           {skills.map((skill) => (
             <div
               key={skill.name}
@@ -112,7 +113,7 @@ const Skills: React.FC = () => {
               </p>
             </div>
           ))}
-        </div>
+        </ScrollAnimation>
       </div>
     </section>
   );

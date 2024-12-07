@@ -6,7 +6,7 @@ type ProjectItemProps = {
 
 export function ProjectItem({ title, description, link }: ProjectItemProps) {
   return (
-    <div className="bg-blue-950 h-[350px] col-span-1 text-blue-100 rounded-md shadow-md">
+    <div className="bg-slate-950 h-[350px] col-span-1 text-blue-100 rounded-md shadow-md">
       <div className="flex flex-col">
         <img
           className="h-[150px] rounded-t-md object-cover"

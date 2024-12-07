@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 
-export function NavBar() {
+export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState<string>("");
 
   const menuItems = [
     "Home",
@@ -14,14 +15,18 @@ export function NavBar() {
     "Contact",
   ];
 
-  const links = ["home", "about", "contact"];
+  const links = ["home", "about", "skills", "education", "projects", "contact"];
+
+  const handleItemClick = (item: string) => {
+    setSelectedItem(item); // Update the selected item state
+  };
 
   return (
     <>
       {/* mobile responsive */}
       <div id="responsive" className="sm:hidden">
-        <div className="w-full flex flex-col justify-start ">
-          <div className=" bg-transparent h-full text-blue-200 p-4 flex justify-between items-center w-full ">
+        <div className="w-full flex flex-col justify-start">
+          <div className="bg-transparent h-full text-blue-200 p-4 flex justify-between items-center w-full">
             <div className="flex items-center">
               <div className="text-xl font-bold">Logo</div>
             </div>
@@ -55,14 +60,19 @@ export function NavBar() {
             </div>
           </div>
         </div>
-        <div className=" mx-auto bg-blue-100 ">
+        <div className="mx-auto">
           {menuOpen && (
-            <div className="flex flex-col items-end">
+            <div className="flex flex-col items-start">
               {menuItems.map((item, index) => (
                 <a
                   key={index}
                   href={`#${links[index]}`}
-                  className="transition-all duration-200 text-blue-100 p-3 w-full hover:bg-blue-800 bg-blue-900 text-end"
+                  className={`transition-all duration-200 p-4 w-full hover:bg-slate-950 bg-transparent ${
+                    selectedItem === links[index]
+                      ? "text-blue-500 bg-gray-800"
+                      : "text-blue-100"
+                  }`}
+                  onClick={() => handleItemClick(links[index])}
                 >
                   {item}
                 </a>
@@ -75,19 +85,22 @@ export function NavBar() {
       {/* desktop */}
       <nav
         id="desktop"
-        className="hidden sm:flex justify-between px-5 bg-slate-950 sticky top-0 z-100"
+        className="hidden sm:flex justify-between px-5 bg-slate-950 bg-opacity-95 sticky top-0 z-100"
       >
-        <div className=" bg-transparent h-full  text-blue-200  flex justify-between items-center w-full max-w-screen-xl mx-auto">
+        <div className="bg-transparent h-full text-blue-200 flex justify-between items-center w-full max-w-screen-xl mx-auto">
           <div className="text-xl font-bold">Logo</div>
-          <div className="flex items-center  ">
+          <div className="flex items-center">
             {menuItems.map((item, index) => (
               <a
-                className="transition-all duration-200 group px-4 py-4 text-white "
                 key={index}
                 href={`#${links[index]}`}
+                className={`transition-all duration-200 group px-5 py-3 text-white ${
+                  selectedItem === links[index] ? "bg-gray-800" : ""
+                }`}
+                onClick={() => handleItemClick(links[index])}
               >
                 {item}
-                <hr className="transition-all duration-200 w-0 bg-white group-hover:w-full"></hr>
+                <hr className="transition-all duration-200 w-0 bg-white group-hover:w-full" />
               </a>
             ))}
           </div>
