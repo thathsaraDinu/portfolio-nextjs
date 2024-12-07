@@ -3,7 +3,7 @@
 import React from "react";
 import { Doughnut } from "react-chartjs-2"; // Use Doughnut instead of Pie
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { ScrollAnimation } from "@/animation/animation";
+import { useInView } from "react-intersection-observer"; // Hook for scroll-based detection
 
 // Register Chart.js modules
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -11,20 +11,16 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 // Skills Data
 const skills = [
   {
-    name: "JavaScript",
-    level: 90,
-    description:
-      "Experienced in ES6+, asynchronous programming, and DOM manipulation.",
-  },
-  {
-    name: "TypeScript",
+    name: "Flutter",
     level: 85,
-    description: "Proficient in static typing, interfaces, and type inference.",
+    description:
+      "Proficient in building cross-platform apps, state management, and integrating Firebase.",
   },
   {
     name: "React",
-    level: 80,
-    description: "Skilled in hooks, state management, and component lifecycle.",
+    level: 85,
+    description:
+      "Skilled in hooks, state management, component lifecycle, and building scalable web applications.",
   },
   {
     name: "Node.js",
@@ -33,17 +29,28 @@ const skills = [
       "Knowledgeable in server-side development, Express.js, and RESTful APIs.",
   },
   {
-    name: "CSS",
-    level: 70,
-    description: "Adept at responsive design, Flexbox, and CSS Grid.",
+    name: "MongoDB",
+    level: 75,
+    description:
+      "Experienced in database design, querying, and working with aggregation pipelines.",
+  },
+  {
+    name: "Tailwind CSS",
+    level: 80,
+    description:
+      "Adept at creating responsive designs, custom utility classes, and optimizing CSS for modern web apps.",
   },
 ];
 
 // Single color for the Donut Chart
-const SINGLE_COLOR = "#add8e6"; // Green color (change it as needed)
+const SINGLE_COLOR = "#add8e6"; // Adjust the color as needed
 
 // Generate Donut Chart Data
-const generateChartData = (skill: { name: string; level: number; description?: string; }) => ({
+const generateChartData = (skill: {
+  name: string;
+  level: number;
+  description?: string;
+}) => ({
   labels: [skill.name], // No labels
   datasets: [
     {
@@ -55,7 +62,7 @@ const generateChartData = (skill: { name: string; level: number; description?: s
   ],
 });
 
-// Chart Options to hide the legend, show tooltips, and make it a donut
+// Chart Options
 const chartOptions = {
   responsive: true,
   plugins: {
@@ -65,10 +72,9 @@ const chartOptions = {
     tooltip: {
       enabled: true, // Enable tooltips
       callbacks: {
-        label: (context: { raw: unknown; }) => {
-          // Custom tooltip content, showing the skill name and level
+        label: (context: { raw: unknown }) => {
           const level = context.raw;
-          return ` ${level}%`;
+          return ` ${level}%`; // Custom tooltip content
         },
       },
     },
@@ -77,45 +83,60 @@ const chartOptions = {
     mode: "nearest" as const, // Nearest point on hover
     intersect: false, // Tooltip appears even if not directly on the slice
   },
-  // Add the cutout property to make it a donut chart
-  cutout: "70%", // This creates a donut chart effect, adjust the value as needed
+  cutout: "70%", // Creates a donut chart effect
 };
 
 const Skills: React.FC = () => {
   return (
-    <section id="skills" className="py-20 px-5 ">
+    <section id="skills" className="py-20 px-5">
       <div className="max-w-screen-xl mx-auto flex flex-col gap-10">
-        <ScrollAnimation initial={{opacity: 0, y: 50}} className="flex flex-col justify-center items-center gap-2">
+        {/* Title Section */}
+        <div className="flex flex-col justify-center items-center gap-2">
           <div className="custom-top-topic">SKILLS</div>
           <div className="custom-second-topic">My Skills</div>
           <div className="custom-third-topic">
             Technologies I&apos;m proficient in
           </div>
-        </ScrollAnimation>
+        </div>
 
-        <ScrollAnimation initial={{opacity: 0, y: 50}} className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-10">
+        {/* Skills Section */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-10">
           {skills.map((skill) => (
-            <div
-              key={skill.name}
-              className="flex flex-col items-center justify-center p-2 rounded-lg"
-            >
-              <h3 className="text-sm font-semibold text-center mb-5 text-white">
-                {skill.name}
-              </h3>
-              <div className="w-32 h-32 mb-5">
-                <Doughnut
-                  data={generateChartData(skill)} // Use Doughnut instead of Pie
-                  options={chartOptions} // Apply the chart options
-                />
-              </div>
-              <p className="text-center text-white text-sm leading-relaxed">
-                {skill.description}
-              </p>
-            </div>
+            <SkillChart key={skill.name} skill={skill} />
           ))}
-        </ScrollAnimation>
+        </div>
       </div>
     </section>
+  );
+};
+
+// Single Skill Chart Component
+const SkillChart: React.FC<{
+  skill: { name: string; level: number; description: string };
+}> = ({ skill }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Trigger animation only once
+    threshold: 0.2, // Fire when 20% of the component is visible
+  });
+
+  return (
+    <div
+      ref={ref}
+      className="flex flex-col items-center justify-center p-2 rounded-lg"
+    >
+      <h3 className="text-sm font-semibold text-center mb-5 text-white">
+        {skill.name}
+      </h3>
+      <div className="w-32 h-32 mb-5">
+        {/* Render the chart only when inView is true */}
+        {inView && (
+          <Doughnut data={generateChartData(skill)} options={chartOptions} />
+        )}
+      </div>
+      <p className="text-center text-white text-sm leading-relaxed">
+        {skill.description}
+      </p>
+    </div>
   );
 };
 
