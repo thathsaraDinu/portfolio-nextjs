@@ -8,7 +8,7 @@ type LottieComponentProps = {
   height: number;
 }
 
-export default function LottieComponent ({width, height}: LottieComponentProps) : JSX.Element {
+export default function LottieComponent ({width = 0, height =0}: LottieComponentProps) : JSX.Element {
   const animationContainer = useRef<HTMLDivElement | null>(null); // Add proper typing
 
   useEffect(() => {
@@ -30,7 +30,13 @@ export default function LottieComponent ({width, height}: LottieComponentProps) 
   }, []);
 
   return (
-    <div ref={animationContainer} style={{ width: `${width}px`, height: `${height}px` }} />
+    <div
+      ref={animationContainer}
+      style={{
+        width: `${width === 0 ? "100%" : width}px`,
+        height: `${height === 0 ? "100%" : height}px`,
+      }}
+    />
   );
 };
 

@@ -61,9 +61,11 @@ const Projects: React.FC = () => {
             initial={{ opacity: 0, y: 50 }}
             className="flex flex-col gap-2 text-center justify-center"
           >
-            <div className="custom-top-topic">PROJECTS</div>
-            <div className="custom-second-topic">My Projects</div>
-            <div className="custom-third-topic">
+            <div className="custom-top-topic dark:text-lime-200">PROJECTS</div>
+            <div className="custom-second-topic dark:text-blue-400">
+              My Projects
+            </div>
+            <div className="custom-third-topic dark:text-blue-100">
               A few projects I&apos;ve worked on
             </div>
           </ScrollAnimation>
@@ -118,7 +120,7 @@ const Projects: React.FC = () => {
         {/* View All Button */}
         <ScrollAnimation>
           <button
-            className="transition-all text-sm font-semibold duration-200 bg-blue-100 rounded text-blue-800 hover:text-blue-950 px-4 py-2 mt-4 hover:bg-blue-300"
+            className="transition-all text-sm font-semibold duration-200  px-4 py-2 mt-4 rounded dark:bg-slate-100 bg-blue-950  dark:text-blue-950 text-blue-100  dark:hover:bg-blue-300 hover:bg-blue-800"
             onClick={() => setShowAll((prevState) => !prevState)} // Toggle the showAll state
           >
             {showAll ? "View less" : "View all"}

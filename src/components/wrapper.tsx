@@ -1,3 +1,4 @@
+"use client";
 import About from "@/components/about";
 import Contact from "@/components/contact";
 import Education from "@/components/education";
@@ -6,37 +7,39 @@ import Hero from "@/components/hero";
 import NavBar from "@/components/navbar";
 import Projects from "@/components/projects";
 import Skills from "@/components/skills";
+import ThemeContext from "@/context/theme-context";
+import { useContext } from "react";
 
 export default function Wrapper() {
-  
+  const { theme } = useContext(ThemeContext);
+
+  console.log(theme);
   return (
     <div className="dark:bg-[url('/images/back.svg')] bg-[url('/images/elementor-placeholder-image.webp')] dark:bg-white bg-fixed bg-center bg-no-repeat bg-cover bg-slate-900">
-     
-        <div className="font-inter">
-          <NavBar />
+      <div className="font-inter">
+        <NavBar />
 
-          <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
-          <Hero />
+        <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
+        <Hero theme={theme} />
 
-          <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
-          <About />
+        <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
+        <About />
 
-          <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
-          <Skills />
+        <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
+        <Skills theme={theme} />
 
-          <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
-          <Education />
+        <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
+        <Education theme={theme} />
 
-          <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
-          <Projects />
+        <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
+        <Projects />
 
-          <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
-          <Contact />
+        <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
+        <Contact theme={theme} />
 
-          <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
-          <Footer />
-        </div>
-    
+        <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
+        <Footer />
+      </div>
     </div>
   );
 }

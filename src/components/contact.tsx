@@ -5,7 +5,7 @@ import { ScrollAnimation } from "@/animation/animation";
 import LottieComponent from "@/animation/lottie";
 import emailjs from "emailjs-com";
 
-export default function Contact() {
+export default function Contact({theme} : {theme: string}) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -67,9 +67,11 @@ export default function Contact() {
           initial={{ opacity: 0, y: 50 }}
           className="flex flex-col gap-2 text-center justify-center"
         >
-          <div className="custom-top-topic">Contact</div>
-          <div className="custom-second-topic">Get in touch</div>
-          <div className="custom-third-topic">
+          <div className="custom-top-topic dark:text-lime-200">Contact</div>
+          <div className="custom-second-topic dark:text-blue-400">
+            Get in touch
+          </div>
+          <div className="custom-third-topic dark:text-blue-100">
             I&apos;m always open to new opportunities
           </div>
         </ScrollAnimation>
@@ -79,48 +81,92 @@ export default function Contact() {
             className="col-span-4 md:col-span-2 flex justify-center flex-col items-center gap-"
           >
             <LottieComponent height={300} width={300} />
-            <hr className="   hidden md:block md:w-full  pb-5"></hr>
-            <div className="flex gap-10 justify-center items-center">
-              <a
-                href="https://wa.me/94704151942"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  alt=" "
-                  width={10}
-                  height={10}
-                  className="w-8"
-                  src="/icons/whatsapp-svgrepo-com.svg"
-                />
-              </a>
-              <a
-                href="http://www.linkedin.com/in/thathsara-dinuwan-6872bb2ab/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  alt="LinkedIn"
-                  width={10}
-                  height={10}
-                  className="w-10"
-                  src="/icons/linkedin-svgrepo-com.svg"
-                />
-              </a>
-              <a
-                href="https://github.com/thathsaraDinu"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  alt="GitHub"
-                  width={10}
-                  height={10}
-                  className="w-10"
-                  src="/icons/github-142-svgrepo-com.svg"
-                />
-              </a>
-            </div>
+            <hr className="   hidden md:block md:w-full dark:border-white border-black h-0  mb-5"></hr>
+            {theme == "light" ? (
+              <div className="flex gap-10 justify-center items-center">
+                <a
+                  href="https://wa.me/94704151942"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:-translate-y-2 transition-all duration-200"
+                >
+                  <Image
+                    alt="LinkedIn"
+                    width={30}
+                    height={30}
+                    src="/icons/whatsapp-svgrepo-com.svg"
+                  />
+                </a>
+                <a
+                  href="http://www.linkedin.com/in/thathsara-dinuwan-6872bb2ab/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:-translate-y-2 transition-all duration-200"
+                >
+                  <Image
+                    alt="LinkedIn"
+                    width={40}
+                    height={40}
+                    src="/icons/linkedin-svgrepo-com-black.svg"
+                  />
+                </a>
+                <a
+                  href="https://github.com/thathsaraDinu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:-translate-y-2 transition-all duration-200"
+                >
+                  <Image
+                    alt="GitHub"
+                    width={28}
+                    height={28}
+                    src="/icons/github-142-svgrepo-com-black.svg"
+                  />
+                </a>
+              </div>
+            ) : (
+              <div className="flex gap-10 justify-center items-center">
+                <a
+                  href="https://wa.me/94704151942"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:-translate-y-2 transition-all duration-200"
+                >
+                  <Image
+                    alt="LinkedIn"
+                    width={30}
+                    height={30}
+                    src="/icons/whatsapp-svgrepo-com-white.svg"
+                  />
+                </a>
+                <a
+                  href="http://www.linkedin.com/in/thathsara-dinuwan-6872bb2ab/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:-translate-y-2 transition-all duration-200"
+                >
+                  <Image
+                    alt="LinkedIn"
+                    width={40}
+                    height={40}
+                    src="/icons/linkedin-svgrepo-com.svg"
+                  />
+                </a>
+                <a
+                  href="https://github.com/thathsaraDinu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:-translate-y-2 transition-all duration-200"
+                >
+                  <Image
+                    alt="GitHub"
+                    width={28}
+                    height={28}
+                    src="/icons/github-142-svgrepo-com.svg"
+                  />
+                </a>
+              </div>
+            )}
           </ScrollAnimation>
           <ScrollAnimation
             initial={{ opacity: 0, x: 50 }}
@@ -134,7 +180,7 @@ export default function Contact() {
                 onChange={handleInputChange}
                 required
                 placeholder="Name"
-                className="w-full rounded-md py-3 px-4 text-white bg-transparent border border-white focus:bg-transparent text-sm outline-blue-bg-blue-800"
+                className="w-full rounded-md py-3 px-4 dark:text-white text-blue-950 bg-transparent border dark:border-white border-blue-900 focus:bg-transparent text-sm outline-blue-bg-blue-800"
               />
               <input
                 type="email"
@@ -143,7 +189,7 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleInputChange}
                 placeholder="Email"
-                className="w-full rounded-md py-3 px-4 text-white bg-transparent border border-white focus:bg-transparent text-sm outline-blue-bg-blue-800"
+                className="w-full rounded-md py-3 px-4 dark:text-white text-blue-950 bg-transparent border dark:border-white border-blue-900 focus:bg-transparent text-sm outline-blue-bg-blue-800"
               />
               <input
                 type="text"
@@ -152,7 +198,7 @@ export default function Contact() {
                 value={formData.subject}
                 onChange={handleInputChange}
                 placeholder="Subject"
-                className="w-full rounded-md py-3 px-4 text-white bg-transparent border border-white focus:bg-transparent text-sm outline-blue-bg-blue-800"
+                className="w-full rounded-md py-3 px-4 dark:text-white text-blue-950 bg-transparent border dark:border-white border-blue-900 focus:bg-transparent text-sm outline-blue-bg-blue-800"
               />
               <textarea
                 name="message"
@@ -161,7 +207,7 @@ export default function Contact() {
                 placeholder="Message"
                 required
                 rows={5}
-                className="w-full rounded-md px-4 text-white bg-transparent border border-white focus:bg-transparent text-sm pt-3 outline-blue-bg-blue-800"
+                className="w-full rounded-md px-4 dark:text-white text-blue-950 bg-transparent border dark:border-white border-blue-900 focus:bg-transparent text-sm pt-3 outline-blue-bg-blue-800"
               ></textarea>
               <button
                 type="submit"
@@ -171,7 +217,7 @@ export default function Contact() {
                 {isSending ? "Sending..." : "Send Message"}
               </button>
             </form>
-            {status && <p className="text-center text-white mt-4">{status}</p>}
+            {status && <p className="text-center dark:text-white text-blue-950 mt-4">{status}</p>}
           </ScrollAnimation>
         </div>
       </div>
