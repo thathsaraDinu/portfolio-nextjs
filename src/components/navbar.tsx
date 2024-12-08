@@ -65,12 +65,12 @@ export default function NavBar() {
       {/* mobile responsive */}
       <div id="responsive" className="md:hidden">
         <div className="w-full flex flex-col justify-start">
-          <div className="bg-transparent h-full dark:text-blue-200 text-blue-950  p-4 flex justify-between items-center w-full">
+          <div className="bg-transparent h-full dark:text-blue-200 px-4 text-blue-950 flex justify-between items-center w-full">
             <div className="flex gap-10 items-center">
               <div className="text-xl font-bold">Logo</div>
               <button
                 onClick={toggleTheme}
-                className="  hover:bg-gray-300 dark:hover:bg-gray-800"
+                className="  hover:bg-gray-300 dark:hover:bg-gray-800 p-3"
               >
                 {theme === "light" ? (
                   <svg
