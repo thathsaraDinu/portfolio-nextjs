@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollAnimation } from "@/animation/animation";
+import { ScrollAnimation } from "@/animation/scroll-animation";
 import LottieComponent from "@/animation/lottie";
 
 const About: React.FC = () => {
@@ -39,10 +39,14 @@ const About: React.FC = () => {
           <hr className="max-w-screen-xl mx-auto h-2 border-white bg-white" />
         </ScrollAnimation>
         <ScrollAnimation
-          className="md:block hidden w-1/2"
+          className="md:block hidden w-1/3"
           initial={{ opacity: 0, x: 50 }}
         >
-          <LottieComponent width={0} height={0} />
+          <LottieComponent
+            imagePath="/images/coding-animation.json"
+            width={0}
+            height={0}
+          />
         </ScrollAnimation>
       </div>
     </section>

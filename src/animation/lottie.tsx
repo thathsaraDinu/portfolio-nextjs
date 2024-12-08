@@ -6,9 +6,10 @@ import lottie from "lottie-web";
 type LottieComponentProps = {
   width: number;
   height: number;
+  imagePath: string;
 }
 
-export default function LottieComponent ({width = 0, height =0}: LottieComponentProps) : JSX.Element {
+export default function LottieComponent ({width = 0, height =0, imagePath}: LottieComponentProps) : JSX.Element {
   const animationContainer = useRef<HTMLDivElement | null>(null); // Add proper typing
 
   useEffect(() => {
@@ -19,7 +20,7 @@ export default function LottieComponent ({width = 0, height =0}: LottieComponent
         renderer: "svg", // Rendering mode: SVG (can also use "canvas" or "html")
         loop: true, // Loop the animation
         autoplay: true, // Start animation automatically
-        path: "/images/Animation - 1733577247536.json", // Path to your JSON file (adjust the path if necessary)
+        path: imagePath, // Path to your JSON file (adjust the path if necessary)
       });
 
       // Cleanup the animation when the component unmounts

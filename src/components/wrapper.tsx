@@ -13,9 +13,8 @@ import { useContext } from "react";
 export default function Wrapper() {
   const { theme } = useContext(ThemeContext);
 
-  console.log(theme);
   return (
-    <div className="dark:bg-[url('/images/back.svg')] bg-[url('/images/elementor-placeholder-image.webp')] dark:bg-white bg-fixed bg-center bg-no-repeat bg-cover bg-slate-900">
+    <div className="dark:bg-[url('/images/back.svg')]  bg-gray-200 bg-fixed bg-center bg-no-repeat bg-cover dark:bg-slate-900">
       <div className="font-inter">
         <NavBar />
 

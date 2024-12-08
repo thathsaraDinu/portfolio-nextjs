@@ -1,11 +1,11 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import { ScrollAnimation } from "@/animation/animation";
+import { ScrollAnimation } from "@/animation/scroll-animation";
 import LottieComponent from "@/animation/lottie";
 import emailjs from "emailjs-com";
 
-export default function Contact({theme} : {theme: string}) {
+export default function Contact({ theme }: { theme: string }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -80,7 +80,11 @@ export default function Contact({theme} : {theme: string}) {
             initial={{ opacity: 0, x: -50 }}
             className="col-span-4 md:col-span-2 flex justify-center flex-col items-center gap-"
           >
-            <LottieComponent height={300} width={300} />
+            <LottieComponent
+              imagePath="/images/red-shirt-man-coding.json"
+              height={300}
+              width={300}
+            />
             <hr className="   hidden md:block md:w-full dark:border-white border-black h-0  mb-5"></hr>
             {theme == "light" ? (
               <div className="flex gap-10 justify-center items-center">
@@ -217,7 +221,11 @@ export default function Contact({theme} : {theme: string}) {
                 {isSending ? "Sending..." : "Send Message"}
               </button>
             </form>
-            {status && <p className="text-center dark:text-white text-blue-950 mt-4">{status}</p>}
+            {status && (
+              <p className="text-center dark:text-white text-blue-950 mt-4">
+                {status}
+              </p>
+            )}
           </ScrollAnimation>
         </div>
       </div>

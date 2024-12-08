@@ -1,4 +1,4 @@
-import { ScrollAnimation } from "@/animation/animation";
+import { ScrollAnimation } from "@/animation/scroll-animation";
 
 type ProjectItemProps = {
   title: string;

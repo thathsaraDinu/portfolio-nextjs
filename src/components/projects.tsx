@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { ProjectItem } from "./projectitem";
-import { ScrollAnimation } from "@/animation/animation";
+import { ScrollAnimation } from "@/animation/scroll-animation";
 
 interface GitHubProject {
   name: string;

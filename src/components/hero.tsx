@@ -1,19 +1,21 @@
 "use client";
-import { ScrollAnimation } from "@/animation/animation";
+import LottieComponent from "@/animation/lottie";
+import { ScrollAnimation } from "@/animation/scroll-animation";
 import Image from "next/image";
-import { useContext } from "react";
-import ThemeContext from "@/context/theme-context"; // Adjust the import path as necessary
 
 type HeroType = {
   theme: string;
 };
 
 export default function Hero({ theme }: HeroType) {
-  const handleDownload = async () => {
-    const link = document.createElement("a");
-    link.href = "/Thathsara-Dinuwan-CV.pdf"; // Replace with the actual path to the file you want to download
-    link.download = "Thathsara-Dinuwan-CV.pdf"; // Optional: specify the name of the downloaded file
-    link.click(); // Trigger the download
+  const handleOpenPdf = () => {
+    const pdfUrl = "/Thathsara-Dinuwan-CV.pdf"; // Replace with the actual URL to your CV PDF
+    const newTab = window.open(pdfUrl, "_blank");
+    if (newTab) {
+      newTab.focus();
+    } else {
+      alert("Please allow pop-ups to open the PDF in a new tab.");
+    }
   };
 
   return (
@@ -43,7 +45,7 @@ export default function Hero({ theme }: HeroType) {
           </p>
           <div className=" flex gap-5 text-sm font-semibold">
             <button
-              onClick={handleDownload}
+              onClick={handleOpenPdf}
               className="transition-all flex items-center gap-2 duration-200 px-4 py-2 mt-4 rounded dark:bg-slate-100 bg-blue-950  dark:text-blue-950 text-blue-100  dark:hover:bg-blue-300 hover:bg-blue-800"
             >
               <span>Download CV</span>
@@ -106,12 +108,12 @@ export default function Hero({ theme }: HeroType) {
             </button>
           </div>
           {theme == "light" ? (
-            <div className="flex gap-10 pt-5 justify-center items-center w-full md:w-auto">
+            <div className="flex gap-10 pt-5 md:px-5 justify-center items-center w-full md:w-auto">
               <a
                 href="https://wa.me/94704151942"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:-translate-y-2 transition-all duration-200"
+                className="hover:-translate-y-1 transition-all duration-200"
               >
                 <Image
                   alt="LinkedIn"
@@ -124,7 +126,7 @@ export default function Hero({ theme }: HeroType) {
                 href="http://www.linkedin.com/in/thathsara-dinuwan-6872bb2ab/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:-translate-y-2 transition-all duration-200"
+                className="hover:-translate-y-1 transition-all duration-200"
               >
                 <Image
                   alt="LinkedIn"
@@ -137,7 +139,7 @@ export default function Hero({ theme }: HeroType) {
                 href="https://github.com/thathsaraDinu"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:-translate-y-2 transition-all duration-200"
+                className="hover:-translate-y-1 transition-all duration-200"
               >
                 <Image
                   alt="GitHub"
@@ -153,7 +155,7 @@ export default function Hero({ theme }: HeroType) {
                 href="https://wa.me/94704151942"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:-translate-y-2 transition-all duration-200"
+                className="hover:-translate-y-1 transition-all duration-200"
               >
                 <Image
                   alt="LinkedIn"
@@ -166,7 +168,7 @@ export default function Hero({ theme }: HeroType) {
                 href="http://www.linkedin.com/in/thathsara-dinuwan-6872bb2ab/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:-translate-y-2 transition-all duration-200"
+                className="hover:-translate-y-1 transition-all duration-200"
               >
                 <Image
                   alt="LinkedIn"
@@ -179,7 +181,7 @@ export default function Hero({ theme }: HeroType) {
                 href="https://github.com/thathsaraDinu"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:-translate-y-2 transition-all duration-200"
+                className="hover:-translate-y-1 transition-all duration-200"
               >
                 <Image
                   alt="GitHub"
@@ -197,12 +199,10 @@ export default function Hero({ theme }: HeroType) {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Image
-            src="/images/elementor-placeholder-image.webp"
-            alt="hero"
-            width={600}
-            height={600}
-            className=" rounded-lg"
+          <LottieComponent
+            imagePath="/images/3montiors-and-phone.json"
+            width={0}
+            height={0}
           />
         </ScrollAnimation>
       </div>

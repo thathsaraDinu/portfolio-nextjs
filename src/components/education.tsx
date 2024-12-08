@@ -1,8 +1,7 @@
 import Image from "next/image";
-import { ScrollAnimation } from "@/animation/animation";
+import { ScrollAnimation } from "@/animation/scroll-animation";
 
 export default function Education({ theme }: { theme: string }) {
-
   return (
     <section id="education" className="py-20 md:px-10 px-5">
       <div className="max-w-screen-xl mx-auto flex flex-col gap-10">

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useContext } from "react";
 import ThemeContext from "../context/theme-context"; // Adjust the path as necessary
+import Image from "next/image";
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -67,7 +68,12 @@ export default function NavBar() {
         <div className="w-full flex flex-col justify-start">
           <div className="bg-transparent h-full dark:text-blue-200 px-4 text-blue-950 flex justify-between items-center w-full">
             <div className="flex gap-10 items-center">
-              <div className="text-xl font-bold">Logo</div>
+              {theme === "light" ? (
+                <Image src="/icons/" alt="logo" width={30} height={30}></Image>
+              ) : (
+                <Image src="/icons/" alt="logo" width={30} height={30}></Image>
+              )}
+
               <button
                 onClick={toggleTheme}
                 className="  hover:bg-gray-300 dark:hover:bg-gray-800 p-3"
@@ -84,7 +90,7 @@ export default function NavBar() {
                   </svg>
                 ) : (
                   <svg
-                    className="fill-yellow-100 hidden dark:block"
+                    className="fill-yellow-300 hidden dark:block"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     height={25}
@@ -158,7 +164,12 @@ export default function NavBar() {
       >
         <div className="bg-transparent h-full dark:text-blue-200 text-blue-950 flex justify-between items-center w-full max-w-screen-xl mx-auto">
           <div className="flex gap-10 items-center">
-            <div className="text-xl font-bold">Logo</div>
+            
+            {theme === "light" ? (
+              <Image src="/icons/" alt="logo" width={30} height={30}></Image>
+            ) : (
+              <Image src="/icons/" alt="logo" width={30} height={30}></Image>
+            )}
             <button
               onClick={toggleTheme}
               className=" hover:bg-gray-300 p-3 dark:hover:bg-gray-800"
@@ -175,7 +186,7 @@ export default function NavBar() {
                 </svg>
               ) : (
                 <svg
-                  className="fill-yellow-100 hidden dark:block"
+                  className="fill-yellow-300 hidden dark:block"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   height={25}
