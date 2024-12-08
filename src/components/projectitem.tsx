@@ -17,7 +17,7 @@ export function ProjectItem({
 }: ProjectItemProps) {
   return (
     <ScrollAnimation className="dark:bg-slate-800 bg-slate-200  border dark:border-slate-600 border-slate-300 relative h-[350px] col-span-1 dark:text-blue-100 text-blue-950 rounded-md shadow-md z-10 ">
-      <a className="flex flex-col " href={link}>
+      <a className="flex flex-col h-full w-full " href={link} target="_blank">
         <img className="h-[150px] rounded-t-md object-cover" src={imageUrl} />
         <div className="flex flex-col justify-between items-start gap-3 px-3 py-2">
           <div className="flex flex-col gap-2">
