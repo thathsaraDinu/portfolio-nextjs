@@ -43,7 +43,7 @@ const About: React.FC = () => {
           initial={{ opacity: 0, x: 50 }}
         >
           <LottieComponent
-            imagePath="/images/coding-animation.json"
+            imagePath="images/coding-animation.json"
             width={0}
             height={0}
           />

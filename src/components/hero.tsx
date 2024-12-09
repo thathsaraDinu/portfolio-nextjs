@@ -120,7 +120,7 @@ export default function Hero({ theme }: HeroType) {
                   alt="LinkedIn"
                   width={30}
                   height={30}
-                  src="/icons/whatsapp-svgrepo-com.svg"
+                  src="icons/whatsapp-svgrepo-com.svg"
                 />
               </a>
               <a
@@ -133,7 +133,7 @@ export default function Hero({ theme }: HeroType) {
                   alt="LinkedIn"
                   width={40}
                   height={40}
-                  src="/icons/linkedin-svgrepo-com-black.svg"
+                  src="icons/linkedin-svgrepo-com-black.svg"
                 />
               </a>
               <a
@@ -146,7 +146,7 @@ export default function Hero({ theme }: HeroType) {
                   alt="GitHub"
                   width={28}
                   height={28}
-                  src="/icons/github-142-svgrepo-com-black.svg"
+                  src="icons/github-142-svgrepo-com-black.svg"
                 />
               </a>
             </div>
@@ -162,7 +162,7 @@ export default function Hero({ theme }: HeroType) {
                   alt="LinkedIn"
                   width={30}
                   height={30}
-                  src="/icons/whatsapp-svgrepo-com-white.svg"
+                  src="icons/whatsapp-svgrepo-com-white.svg"
                 />
               </a>
               <a
@@ -175,7 +175,7 @@ export default function Hero({ theme }: HeroType) {
                   alt="LinkedIn"
                   width={40}
                   height={40}
-                  src="/icons/linkedin-svgrepo-com.svg"
+                  src="icons/linkedin-svgrepo-com.svg"
                 />
               </a>
               <a
@@ -188,7 +188,7 @@ export default function Hero({ theme }: HeroType) {
                   alt="GitHub"
                   width={28}
                   height={28}
-                  src="/icons/github-142-svgrepo-com.svg"
+                  src="icons/github-142-svgrepo-com.svg"
                 />
               </a>
             </div>
