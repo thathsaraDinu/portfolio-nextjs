@@ -9,7 +9,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <title>Thathsara Dinuwan Portfolio</title>
-        <link rel="icon" href="/icons/logo-icon.png" type="image/png" />
+        <link rel="icon" href="icons/logo-icon.png" type="image/png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

@@ -201,7 +201,7 @@ export default function Hero({ theme }: HeroType) {
           transition={{ duration: 0.8 }}
         >
           <LottieComponent
-            imagePath="/images/3montiors-and-phone.json"
+            imagePath="images/3montiors-and-phone.json"
             width={0}
             height={0}
           />
