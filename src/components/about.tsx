@@ -5,7 +5,7 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 const About: React.FC = () => {
   return (
     <section id="about" className="py-20 md:px-10 px-5">
-      <div className="flex justify-center items-center lg:gap-10 max-w-screen-xl mx-auto">
+      <div className="flex justify-center items-center lg:gap-0 max-w-screen-xl mx-auto">
         <ScrollAnimation
           initial={{
             opacity: 0,
@@ -43,10 +43,10 @@ const About: React.FC = () => {
           initial={{ opacity: 0, x: 50 }}
         >
           <DotLottieReact
-            src="images/coding-with-magnifier.lottie"
+            src="images/blue-shirt-coding.lottie"
             loop
             autoplay
-            className=" " // Adjust height as per your design needs
+            className="w-full h-full" // Adjust height as per your design needs
           />
         </ScrollAnimation>
       </div>
