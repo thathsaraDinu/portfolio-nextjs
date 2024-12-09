@@ -1,10 +1,7 @@
-"use client";
-
-import { useState, useEffect, useContext } from "react";
-import ThemeContext from "../context/theme-context"; // Adjust the path as necessary
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
-export default function NavBar() {
+export default function NavBar({ toggleTheme }: { toggleTheme: () => void }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState<string>("");
 
@@ -58,51 +55,59 @@ export default function NavBar() {
       sections.forEach((section) => observer.unobserve(section));
     };
   }, []);
-    const { theme, toggleTheme } = useContext(ThemeContext);
-
 
   return (
     <>
       {/* mobile responsive */}
-      <div id="responsive" className="md:hidden">
+      <nav id="responsive" className="md:hidden dark:bg-slate-950 bg-slate-100">
         <div className="w-full flex flex-col justify-start">
           <div className="bg-transparent h-full dark:text-blue-200 px-4 text-blue-950 flex justify-between items-center w-full">
-            <div className="flex gap-10 items-center">
-              {theme === "light" ? (
-                <Image src="/icons/" alt="logo" width={30} height={30}></Image>
-              ) : (
-                <Image src="/icons/" alt="logo" width={30} height={30}></Image>
-              )}
+            <div className="flex p-2 gap-10 items-center">
+              <a href="#home">
+                <Image
+                  src="/icons/logo.png"
+                  alt="logo"
+                  className="block dark:hidden"
+                  width={100}
+                  height={32}
+                />
+
+                <Image
+                  src="/icons/logo-dark.png"
+                  className="hidden dark:block"
+                  alt="logo"
+                  width={100}
+                  height={32}
+                />
+              </a>
 
               <button
                 onClick={toggleTheme}
-                className="  hover:bg-gray-300 dark:hover:bg-gray-800 p-3"
+                className="  hover:bg-gray-300 p-1 rounded-md dark:hover:bg-gray-800"
               >
-                {theme === "light" ? (
-                  <svg
-                    className="fill-blue-900 block dark:hidden"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    height={25}
-                    width={25}
-                  >
-                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-                  </svg>
-                ) : (
-                  <svg
-                    className="fill-yellow-300 hidden dark:block"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    height={25}
-                    width={25}
-                  >
-                    <path
-                      d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                )}
+                <svg
+                  className="fill-blue-900 block dark:hidden"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  height={25}
+                  width={25}
+                >
+                  <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                </svg>
+
+                <svg
+                  className="fill-yellow-300 hidden dark:block"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  height={25}
+                  width={25}
+                >
+                  <path
+                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                  ></path>
+                </svg>
               </button>
             </div>
             <div
@@ -155,50 +160,60 @@ export default function NavBar() {
             </div>
           )}
         </div>
-      </div>
+      </nav>
 
       {/* desktop */}
       <nav
         id="desktop"
         className="hidden md:flex justify-between px-5 dark:bg-slate-950 bg-slate-100 bg-opacity-95 sticky top-0 z-50"
       >
-        <div className="bg-transparent h-full dark:text-blue-200 text-blue-950 flex justify-between items-center w-full max-w-screen-xl mx-auto">
-          <div className="flex gap-10 items-center">
-            
-            {theme === "light" ? (
-              <Image src="/icons/" alt="logo" width={30} height={30}></Image>
-            ) : (
-              <Image src="/icons/" alt="logo" width={30} height={30}></Image>
-            )}
+        <div className="bg-transparent h-full dark:text-blue-200 text-blue-950 gap-2 flex justify-between items-center w-full max-w-screen-xl mx-auto">
+          <div className="flex gap-10 h-full items-center">
+            <a href="#home">
+              <Image
+                src="/icons/logo.png"
+                alt="logo"
+                className="block dark:hidden"
+                width={100}
+                height={32}
+              />
+
+              <Image
+                src="/icons/logo-dark.png"
+                className="hidden dark:block"
+                alt="logo"
+                width={100}
+                height={32}
+              />
+            </a>
+
             <button
               onClick={toggleTheme}
-              className=" hover:bg-gray-300 p-3 dark:hover:bg-gray-800"
+              className=" hover:bg-gray-300 p-1 rounded-md dark:hover:bg-gray-800 group"
             >
-              {theme === "light" ? (
-                <svg
-                  className="fill-blue-900 block dark:hidden"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  height={25}
-                  width={25}
-                >
-                  <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-                </svg>
-              ) : (
-                <svg
-                  className="fill-yellow-300 hidden dark:block"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  height={25}
-                  width={25}
-                >
-                  <path
-                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-              )}
+              <svg
+                className="fill-blue-900 block dark:hidden transform group-hover:rotate-[360deg] transition-all duration-500 ease-in-out"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                height={25}
+                width={25}
+              >
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+              </svg>
+
+              <svg
+                className="fill-yellow-300 hidden dark:block group-hover:rotate-[360deg] transition-all duration-500 ease-in-out"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                height={25}
+                width={25}
+              >
+                <path
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
             </button>
           </div>
 

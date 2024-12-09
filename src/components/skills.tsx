@@ -1,10 +1,7 @@
-"use client";
-
-import React, { useContext, useMemo } from "react";
+import React, { useMemo } from "react";
 import { Doughnut } from "react-chartjs-2"; // Use Doughnut instead of Pie
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { useInView } from "react-intersection-observer"; // Hook for scroll-based detection
-import ThemeContext from "@/context/theme-context";
 
 // Register Chart.js modules
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -74,11 +71,11 @@ const Skills = ({ theme }: { theme: string }) => {
         {/* Title Section */}
         <div className="flex flex-col justify-center items-center gap-2">
           <div className="custom-top-topic dark:text-lime-200">SKILLS</div>
-          <div className="custom-second-topic dark:text-blue-400 ">
-            My Skills
+          <div className="custom-second-topic dark:text-blue-400">
+            My Expertise
           </div>
           <div className="custom-third-topic dark:text-blue-100">
-            Technologies I&apos;m proficient in
+            Tools and Technologies I Use
           </div>
         </div>
 

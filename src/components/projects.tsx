@@ -1,4 +1,3 @@
-"use client";
 import React, { useEffect, useState } from "react";
 import { ProjectItem } from "./projectitem";
 import { ScrollAnimation } from "@/animation/scroll-animation";
@@ -8,6 +7,7 @@ interface GitHubProject {
   description: string;
   html_url: string;
   language: string; // Add the language property
+  updated_at: string; // Add the updated_at property
 }
 
 const Projects: React.FC = () => {
@@ -16,7 +16,6 @@ const Projects: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [showAll, setShowAll] = useState<boolean>(false); // State to control showing all projects
 
-  // Fetch projects from GitHub API
   const fetchProjects = async () => {
     try {
       const response = await fetch(
@@ -25,13 +24,22 @@ const Projects: React.FC = () => {
       const data = await response.json();
 
       if (response.ok) {
-        const filteredProjects = data.map((project: GitHubProject) => ({
-          name: project.name,
-          description: project.description || "No description available",
-          html_url: project.html_url,
-          language: project.language,
-        }));
-        setProjects(filteredProjects);
+        // Sort projects by the updated_at date (most recent first)
+        const sortedProjects = data
+          .map((project: GitHubProject) => ({
+            name: project.name,
+            description: project.description || "No description available",
+            html_url: project.html_url,
+            language: project.language,
+            updated_at: project.updated_at, // Include the updated_at field
+          }))
+          .sort((a: GitHubProject, b: GitHubProject) => {
+            const dateA = new Date(a.updated_at);
+            const dateB = new Date(b.updated_at);
+            return dateB.getTime() - dateA.getTime(); // Sort in descending order
+          });
+
+        setProjects(sortedProjects);
       } else {
         throw new Error("Failed to fetch projects");
       }
@@ -63,10 +71,10 @@ const Projects: React.FC = () => {
           >
             <div className="custom-top-topic dark:text-lime-200">PROJECTS</div>
             <div className="custom-second-topic dark:text-blue-400">
-              My Projects
+              My Creations
             </div>
             <div className="custom-third-topic dark:text-blue-100">
-              A few projects I&apos;ve worked on
+              Things I&apos;ve Built
             </div>
           </ScrollAnimation>
           <ScrollAnimation
@@ -101,8 +109,9 @@ const Projects: React.FC = () => {
             {!loading &&
               !error &&
               projectsToShow.map((project: GitHubProject) => {
+                const newLocal = `https://raw.githubusercontent.com/thathsaraDinu/${project.name}/main/project-image.jpg`;
                 // Constructing the image URL for each project from GitHub
-                const imageUrl = `https://raw.githubusercontent.com/<your-github-username>/${project.name}/main/project-image.jpg`;
+                const imageUrl = newLocal;
                 return (
                   <ProjectItem
                     key={project.name}

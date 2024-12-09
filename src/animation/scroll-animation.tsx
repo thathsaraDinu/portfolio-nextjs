@@ -1,5 +1,4 @@
-"use client"
-import { motion, TargetAndTransition, Target, Variant, Transition } from "framer-motion";
+import { motion, Target, Transition } from "framer-motion";
 import { ReactNode, useEffect, useRef, useState } from "react";
 
 interface ScrollAnimationProps {
@@ -32,10 +31,11 @@ export const ScrollAnimation = ({
       { threshold }
     );
 
-    if (ref.current) observer.observe(ref.current);
+    const currentRef = ref.current;
+    if (currentRef) observer.observe(currentRef);
 
     return () => {
-      if (ref.current) observer.unobserve(ref.current);
+      if (currentRef) observer.unobserve(currentRef);
     };
   }, [hasAnimated, threshold]);
 

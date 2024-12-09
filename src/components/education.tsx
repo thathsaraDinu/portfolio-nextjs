@@ -11,10 +11,10 @@ export default function Education({ theme }: { theme: string }) {
         >
           <div className="custom-top-topic dark:text-lime-200">EDUCATION</div>
           <div className="custom-second-topic dark:text-blue-400">
-            My Education
+            Academic Journey
           </div>
           <div className="custom-third-topic dark:text-blue-100">
-            My academic background
+            My Learning Path
           </div>
         </ScrollAnimation>
 

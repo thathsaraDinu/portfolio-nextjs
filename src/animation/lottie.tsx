@@ -1,4 +1,3 @@
-"use client";
 import React, { useEffect, useRef } from "react";
 import lottie from "lottie-web";
 
@@ -28,7 +27,7 @@ export default function LottieComponent ({width = 0, height =0, imagePath}: Lott
         animation.destroy();
       };
     }
-  }, []);
+  }, [imagePath]);
 
   return (
     <div
