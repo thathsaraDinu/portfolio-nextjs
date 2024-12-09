@@ -2,8 +2,8 @@ import { useState } from "react";
 import Image from "next/image";
 import { ScrollAnimation } from "@/animation/scroll-animation";
 import emailjs from "emailjs-com";
-import Lottie from "lottie-react";
-import animation from "../assets/red-shirt-man-coding.json"; // Adjust the path to the correct location
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+
 
 export default function Contact({ theme }: { theme: string }) {
   const [formData, setFormData] = useState({
@@ -80,7 +80,12 @@ export default function Contact({ theme }: { theme: string }) {
             initial={{ opacity: 0, x: -50 }}
             className="col-span-4 md:col-span-2 flex justify-center flex-col items-center gap-"
           >
-            <Lottie animationData={animation} loop className="w-[300px] pb-10" />
+            <DotLottieReact
+              src="images/red-shirt-man-coding.lottie"
+              loop
+              autoplay
+              className="w-full pb-10" // Adjust height as per your design needs
+            />
             <hr className="   hidden md:block md:w-1/2 dark:border-white border-black h-0  mb-5"></hr>
             {theme == "light" ? (
               <div className="flex gap-10 justify-center items-center">

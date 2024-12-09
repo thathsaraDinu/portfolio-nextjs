@@ -1,7 +1,7 @@
 import { ScrollAnimation } from "@/animation/scroll-animation";
 import Lottie from "lottie-react";
 import Image from "next/image";
-import animation from "../assets/3montiors-and-phone.json"; // Adjust the path to the correct location
+import animation from "../assets/3monitors-and-phone.json"; // Adjust the path to the correct location
 
 type HeroType = {
   theme: string;

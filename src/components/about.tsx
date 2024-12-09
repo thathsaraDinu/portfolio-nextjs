@@ -1,7 +1,6 @@
 import React from "react";
 import { ScrollAnimation } from "@/animation/scroll-animation";
-import animation from "../assets/coding-with-magnifier.json"; // Adjust the path to the correct location
-import Lottie from "lottie-react";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const About: React.FC = () => {
   return (
@@ -40,15 +39,15 @@ const About: React.FC = () => {
           <hr className="max-w-screen-xl mx-auto h-2 border-white bg-white" />
         </ScrollAnimation>
         <ScrollAnimation
-          className="md:block hidden w-1/3"
+          className="md:block hidden w-1/2"
           initial={{ opacity: 0, x: 50 }}
         >
-          <Lottie
-            animationData={animation}
+          <DotLottieReact
+            src="images/coding-with-magnifier.lottie"
             loop
-            width={30}
-            height={30}
-          ></Lottie>
+            autoplay
+            className=" " // Adjust height as per your design needs
+          />
         </ScrollAnimation>
       </div>
     </section>
