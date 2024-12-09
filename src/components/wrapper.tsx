@@ -27,7 +27,7 @@ export default function Wrapper() {
         <Skills theme={theme} />
 
         <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
-        <Education theme={theme} />
+        <Education />
 
         <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
         <Projects />

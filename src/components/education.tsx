@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ScrollAnimation } from "@/animation/scroll-animation";
 
-export default function Education({ theme }: { theme: string }) {
+export default function Education() {
   return (
     <section id="education" className="py-20 md:px-10 px-5">
       <div className="max-w-screen-xl mx-auto flex flex-col gap-10">
@@ -24,23 +24,21 @@ export default function Education({ theme }: { theme: string }) {
             className="flex gap-5 md:gap-10"
           >
             <div className="flex flex-col items-center justify-start gap-2">
-              {theme == "light" ? (
-                <Image
-                  src="icons/graduate-cap-svgrepo-com-black.svg"
-                  width={30}
-                  height={30}
-                  alt="grad-hat"
-                  className="min-h-10 min-w-10 "
-                ></Image>
-              ) : (
-                <Image
-                  src="icons/graduate-cap-svgrepo-com.svg"
-                  width={30}
-                  height={30}
-                  alt="grad-hat"
-                  className="min-h-10 min-w-10"
-                ></Image>
-              )}
+              <Image
+                src="icons/graduate-cap-svgrepo-com-black.svg"
+                width={30}
+                height={30}
+                alt="grad-hat"
+                className="min-h-10 min-w-10 dark:hidden "
+              ></Image>
+
+              <Image
+                src="icons/graduate-cap-svgrepo-com.svg"
+                width={30}
+                height={30}
+                alt="grad-hat"
+                className="min-h-10 min-w-10 hidden dark:block "
+              ></Image>
 
               <div className="w-[2px] h-full dark:bg-blue-300 bg-blue-800"></div>
             </div>

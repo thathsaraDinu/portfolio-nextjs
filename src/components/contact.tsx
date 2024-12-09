@@ -80,7 +80,7 @@ export default function Contact({ theme }: { theme: string }) {
             className="col-span-4 md:col-span-2 flex justify-center flex-col items-center gap-"
           >
             <LottieComponent
-              imagePath="/images/red-shirt-man-coding.json"
+              imagePath="images/red-shirt-man-coding.json"
               height={300}
               width={300}
             />
