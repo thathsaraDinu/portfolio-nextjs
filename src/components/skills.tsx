@@ -1,7 +1,8 @@
-import React, { useMemo } from "react";
+import React, { useMemo, memo } from "react";
 import { Doughnut } from "react-chartjs-2"; // Use Doughnut instead of Pie
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { useInView } from "react-intersection-observer"; // Hook for scroll-based detection
+import { ScrollAnimation } from "@/animation/scroll-animation";
 
 // Register Chart.js modules
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -69,7 +70,7 @@ const Skills = ({ theme }: { theme: string }) => {
     <section id="skills" className="py-20 px-5">
       <div className="max-w-screen-xl mx-auto flex flex-col gap-10">
         {/* Title Section */}
-        <div className="flex flex-col justify-center items-center gap-2">
+        <ScrollAnimation initial={{opacity: 0, y: 50}} className="flex flex-col justify-center items-center gap-2">
           <div className="custom-top-topic dark:text-lime-200">SKILLS</div>
           <div className="custom-second-topic dark:text-blue-400">
             My Expertise
@@ -77,12 +78,12 @@ const Skills = ({ theme }: { theme: string }) => {
           <div className="custom-third-topic dark:text-blue-100">
             Tools and Technologies I Use
           </div>
-        </div>
+        </ScrollAnimation>
 
         {/* Skills Section */}
         <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-10">
           {skills.map((skill) => (
-            <SkillChart theme={theme} key={skill.name} skill={skill} />
+            <MemoizedSkillChart key={skill.name} theme={theme} skill={skill} />
           ))}
         </div>
       </div>
@@ -114,7 +115,7 @@ const SkillChart: React.FC<{
         },
       ],
     }),
-    [skill, SINGLE_COLOR]
+    [skill.level, SINGLE_COLOR]
   );
 
   return (
@@ -135,5 +136,8 @@ const SkillChart: React.FC<{
     </div>
   );
 };
+
+// Memoize SkillChart to prevent unnecessary re-renders
+const MemoizedSkillChart = memo(SkillChart);
 
 export default Skills;

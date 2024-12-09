@@ -1,6 +1,6 @@
 import React from "react";
 import { ScrollAnimation } from "@/animation/scroll-animation";
-import animation from "../assets/monitor-animation.json"; // Adjust the path to the correct location
+import animation from "../assets/coding-with-magnifier.json"; // Adjust the path to the correct location
 import Lottie from "lottie-react";
 
 const About: React.FC = () => {
