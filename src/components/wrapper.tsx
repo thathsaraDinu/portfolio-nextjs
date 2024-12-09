@@ -32,7 +32,6 @@ export default function Wrapper() {
         <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
         <About />
         <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
-        <Skills theme={theme} />
         <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
         <Education /> {/* Loaded immediately */}
         <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
