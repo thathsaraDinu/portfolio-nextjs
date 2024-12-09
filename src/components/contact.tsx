@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ScrollAnimation } from "@/animation/scroll-animation";
-import LottieComponent from "@/animation/lottie";
 import emailjs from "emailjs-com";
+import Lottie from "lottie-react";
+import animation from "../assets/red-shirt-man-coding.json"; // Adjust the path to the correct location
 
 export default function Contact({ theme }: { theme: string }) {
   const [formData, setFormData] = useState({
@@ -79,12 +80,8 @@ export default function Contact({ theme }: { theme: string }) {
             initial={{ opacity: 0, x: -50 }}
             className="col-span-4 md:col-span-2 flex justify-center flex-col items-center gap-"
           >
-            <LottieComponent
-              imagePath="images/red-shirt-man-coding.json"
-              height={300}
-              width={300}
-            />
-            <hr className="   hidden md:block md:w-full dark:border-white border-black h-0  mb-5"></hr>
+            <Lottie animationData={animation} loop className="w-[300px] pb-10" />
+            <hr className="   hidden md:block md:w-1/2 dark:border-white border-black h-0  mb-5"></hr>
             {theme == "light" ? (
               <div className="flex gap-10 justify-center items-center">
                 <a

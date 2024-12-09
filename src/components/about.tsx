@@ -1,6 +1,7 @@
 import React from "react";
 import { ScrollAnimation } from "@/animation/scroll-animation";
-import LottieComponent from "@/animation/lottie";
+import animation from "../assets/monitor-animation.json"; // Adjust the path to the correct location
+import Lottie from "lottie-react";
 
 const About: React.FC = () => {
   return (
@@ -42,11 +43,12 @@ const About: React.FC = () => {
           className="md:block hidden w-1/3"
           initial={{ opacity: 0, x: 50 }}
         >
-          <LottieComponent
-            imagePath="images/coding-animation.json"
-            width={0}
-            height={0}
-          />
+          <Lottie
+            animationData={animation}
+            loop
+            width={30}
+            height={30}
+          ></Lottie>
         </ScrollAnimation>
       </div>
     </section>
