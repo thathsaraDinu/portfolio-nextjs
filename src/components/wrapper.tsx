@@ -6,7 +6,6 @@ import ThemeContext from "@/context/theme-context";
 const About = dynamic(() => import("@/components/about"));
 const Contact = dynamic(() => import("@/components/contact"));
 const Projects = dynamic(() => import("@/components/projects"));
-const Skills = dynamic(() => import("@/components/skills"));
 const Hero = dynamic(() => import("@/components/hero"));
 const NavBar = dynamic(() => import("@/components/navbar"));
 
