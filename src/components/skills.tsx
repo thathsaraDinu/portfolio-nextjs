@@ -81,11 +81,7 @@ const Skills = ({ theme }: { theme: string }) => {
         </ScrollAnimation>
 
         {/* Skills Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-10">
-          {skills.map((skill) => (
-            <MemoizedSkillChart key={skill.name} theme={theme} skill={skill} />
-          ))}
-        </div>
+        
       </div>
     </section>
   );
