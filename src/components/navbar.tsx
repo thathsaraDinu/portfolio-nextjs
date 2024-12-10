@@ -167,7 +167,7 @@ export default function NavBar({ toggleTheme }: { toggleTheme: () => void }) {
       {/* desktop */}
       <nav
         id="desktop"
-        className="hidden md:flex justify-between px-5 dark:bg-slate-950 bg-slate-100 bg-opacity-95 sticky top-0 z-50"
+        className="hidden scroll-mt-navbar md:flex justify-between px-5 dark:bg-slate-950 bg-slate-100 bg-opacity-95 sticky top-0 z-50"
       >
         <div className="bg-transparent h-full dark:text-blue-200 text-blue-950 gap-2 flex justify-between items-center w-full max-w-screen-xl mx-auto">
           <div className="flex gap-10 h-full items-center">
