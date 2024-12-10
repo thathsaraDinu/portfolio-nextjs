@@ -1,10 +1,10 @@
 import dynamic from "next/dynamic";
 
 // Import the immidiate components statically
-import NavBar from "@/components/navbar";
-import Hero from "@/components/hero";
-import About from "@/components/about";
-import Footer from "@/components/footer";
+const NavBar = dynamic(() => import("@/components/navbar"), { ssr: false });
+const Hero = dynamic(() => import("@/components/hero"), { ssr: false });
+const About = dynamic(() => import("@/components/about"), { ssr: false });
+const Footer = dynamic(() => import("@/components/footer"), { ssr: false });
 
 // Dynamically import the non-immidiate components
 const Skills = dynamic(() => import("@/components/skills") ,{ssr: false});
