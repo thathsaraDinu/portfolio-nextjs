@@ -16,12 +16,14 @@ export default function Wrapper() {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
-    <div
-      style={{
-        backgroundImage: theme == "dark" ? `url('images/background.svg')` : "",
-      }}
-    >
-      <div className="bg-gray-200 bg-fixed bg-center bg-no-repeat bg-cover dark:bg-slate-900">
+    <div className="md:scroll-mt-navbar">
+      <div
+        style={{
+          backgroundImage:
+            theme == "dark" ? `url('images/background.svg')` : "",
+        }}
+        className="bg-gray-200 bg-fixed bg-center bg-no-repeat bg-cover"
+      >
         <div className="font-inter">
           {/* Always load NavBar and Hero */}
           <NavBar toggleTheme={toggleTheme} />
