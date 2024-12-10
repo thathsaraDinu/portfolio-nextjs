@@ -22,7 +22,7 @@ export default function Education() {
           >
             <div className="flex flex-col items-center justify-start gap-2">
               <Image
-                src="icons/graduate-cap-svgrepo-com-black.svg"
+                src="/icons/graduate-cap-svgrepo-com-black.svg"
                 width={30}
                 height={30}
                 alt="grad-hat"
@@ -30,7 +30,7 @@ export default function Education() {
               ></Image>
 
               <Image
-                src="icons/graduate-cap-svgrepo-com.svg"
+                src="/icons/graduate-cap-svgrepo-com.svg"
                 width={30}
                 height={30}
                 alt="grad-hat"

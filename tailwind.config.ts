@@ -21,9 +21,6 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
-      backgroundImage: {
-        "background-pattern": "url('images/background.svg')",
-      },
     },
   },
   darkMode: "class", // Enables class-based dark mode

@@ -21,7 +21,7 @@ const About: React.FC = () => {
             </div>
           </div>
           <div className=" text-blue-950 dark:text-white  ">
-            I’m Thathssara Dinuwan, a 23-year-old software engineering student
+            I’m Thathsara Dinuwan, a 23-year-old software engineering student
             at the Sri Lanka Institute of Technology. I specialize in full-stack
             development with a passion for Flutter, Node.js, and Next.js. I’m
             skilled in building both mobile and web apps, using languages like
