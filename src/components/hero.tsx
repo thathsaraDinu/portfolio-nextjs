@@ -21,7 +21,7 @@ export default function Hero({ theme }: HeroType) {
   return (
     <section
       id="home"
-      className=" lg:h-[calc(100vh-50px)] py-20 flex flex-col justify-center md:px-10 px-5"
+      className="md:scroll-mt-navbar lg:h-[calc(100vh-50px)] py-20 flex flex-col justify-center md:px-10 px-5"
     >
       <div className="max-w-screen-xl mx-auto gap-5 flex justify-between items-center">
         <ScrollAnimation
@@ -29,18 +29,12 @@ export default function Hero({ theme }: HeroType) {
           className="md:w-1/2  flex flex-col gap-5 items-start  max-w-[600px]"
         >
           <div className="flex flex-col gap-3 font-raleway dark:text-blue-200 text-blue-950 font-bold">
-            <div className="text-2xl">
-              Crafting code, building solutions
-            </div>
+            <div className="text-2xl">Crafting code, building solutions</div>
             <div className="text-5xl">Welcome to my digital portfolio.</div>
           </div>
           <p className="dark:text-blue-200 text-blue-950 text-lg">
-            Hi, I&apos;m{" "}
-            <span className="font-bold">
-              {" "}
-              Thathsara Dinuwan
-            </span>
-            , a software engineer specializing in mobile and full-stack
+            Hi, I&apos;m <span className="font-bold"> Thathsara Dinuwan</span>,
+            a software engineer specializing in mobile and full-stack
             development, building scalable solutions with clean, efficient code.
           </p>
           <div className=" flex gap-5 text-sm font-semibold">

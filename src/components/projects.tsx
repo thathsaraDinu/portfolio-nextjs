@@ -63,7 +63,7 @@ const Projects: React.FC = () => {
   const projectsToShow = showAll ? projects : projects.slice(0, 4); // Show 4 projects initially
 
   return (
-    <section id="projects" className="py-20 md:px-10 px-5 ">
+    <section id="projects" className="md:scroll-mt-navbar py-20 md:px-10 px-5 ">
       <div className="flex flex-col items-center gap-5 max-w-screen-xl mx-auto">
         <div className="flex flex-col items-center max-w-screen-xl text-start gap-10">
           <ScrollAnimation className="flex flex-col gap-2 text-center justify-center">

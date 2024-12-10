@@ -75,7 +75,7 @@ const chartOptions: ChartOptions<"doughnut"> = {
 
 const Skills: React.FC<SkillsProps> = ({ theme }) => {
   return (
-    <section id="skills" className="py-20 px-5">
+    <section id="skills" className="md:scroll-mt-navbar py-20 px-5">
       <div className="max-w-screen-xl mx-auto flex flex-col gap-10">
         {/* Title Section */}
         <ScrollAnimation className="flex flex-col justify-center items-center gap-2">

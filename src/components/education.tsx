@@ -3,7 +3,7 @@ import { ScrollAnimation } from "@/animation/scroll-animation";
 
 export default function Education() {
   return (
-    <section id="education" className="py-20 md:px-10 px-5">
+    <section id="education" className="md:scroll-mt-navbar py-20 md:px-10 px-5">
       <div className="max-w-screen-xl mx-auto flex flex-col gap-10">
         <ScrollAnimation className="flex flex-col justify-center items-center gap-2">
           <div className="custom-top-topic dark:text-lime-200">EDUCATION</div>

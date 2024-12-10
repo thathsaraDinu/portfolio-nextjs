@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      scrollMargin: {
+        navbar: "50px", // Define your custom value
+      },
       fontFamily: {
         josefin: ["Josefin Sans", "sans-serif"],
         outfit: ["Outfit", "sans-serif"],

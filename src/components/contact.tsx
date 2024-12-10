@@ -58,7 +58,7 @@ export default function Contact({ theme }: { theme: string }) {
   return (
     <section
       id="contact"
-      className="flex flex-col items-center gap-10 py-20 md:px-10 px-5 max-w-screen-xl mx-auto"
+      className="md:scroll-mt-navbar flex flex-col items-center gap-10 py-20 md:px-10 px-5 max-w-screen-xl mx-auto"
     >
       <div className="flex flex-col items-center max-w-screen-xl w-full text-start gap-10">
         <ScrollAnimation className="flex flex-col gap-2 text-center justify-center">

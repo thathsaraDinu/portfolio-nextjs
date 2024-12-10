@@ -6,7 +6,3 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Apply this to each section */
-section {
-  scroll-margin-top: 50px; /* Adjust this value to match the height of your navbar */
-}

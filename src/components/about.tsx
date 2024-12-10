@@ -3,7 +3,7 @@ import { ScrollAnimation } from "@/animation/scroll-animation";
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-20 md:px-10 px-5">
+    <section id="about" className="md:scroll-mt-navbar py-20 md:px-10 px-5">
       <div className="flex justify-center items-center lg:gap-0 max-w-screen-xl mx-auto">
         <ScrollAnimation
           initial={{ opacity: 0, x: -20 }}
@@ -38,7 +38,7 @@ const About: React.FC = () => {
           className="md:block hidden w-1/3"
           initial={{ opacity: 0, x: 50 }}
         >
-         <></>
+          <></>
         </ScrollAnimation>
       </div>
     </section>
