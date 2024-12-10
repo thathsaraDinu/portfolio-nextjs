@@ -1,5 +1,6 @@
+import dynamic from "next/dynamic";
 
-import HeroContent from "./hero-content";
+const HeroContent = dynamic(() => import("./hero-content"));
 
 export default function Hero() {
   return (
