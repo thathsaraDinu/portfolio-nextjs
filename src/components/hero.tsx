@@ -206,8 +206,7 @@ export default function Hero({ theme }: HeroType) {
             rendererSettings={{
               preserveAspectRatio: "xMidYMid slice",
             }}
-            height={400}
-            width={400}
+            className="max-w-[550px]"
           ></Lottie>
         </ScrollAnimation>
       </div>
