@@ -1,18 +1,16 @@
 import { useContext } from "react";
 import dynamic from "next/dynamic";
 import ThemeContext from "@/context/theme-context";
-
-// Lazy load the components that are not immediately visible on page load
-const About = dynamic(() => import("@/components/about"));
-const Contact = dynamic(() => import("@/components/contact"));
-const Projects = dynamic(() => import("@/components/projects"));
-const Skills = dynamic(() => import("@/components/skills"));
-const Hero = dynamic(() => import("@/components/hero"));
-const NavBar = dynamic(() => import("@/components/navbar"));
-
-// Footer and Education are loaded immediately
+import NavBar from "@/components/navbar";
+import Hero from "@/components/hero";
+import About from "@/components/about";
 import Footer from "@/components/footer";
-import Education from "@/components/education";
+
+// Dynamically import the components
+const Skills = dynamic(() => import("@/components/skills"));
+const Education = dynamic(() => import("@/components/education"));
+const Projects = dynamic(() => import("@/components/projects"));
+const Contact = dynamic(() => import("@/components/contact"));
 
 export default function Wrapper() {
   const { theme, toggleTheme } = useContext(ThemeContext);
