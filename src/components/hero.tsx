@@ -1,5 +1,7 @@
 import { ScrollAnimation } from "@/animation/scroll-animation";
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
+
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 import animation from "@/assets/3monitors-and-phone-optimized.json";
 
 export default function Hero() {
