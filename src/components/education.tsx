@@ -5,10 +5,7 @@ export default function Education() {
   return (
     <section id="education" className="py-20 md:px-10 px-5">
       <div className="max-w-screen-xl mx-auto flex flex-col gap-10">
-        <ScrollAnimation
-          initial={{ opacity: 0, y: 50 }}
-          className="flex flex-col justify-center items-center gap-2"
-        >
+        <ScrollAnimation className="flex flex-col justify-center items-center gap-2">
           <div className="custom-top-topic dark:text-lime-200">EDUCATION</div>
           <div className="custom-second-topic dark:text-blue-400">
             Academic Journey

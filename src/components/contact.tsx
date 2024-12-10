@@ -3,7 +3,6 @@ import Image from "next/image";
 import { ScrollAnimation } from "@/animation/scroll-animation";
 import emailjs from "emailjs-com";
 
-
 export default function Contact({ theme }: { theme: string }) {
   const [formData, setFormData] = useState({
     name: "",
@@ -61,11 +60,8 @@ export default function Contact({ theme }: { theme: string }) {
       id="contact"
       className="flex flex-col items-center gap-10 py-20 md:px-10 px-5 max-w-screen-xl mx-auto"
     >
-      <div className="flex flex-col items-center max-w-screen-xl text-start gap-10">
-        <ScrollAnimation
-          initial={{ opacity: 0, y: 50 }}
-          className="flex flex-col gap-2 text-center justify-center"
-        >
+      <div className="flex flex-col items-center max-w-screen-xl w-full text-start gap-10">
+        <ScrollAnimation className="flex flex-col gap-2 text-center justify-center">
           <div className="custom-top-topic dark:text-lime-200">Contact</div>
           <div className="custom-second-topic dark:text-blue-400">
             Get in touch
@@ -74,12 +70,11 @@ export default function Contact({ theme }: { theme: string }) {
             I&apos;m always open to new opportunities
           </div>
         </ScrollAnimation>
-        <div className="grid grid-cols-4 md:gap-32 gap-5 mx-auto font-inter">
-          <ScrollAnimation
-            initial={{ opacity: 0, x: -50 }}
-            className="col-span-4 md:col-span-2 flex justify-center flex-col items-center gap-"
-          >
-           
+        <ScrollAnimation
+          initial={{ opacity: 0, y: 50 }}
+          className="flex flex-col md:flex-row justify-center items-center md:gap-20 w-full px-20 mx-auto font-inter"
+        >
+          <div className=" flex justify-center flex-col items-center w-full ">
             <hr className="hidden md:block md:w-full dark:border-white border-black h-0  mb-5"></hr>
             {theme == "light" ? (
               <div className="flex gap-10 justify-center items-center">
@@ -166,10 +161,8 @@ export default function Contact({ theme }: { theme: string }) {
                 </a>
               </div>
             )}
-          </ScrollAnimation>
-          <ScrollAnimation
-            className="col-span-4 md:col-span-2"
-          >
+          </div>
+          <div className="col-span-4 md:col-span-2 w-full">
             <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
               <input
                 type="text"
@@ -220,8 +213,8 @@ export default function Contact({ theme }: { theme: string }) {
                 {status}
               </p>
             )}
-          </ScrollAnimation>
-        </div>
+          </div>
+        </ScrollAnimation>
       </div>
     </section>
   );

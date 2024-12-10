@@ -6,10 +6,7 @@ const About: React.FC = () => {
     <section id="about" className="py-20 md:px-10 px-5">
       <div className="flex justify-center items-center lg:gap-0 max-w-screen-xl mx-auto">
         <ScrollAnimation
-          initial={{
-            opacity: 0,
-            x: -50,
-          }}
+          initial={{ opacity: 0, x: -20 }}
           className="flex flex-col items-start max-w-[600px] md:w-1/2   text-start gap-5 "
         >
           <div className="flex flex-col gap-2">
