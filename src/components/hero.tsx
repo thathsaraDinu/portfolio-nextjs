@@ -1,7 +1,5 @@
 import { ScrollAnimation } from "@/animation/scroll-animation";
-import Lottie from "lottie-react";
 import Image from "next/image";
-import animation from "../assets/3monitors-and-phone.json"; // Adjust the path to the correct location
 
 type HeroType = {
   theme: string;
@@ -201,12 +199,7 @@ export default function Hero({ theme }: HeroType) {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Lottie
-            animationData={animation}
-            loop
-            width={30}
-            height={30}
-          ></Lottie>
+          
         </ScrollAnimation>
       </div>
     </section>
