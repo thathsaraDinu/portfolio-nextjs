@@ -25,7 +25,7 @@ export default function Hero({ theme }: HeroType) {
     >
       <div className="max-w-screen-xl mx-auto gap-5 flex justify-between items-center">
         <ScrollAnimation
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, x: -50 }}
           className="md:w-1/2  flex flex-col gap-5 items-start  max-w-[600px]"
         >
           <div className="flex flex-col gap-3 font-raleway dark:text-blue-200 text-blue-950 font-bold">
@@ -190,7 +190,7 @@ export default function Hero({ theme }: HeroType) {
           )}
         </ScrollAnimation>
         <ScrollAnimation
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, x: 50 }}
           className="md:w-1/2 hidden md:block"
         >
           <Lottie

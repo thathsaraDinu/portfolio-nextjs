@@ -20,7 +20,7 @@ export default function Wrapper() {
       style={{
         backgroundImage: theme == "dark" ? `url('images/background.svg')` : "",
       }}
-      className="bg-gray-200 bg-fixed bg-center bg-no-repeat bg-cover dark:bg-slate-900"
+      className="bg-gray-200 md:scroll-mt-navbar bg-fixed bg-center bg-no-repeat bg-cover dark:bg-slate-900"
     >
       <div className="font-inter">
         {/* Always load NavBar and Hero */}

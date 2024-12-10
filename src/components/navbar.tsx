@@ -5,16 +5,9 @@ export default function NavBar({ toggleTheme }: { toggleTheme: () => void }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState<string>("");
 
-  const menuItems = [
-    "Home",
-    "About",
-    "Skills",
-    "Education",
-    "Projects",
-    "Contact",
-  ];
+  const menuItems = ["About", "Skills", "Education", "Projects", "Contact"];
 
-  const links = ["home", "about", "skills", "education", "projects", "contact"];
+  const links = ["about", "skills", "education", "projects", "contact"];
 
   const handleItemClick = (item: string) => {
     // Scroll to the section with smooth animation
@@ -149,7 +142,7 @@ export default function NavBar({ toggleTheme }: { toggleTheme: () => void }) {
                 <a
                   key={index}
                   href={`#${links[index]}`}
-                  className={`transition-all duration-200 p-4 w-full dark:hover:bg-slate-950 hover:bg-slate-400 bg-transparent ${
+                  className={`transition-all duration-200 p-4 w-full dark:hover:bg-slate-950 hover:bg-slate-300 bg-transparent ${
                     selectedItem === links[index]
                       ? "dark:text-blue-500 dark:bg-gray-800 bg-slate-100 text-blue-800"
                       : "dark:text-blue-100 text-blue-950"
