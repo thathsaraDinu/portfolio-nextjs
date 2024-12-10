@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
   // Optional: Disable Image Optimization since GitHub Pages won't support Next.js's image optimization
   images: {
     unoptimized: true,
-    domains: ["example.com", "anotherdomain.com"], // Add the external domains you want to load images from
+    domains: ["raw.githubusercontent.com"] // Add the external domains you want to load images from
   },
 
   // Additional Next.js configuration options can be added here

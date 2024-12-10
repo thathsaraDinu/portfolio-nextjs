@@ -1,6 +1,5 @@
 import React from "react";
 import { ScrollAnimation } from "@/animation/scroll-animation";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const About: React.FC = () => {
   return (
@@ -39,15 +38,10 @@ const About: React.FC = () => {
           <hr className="max-w-screen-xl mx-auto h-2 border-white bg-white" />
         </ScrollAnimation>
         <ScrollAnimation
-          className="md:block hidden w-1/2"
+          className="md:block hidden w-1/3"
           initial={{ opacity: 0, x: 50 }}
         >
-          <DotLottieReact
-            src="images/blue-shirt-coding.lottie"
-            loop
-            autoplay
-            className="w-full h-full" // Adjust height as per your design needs
-          />
+         <></>
         </ScrollAnimation>
       </div>
     </section>

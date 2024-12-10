@@ -1,5 +1,5 @@
 import { motion, Target, Transition } from "framer-motion";
-import { ReactNode, useEffect, useRef, useState } from "react";
+import { ReactNode, useRef } from "react";
 
 interface ScrollAnimationProps {
   children: ReactNode;
@@ -12,38 +12,19 @@ interface ScrollAnimationProps {
 
 export const ScrollAnimation = ({
   children,
-  initial = { opacity: 0, y: 50 },
-  animate = { opacity: 1, y: 0 , x: 0},
+  initial = { opacity: 0, y: 0 },
+  animate = { opacity: 1, y: 0, x: 0 },
   transition = { duration: 1 },
-  threshold = 0.2,
   className,
 }: ScrollAnimationProps) => {
-  const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated) {
-          setHasAnimated(true);
-        }
-      },
-      { threshold }
-    );
-
-    const currentRef = ref.current;
-    if (currentRef) observer.observe(currentRef);
-
-    return () => {
-      if (currentRef) observer.unobserve(currentRef);
-    };
-  }, [hasAnimated, threshold]);
 
   return (
     <motion.div
-      ref={ref}
+    ref={ref}
+      whileInView={animate}
+      viewport={{ once: true }}
       initial={initial}
-      animate={hasAnimated ? animate : initial}
       transition={transition}
       className={className}
     >

@@ -1,14 +1,22 @@
-import React, { useMemo, memo } from "react";
-import { Doughnut } from "react-chartjs-2"; // Use Doughnut instead of Pie
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { useInView } from "react-intersection-observer"; // Hook for scroll-based detection
-import { ScrollAnimation } from "@/animation/scroll-animation";
+import React, { useEffect, useRef, useState, useMemo, memo } from "react";
+import { Doughnut } from "react-chartjs-2";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend, ChartOptions } from "chart.js";
 
-// Register Chart.js modules
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-// Skills Data
-const skills = [
+// Define skill type
+interface Skill {
+  name: string;
+  level: number;
+  description: string;
+}
+
+// Define props for Skills component
+interface SkillsProps {
+  theme: string;
+}
+
+const skills: Skill[] = [
   {
     name: "Flutter",
     level: 85,
@@ -41,36 +49,35 @@ const skills = [
   },
 ];
 
-// Chart Options
-const chartOptions = {
+const chartOptions: ChartOptions<"doughnut"> = {
   responsive: true,
   plugins: {
     legend: {
-      display: false, // Hide the legend
+      display: false,
     },
     tooltip: {
-      enabled: true, // Enable tooltips
+      enabled: true,
       callbacks: {
-        label: (context: { raw: unknown }) => {
-          const level = context.raw;
-          return ` ${level}%`; // Custom tooltip content
+        label: (context) => {
+          const level = context.raw as number;
+          return ` ${level}%`;
         },
       },
     },
   },
   interaction: {
-    mode: "nearest" as const, // Nearest point on hover
-    intersect: false, // Tooltip appears even if not directly on the slice
+    mode: "nearest",
+    intersect: false,
   },
-  cutout: "70%", // Creates a donut chart effect
+  cutout: "60%", // Adjust inner radius here (e.g., "50%", "70%", or a pixel value like 50)
 };
 
-const Skills = ({ theme }: { theme: string }) => {
+const Skills: React.FC<SkillsProps> = ({ theme }) => {
   return (
     <section id="skills" className="py-20 px-5">
       <div className="max-w-screen-xl mx-auto flex flex-col gap-10">
         {/* Title Section */}
-        <ScrollAnimation initial={{opacity: 0, y: 50}} className="flex flex-col justify-center items-center gap-2">
+        <div className="flex flex-col justify-center items-center gap-2">
           <div className="custom-top-topic dark:text-lime-200">SKILLS</div>
           <div className="custom-second-topic dark:text-blue-400">
             My Expertise
@@ -78,7 +85,7 @@ const Skills = ({ theme }: { theme: string }) => {
           <div className="custom-third-topic dark:text-blue-100">
             Tools and Technologies I Use
           </div>
-        </ScrollAnimation>
+        </div>
 
         {/* Skills Section */}
         <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-10">
@@ -91,44 +98,67 @@ const Skills = ({ theme }: { theme: string }) => {
   );
 };
 
-// Single Skill Chart Component
-const SkillChart: React.FC<{
-  skill: { name: string; level: number; description: string };
+interface SkillChartProps {
+  skill: Skill;
   theme: string;
-}> = ({ skill, theme }) => {
-  const { ref, inView } = useInView({
-    triggerOnce: true, // Trigger animation only once
-    threshold: 0.2, // Fire when 20% of the component is visible
-  });
+}
+
+const SkillChart: React.FC<SkillChartProps> = ({ skill, theme }) => {
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const chartRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          setHasAnimated(true); // Trigger animation and ensure it runs only once
+        }
+      },
+      { threshold: 0.5 } // Trigger when 50% of the chart is visible
+    );
+
+    const currentRef = chartRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [hasAnimated]);
 
   const SINGLE_COLOR = theme === "light" ? "#002f6b" : "#66a9ff";
 
   const generateChartData = useMemo(
     () => ({
-      labels: [skill.name], // No labels
+      labels: [skill.name],
       datasets: [
         {
           data: [skill.level, 100 - skill.level],
-          backgroundColor: [SINGLE_COLOR, "rgba(0, 0, 0, 0)"], // Use the single color for the skill
-          hoverBackgroundColor: [SINGLE_COLOR, "rgba(0, 0, 0, 0)"], // Hover effect with the same color
-          borderWidth: 0, // Remove the border from the donut chart
+          backgroundColor: [SINGLE_COLOR, "rgba(0, 0, 0, 0)"],
+          hoverBackgroundColor: [SINGLE_COLOR, "rgba(0, 0, 0, 0)"],
+          borderWidth: 0,
         },
       ],
     }),
-    [skill.level, SINGLE_COLOR]
+    [skill.level, skill.name, SINGLE_COLOR]
   );
 
   return (
     <div
-      ref={ref}
+      ref={chartRef}
       className="flex flex-col items-center justify-center p-2 rounded-lg"
     >
       <h3 className="text-sm font-semibold text-center mb-5 dark:text-white text-blue-950">
         {skill.name}
       </h3>
       <div className="w-32 h-32 mb-5">
-        {/* Render the chart only when inView is true */}
-        {inView && <Doughnut data={generateChartData} options={chartOptions} />}
+        {/* Render the chart only if it hasAnimated is true */}
+        {hasAnimated && (
+          <Doughnut data={generateChartData} options={chartOptions} />
+        )}
       </div>
       <p className="text-center dark:text-white text-blue-950 text-sm leading-relaxed">
         {skill.description}
@@ -137,7 +167,6 @@ const SkillChart: React.FC<{
   );
 };
 
-// Memoize SkillChart to prevent unnecessary re-renders
 const MemoizedSkillChart = memo(SkillChart);
 
 export default Skills;

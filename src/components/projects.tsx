@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { ProjectItem } from "./projectitem";
 import { ScrollAnimation } from "@/animation/scroll-animation";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface GitHubProject {
   name: string;
@@ -77,10 +78,7 @@ const Projects: React.FC = () => {
               Things I&apos;ve Built
             </div>
           </ScrollAnimation>
-          <ScrollAnimation
-            initial={{ opacity: 0, y: 50 }}
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-3 md:px-0"
-          >
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-3 md:px-0">
             {/* Render loading state */}
             {loading && (
               <div className="flex justify-center items-center col-span-full">
@@ -108,22 +106,55 @@ const Projects: React.FC = () => {
             {/* Render fetched projects */}
             {!loading &&
               !error &&
-              projectsToShow.map((project: GitHubProject) => {
+              projectsToShow.map((project: GitHubProject, index: number) => {
                 const newLocal = `https://raw.githubusercontent.com/thathsaraDinu/${project.name}/main/project-image.jpg`;
                 // Constructing the image URL for each project from GitHub
                 const imageUrl = newLocal;
                 return (
-                  <ProjectItem
+                  <motion.div
                     key={project.name}
-                    title={project.name}
-                    description={project.description || "No description"}
-                    link={project.html_url}
-                    imageUrl={imageUrl}
-                    language={project.language} // The language used in the project
-                  />
+                    variants={{
+                      initial: { opacity: 0, y: 50 },
+                      animate: (index: number) => ({
+                        opacity: 1,
+                        y: 0,
+                        transition: { delay: 0.1 * index, duration: 0.5 },
+                      }),
+                    }}
+                    custom={index}
+                    viewport={{ once: true }}
+                    initial="initial"
+                    whileInView="animate" // Animate when in view
+                    className="dark:bg-slate-800 bg-slate-300  border dark:border-slate-600 border-slate-400 relative h-[350px] col-span-1 dark:text-blue-100 text-blue-950 rounded-md shadow-md z-10 "
+                  >
+                    <a
+                      className="flex flex-col h-full w-full "
+                      href={project.html_url}
+                      target="_blank"
+                    >
+                      <Image
+                        className="h-[150px] rounded-t-md object-cover"
+                        alt="project_image"
+                        src={imageUrl}
+                        width={400}
+                        height={150}
+                      />
+                      <div className="flex flex-col justify-between items-start gap-3 px-3 py-2">
+                        <div className="flex flex-col gap-2">
+                          <h2 className="text-xl font-bold">{project.name}</h2>
+                          <p className="text-sm">
+                            {project.description || "No description"}
+                          </p>
+                        </div>
+                        <div className="absolute left-0 bottom-0 text-sm dark:text-slate-900 text-slate-100 px-2 py-1 rounded-full dark:bg-slate-400 bg-slate-700 font-semibold m-4">
+                          {project.language}
+                        </div>
+                      </div>
+                    </a>
+                  </motion.div>
                 );
               })}
-          </ScrollAnimation>
+          </div>
         </div>
 
         {/* View All Button */}

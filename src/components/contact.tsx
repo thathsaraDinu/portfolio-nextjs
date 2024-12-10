@@ -2,7 +2,6 @@ import { useState } from "react";
 import Image from "next/image";
 import { ScrollAnimation } from "@/animation/scroll-animation";
 import emailjs from "emailjs-com";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 
 export default function Contact({ theme }: { theme: string }) {
@@ -80,13 +79,8 @@ export default function Contact({ theme }: { theme: string }) {
             initial={{ opacity: 0, x: -50 }}
             className="col-span-4 md:col-span-2 flex justify-center flex-col items-center gap-"
           >
-            <DotLottieReact
-              src="images/red-shirt-man-coding.lottie"
-              loop
-              autoplay
-              className="w-full pb-10" // Adjust height as per your design needs
-            />
-            <hr className="   hidden md:block md:w-1/2 dark:border-white border-black h-0  mb-5"></hr>
+           
+            <hr className="hidden md:block md:w-full dark:border-white border-black h-0  mb-5"></hr>
             {theme == "light" ? (
               <div className="flex gap-10 justify-center items-center">
                 <a
@@ -174,7 +168,6 @@ export default function Contact({ theme }: { theme: string }) {
             )}
           </ScrollAnimation>
           <ScrollAnimation
-            initial={{ opacity: 0, x: 50 }}
             className="col-span-4 md:col-span-2"
           >
             <form className="flex flex-col gap-4" onSubmit={handleSubmit}>

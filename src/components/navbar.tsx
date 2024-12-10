@@ -65,7 +65,7 @@ export default function NavBar({ toggleTheme }: { toggleTheme: () => void }) {
             <div className="flex p-2 gap-10 items-center">
               <a href="#home">
                 <Image
-                  src="icons/logo.png"
+                  src="icons/logo.webp"
                   alt="logo"
                   className="block dark:hidden"
                   width={100}
@@ -73,7 +73,7 @@ export default function NavBar({ toggleTheme }: { toggleTheme: () => void }) {
                 />
 
                 <Image
-                  src="icons/logo-dark.png"
+                  src="icons/logo-dark.webp"
                   className="hidden dark:block"
                   alt="logo"
                   width={100}
@@ -171,7 +171,7 @@ export default function NavBar({ toggleTheme }: { toggleTheme: () => void }) {
           <div className="flex gap-10 h-full items-center">
             <a href="#home">
               <Image
-                src="icons/logo.png"
+                src="icons/logo.webp"
                 alt="logo"
                 className="block dark:hidden"
                 width={100}
@@ -179,7 +179,7 @@ export default function NavBar({ toggleTheme }: { toggleTheme: () => void }) {
               />
 
               <Image
-                src="icons/logo-dark.png"
+                src="icons/logo-dark.webp"
                 className="hidden dark:block"
                 alt="logo"
                 width={100}
