@@ -36,7 +36,7 @@ export default function Hero({ theme }: HeroType) {
           </div>
           <p className="dark:text-blue-200 text-blue-950 text-lg">
             Hi, I&apos;m{" "}
-            <span className="dark:text-blue-200 text-blue-950 font-bold">
+            <span className="font-bold">
               {" "}
               Thathsara Dinuwan
             </span>
