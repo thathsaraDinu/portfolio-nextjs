@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useTheme } from "@/context/theme-context";
+import Link from "next/link";
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -61,7 +62,7 @@ export default function NavBar() {
         <div className="w-full flex flex-col justify-start">
           <div className="bg-transparent h-full dark:text-blue-200 px-4 text-blue-950 flex justify-between items-center w-full">
             <div className="flex p-2 gap-10 items-center">
-              <a href="#home">
+              <Link href="/#home">
                 <Image
                   src="/icons/logo.webp"
                   alt="logo"
@@ -79,7 +80,7 @@ export default function NavBar() {
                   priority
                   height={32}
                 />
-              </a>
+              </Link>
 
               <button
                 onClick={toggleTheme}
@@ -144,9 +145,9 @@ export default function NavBar() {
           {menuOpen && (
             <div className="flex flex-col items-start">
               {menuItems.map((item, index) => (
-                <a
+                <Link
                   key={index}
-                  href={`#${links[index]}`}
+                  href={`/#${links[index]}`}
                   className={`transition-all duration-200 p-4 w-full dark:hover:bg-slate-950 hover:bg-slate-300 bg-transparent ${
                     selectedItem === links[index]
                       ? "dark:text-blue-500 dark:bg-gray-800 bg-slate-100 text-blue-800"
@@ -155,7 +156,7 @@ export default function NavBar() {
                   onClick={() => handleItemClick(links[index])}
                 >
                   {item}
-                </a>
+                </Link>
               ))}
             </div>
           )}
@@ -169,7 +170,7 @@ export default function NavBar() {
       >
         <div className="bg-transparent h-full dark:text-blue-200 text-blue-950 gap-2 flex justify-between items-center w-full max-w-screen-xl mx-auto">
           <div className="flex gap-10 h-full items-center">
-            <a href="#home">
+            <Link href="/#home">
               <Image
                 src="/icons/logo.webp"
                 alt="logo"
@@ -187,7 +188,7 @@ export default function NavBar() {
                 height={32}
                 priority
               />
-            </a>
+            </Link>
 
             <button
               onClick={toggleTheme}
@@ -221,9 +222,9 @@ export default function NavBar() {
 
           <div className="flex items-center font-medium">
             {menuItems.map((item, index) => (
-              <a
+              <Link
                 key={index}
-                href={`#${links[index]}`}
+                href={`/#${links[index]}`}
                 className={`transition-all duration-200 group px-5 py-3 dark:text-blue-100 text-blue-950 dark:hover:text-blue-600 hover:text-blue-600 ${
                   selectedItem === links[index]
                     ? "dark:bg-gray-800 bg-gray-300"
@@ -232,7 +233,7 @@ export default function NavBar() {
                 onClick={() => handleItemClick(links[index])}
               >
                 {item}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
