@@ -1,7 +1,10 @@
+"use client"
 import { ThemeProvider } from "@/context/theme-context";
 
 // Dynamically import the Wrapper component
-import Wrapper from "../components/wrapper";
+import dynamic from "next/dynamic";
+
+const Wrapper = dynamic(() => import("../components/wrapper"), {ssr: false});
 
 export default function Home() {
   return (

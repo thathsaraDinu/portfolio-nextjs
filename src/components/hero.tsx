@@ -1,7 +1,5 @@
-"use client";
-import dynamic from "next/dynamic";
 
-const HeroContent = dynamic(() => import("./hero-content"), { ssr: false });
+import HeroContent from "./hero-content";
 
 export default function Hero() {
   return (
