@@ -193,14 +193,7 @@ export default function Hero({ theme }: HeroType) {
             </div>
           )}
         </ScrollAnimation>
-        <ScrollAnimation
-          className="hidden md:block w-1/2 max-w-[600px] object-cover rounded-lg"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          
-        </ScrollAnimation>
+        
       </div>
     </section>
   );
