@@ -12,7 +12,6 @@ export default {
         navbar: "50px", // Define your custom value
       },
       fontFamily: {
-        josefin: ["Josefin Sans", "sans-serif"],
         outfit: ["Outfit", "sans-serif"],
         raleway: ["Raleway", "sans-serif"],
         inter: ["Inter", "sans-serif"],

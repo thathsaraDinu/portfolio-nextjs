@@ -1,30 +1,49 @@
 "use client";
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect, useContext } from "react";
+import { ReactNode } from "react";
 
-const ThemeContext = createContext({
+// Define ThemeContext type
+interface ThemeContextProps {
+  theme: "light" | "dark";
+  toggleTheme: () => void;
+}
+
+// Create context with default values
+const ThemeContext = createContext<ThemeContextProps>({
   theme: "light",
   toggleTheme: () => {},
 });
 
-import { ReactNode } from "react";
-
+// Define provider props
 interface ThemeProviderProps {
   children: ReactNode;
 }
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState<"light" | "dark">(() => {
+    // Check for saved theme in localStorage or default to system preference
+    if (typeof window !== "undefined") {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light" || savedTheme === "dark") {
+        return savedTheme;
+      }
+      const systemPreference = window.matchMedia("(prefers-color-scheme: dark)")
+        .matches
+        ? "dark"
+        : "light";
+      return systemPreference;
+    }
+    return "light";
+  });
 
   useEffect(() => {
-    // Check for a saved theme in localStorage
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.classList.add(savedTheme);
-    } else {
-      document.documentElement.classList.add("light");
-    }
-  }, []);
+    // Apply the theme class to the HTML element
+    document.documentElement.classList.add(theme);
+
+    return () => {
+      document.documentElement.classList.remove(theme);
+    };
+  }, [theme]);
 
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
@@ -40,5 +59,7 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
     </ThemeContext.Provider>
   );
 };
+
+export const useTheme = () => useContext(ThemeContext);
 
 export default ThemeContext;

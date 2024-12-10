@@ -1,7 +1,9 @@
+"use client"
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { useTheme } from "@/context/theme-context";
 
-export default function NavBar({ toggleTheme }: { toggleTheme: () => void }) {
+export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState<string>("");
 
@@ -48,6 +50,8 @@ export default function NavBar({ toggleTheme }: { toggleTheme: () => void }) {
       sections.forEach((section) => observer.unobserve(section));
     };
   }, []);
+
+  const { toggleTheme } = useTheme();
 
   return (
     <>

@@ -1,7 +1,15 @@
+"use client"
 import React, { useEffect, useRef, useState, useMemo, memo } from "react";
 import { Doughnut } from "react-chartjs-2";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend, ChartOptions } from "chart.js";
+import {
+  Chart as ChartJS,
+  ArcElement,
+  Tooltip,
+  Legend,
+  ChartOptions,
+} from "chart.js";
 import { ScrollAnimation } from "@/animation/scroll-animation";
+import { useTheme } from "@/context/theme-context";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -10,11 +18,6 @@ interface Skill {
   name: string;
   level: number;
   description: string;
-}
-
-// Define props for Skills component
-interface SkillsProps {
-  theme: string;
 }
 
 const skills: Skill[] = [
@@ -73,7 +76,9 @@ const chartOptions: ChartOptions<"doughnut"> = {
   cutout: "60%", // Adjust inner radius here (e.g., "50%", "70%", or a pixel value like 50)
 };
 
-const Skills: React.FC<SkillsProps> = ({ theme }) => {
+type SkillsProps = object;
+
+const Skills: React.FC<SkillsProps> = () => {
   return (
     <section id="skills" className="md:scroll-mt-navbar py-20 px-5">
       <div className="max-w-screen-xl mx-auto flex flex-col gap-10">
@@ -91,7 +96,7 @@ const Skills: React.FC<SkillsProps> = ({ theme }) => {
         {/* Skills Section */}
         <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-10">
           {skills.map((skill) => (
-            <MemoizedSkillChart key={skill.name} theme={theme} skill={skill} />
+            <MemoizedSkillChart key={skill.name} skill={skill} />
           ))}
         </div>
       </div>
@@ -101,10 +106,11 @@ const Skills: React.FC<SkillsProps> = ({ theme }) => {
 
 interface SkillChartProps {
   skill: Skill;
-  theme: string;
 }
 
-const SkillChart: React.FC<SkillChartProps> = ({ skill, theme }) => {
+const SkillChart: React.FC<SkillChartProps> = ({ skill }) => {
+  const { theme } = useTheme();
+  console.log(theme);
   const [hasAnimated, setHasAnimated] = useState(false);
   const chartRef = useRef<HTMLDivElement>(null);
 
@@ -112,10 +118,10 @@ const SkillChart: React.FC<SkillChartProps> = ({ skill, theme }) => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated) {
-          setHasAnimated(true); // Trigger animation and ensure it runs only once
+          setHasAnimated(true);
         }
       },
-      { threshold: 0.5 } // Trigger when 50% of the chart is visible
+      { threshold: 0.5 }
     );
 
     const currentRef = chartRef.current;
@@ -130,7 +136,7 @@ const SkillChart: React.FC<SkillChartProps> = ({ skill, theme }) => {
     };
   }, [hasAnimated]);
 
-  const SINGLE_COLOR = theme === "light" ? "#002f6b" : "#66a9ff";
+  const themeColor = theme == "dark" ? "#66a9ff" : "#002f6b";
 
   const generateChartData = useMemo(
     () => ({
@@ -138,13 +144,13 @@ const SkillChart: React.FC<SkillChartProps> = ({ skill, theme }) => {
       datasets: [
         {
           data: [skill.level, 100 - skill.level],
-          backgroundColor: [SINGLE_COLOR, "rgba(0, 0, 0, 0)"],
-          hoverBackgroundColor: [SINGLE_COLOR, "rgba(0, 0, 0, 0)"],
+          backgroundColor: [themeColor, "rgba(0, 0, 0, 0)"],
+          hoverBackgroundColor: [themeColor, "rgba(0, 0, 0, 0)"],
           borderWidth: 0,
         },
       ],
     }),
-    [skill.level, skill.name, SINGLE_COLOR]
+    [skill.level, skill.name, themeColor]
   );
 
   return (
@@ -156,7 +162,6 @@ const SkillChart: React.FC<SkillChartProps> = ({ skill, theme }) => {
         {skill.name}
       </h3>
       <div className="w-32 h-32 mb-5">
-        {/* Render the chart only if it hasAnimated is true */}
         {hasAnimated && (
           <Doughnut data={generateChartData} options={chartOptions} />
         )}

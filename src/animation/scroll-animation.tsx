@@ -1,3 +1,5 @@
+"use client"
+
 import { motion, Target, Transition } from "framer-motion";
 import { ReactNode, useRef } from "react";
 
