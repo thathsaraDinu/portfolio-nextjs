@@ -1,7 +1,7 @@
 import { ScrollAnimation } from "@/animation/scroll-animation";
 import Image from "next/image";
 import Lottie from "lottie-react";
-import animation from "@/assets/3monitors-and-phone-optimized.json"
+import animation from "@/assets/3monitors-and-phone-optimized.json";
 
 type HeroType = {
   theme: string;
@@ -28,12 +28,12 @@ export default function Hero({ theme }: HeroType) {
           initial={{ opacity: 0, x: -20 }}
           className="md:w-1/2  flex flex-col gap-5 items-start  max-w-[600px]"
         >
-          <h1 className="text-5xl  font-raleway dark:text-blue-200 text-blue-950 font-bold">
-            <div className="text-2xl pb-3 font-raleway dark:text-blue-200 text-blue-950 font-bold">
+          <div className="flex flex-col gap-3 font-raleway dark:text-blue-200 text-blue-950 font-bold">
+            <div className="text-2xl">
               Crafting code, building solutions
             </div>
-            Welcome to my digital portfolio.
-          </h1>
+            <div className="text-5xl">Welcome to my digital portfolio.</div>
+          </div>
           <p className="dark:text-blue-200 text-blue-950 text-lg">
             Hi, I&apos;m{" "}
             <span className="dark:text-blue-200 text-blue-950 font-bold">

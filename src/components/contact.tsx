@@ -74,7 +74,7 @@ export default function Contact({ theme }: { theme: string }) {
           initial={{ opacity: 0, y: 50 }}
           className="flex flex-col md:flex-row justify-center items-center md:gap-20 w-full px-20 mx-auto font-inter"
         >
-          <div className=" flex justify-center flex-col items-center w-full ">
+          <div className=" flex justify-center flex-col items-center w-full mb-10">
             <hr className="hidden md:block md:w-full dark:border-white border-black h-0  mb-5"></hr>
             {theme == "light" ? (
               <div className="flex gap-10 justify-center items-center">
