@@ -197,7 +197,7 @@ export default function Hero({ theme }: HeroType) {
         </ScrollAnimation>
         <ScrollAnimation
           initial={{ opacity: 0, x: 20 }}
-          className="md:w-1/2 flex justify-center items-center"
+          className="md:w-1/2 hidden md:block"
         >
           <Lottie
             loop={true}
