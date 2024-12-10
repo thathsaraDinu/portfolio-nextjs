@@ -23,7 +23,7 @@ export default function Hero({ theme }: HeroType) {
     >
       <div className="max-w-screen-xl mx-auto gap-5 flex justify-between items-center">
         <ScrollAnimation
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: -20 }}
           className="md:w-1/2  flex flex-col gap-5 items-start  max-w-[600px]"
         >
           <h1 className="text-5xl  font-raleway dark:text-blue-200 text-blue-950 font-bold">
