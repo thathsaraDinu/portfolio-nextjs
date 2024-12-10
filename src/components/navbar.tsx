@@ -69,6 +69,7 @@ export default function NavBar({ toggleTheme }: { toggleTheme: () => void }) {
                   alt="logo"
                   className="block dark:hidden"
                   width={100}
+                  priority
                   height={32}
                 />
 
@@ -77,6 +78,7 @@ export default function NavBar({ toggleTheme }: { toggleTheme: () => void }) {
                   className="hidden dark:block"
                   alt="logo"
                   width={100}
+                  priority
                   height={32}
                 />
               </a>
@@ -176,6 +178,7 @@ export default function NavBar({ toggleTheme }: { toggleTheme: () => void }) {
                 className="block dark:hidden"
                 width={100}
                 height={32}
+                priority
               />
 
               <Image
@@ -184,6 +187,7 @@ export default function NavBar({ toggleTheme }: { toggleTheme: () => void }) {
                 alt="logo"
                 width={100}
                 height={32}
+                priority
               />
             </a>
 
