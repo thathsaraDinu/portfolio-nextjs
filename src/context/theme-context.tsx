@@ -1,4 +1,3 @@
-"use client";
 import React, { createContext, useState, useEffect, useContext } from "react";
 import { ReactNode } from "react";
 
@@ -20,6 +19,7 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
+  "use client";
   const [theme, setTheme] = useState<"light" | "dark">(() => {
     // Check for saved theme in localStorage or default to system preference
     if (typeof window !== "undefined") {

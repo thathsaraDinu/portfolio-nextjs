@@ -1,4 +1,3 @@
-"use client"
 import { ScrollAnimation } from "@/animation/scroll-animation";
 import Lottie from "lottie-react";
 import animation from "@/assets/3monitors-and-phone-optimized.json";

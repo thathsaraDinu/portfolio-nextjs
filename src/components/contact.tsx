@@ -1,4 +1,3 @@
-"use client"
 import { useState } from "react";
 import { ScrollAnimation } from "@/animation/scroll-animation";
 import emailjs from "emailjs-com";

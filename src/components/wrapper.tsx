@@ -7,10 +7,12 @@ import About from "@/components/about";
 import Footer from "@/components/footer";
 
 // Dynamically import the non-immidiate components
-const Skills = dynamic(() => import("@/components/skills"));
-const Education = dynamic(() => import("@/components/education"));
-const Projects = dynamic(() => import("@/components/projects"));
-const Contact = dynamic(() => import("@/components/contact"));
+const Skills = dynamic(() => import("@/components/skills") ,{ssr: false});
+const Education = dynamic(() => import("@/components/education"), {
+  ssr: false,
+});
+const Projects = dynamic(() => import("@/components/projects"), { ssr: false });
+const Contact = dynamic(() => import("@/components/contact"), { ssr: false });
 
 export default function Wrapper() {
   return (
