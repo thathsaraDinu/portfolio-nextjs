@@ -1,5 +1,7 @@
 import { ScrollAnimation } from "@/animation/scroll-animation";
 import Image from "next/image";
+import Lottie from "lottie-react";
+import animation from "@/assets/3monitors-and-phone-optimized.json"
 
 type HeroType = {
   theme: string;
@@ -193,7 +195,21 @@ export default function Hero({ theme }: HeroType) {
             </div>
           )}
         </ScrollAnimation>
-        
+        <ScrollAnimation
+          initial={{ opacity: 0, x: 20 }}
+          className="md:w-1/2 flex justify-center items-center"
+        >
+          <Lottie
+            loop={true}
+            autoplay={true}
+            animationData={animation}
+            rendererSettings={{
+              preserveAspectRatio: "xMidYMid slice",
+            }}
+            height={400}
+            width={400}
+          ></Lottie>
+        </ScrollAnimation>
       </div>
     </section>
   );
