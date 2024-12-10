@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {
       scrollMargin: {
-        navbar: "10px", // Define your custom value
+        navbar: "50px", // Define your custom value
       },
       fontFamily: {
         josefin: ["Josefin Sans", "sans-serif"],
@@ -20,6 +20,9 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+      },
+      backgroundImage: {
+        "background-pattern": "url('images/background.svg')",
       },
     },
   },
