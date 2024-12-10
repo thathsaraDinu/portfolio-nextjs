@@ -1,3 +1,5 @@
+"use client"
+
 import { ScrollAnimation } from "@/animation/scroll-animation";
 import dynamic from "next/dynamic";
 

@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useEffect, useRef, useState, useMemo, memo } from "react";
 import { Doughnut } from "react-chartjs-2";
 import {
@@ -109,7 +111,6 @@ interface SkillChartProps {
 
 const SkillChart: React.FC<SkillChartProps> = ({ skill }) => {
   const { theme } = useTheme();
-  console.log(theme);
   const [hasAnimated, setHasAnimated] = useState(false);
   const chartRef = useRef<HTMLDivElement>(null);
 

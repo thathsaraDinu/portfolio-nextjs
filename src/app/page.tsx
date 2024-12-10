@@ -1,4 +1,3 @@
-"use client"
 import { ThemeProvider } from "@/context/theme-context";
 
 // Dynamically import the Wrapper component
