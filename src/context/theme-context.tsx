@@ -5,13 +5,13 @@ import { ReactNode } from "react";
 
 // Define ThemeContext type
 interface ThemeContextProps {
-  theme: "light" | "dark";
+  theme: "dark" | "light";
   toggleTheme: () => void;
 }
 
 // Create context with default values
 const ThemeContext = createContext<ThemeContextProps>({
-  theme: "light",
+  theme: "dark",
   toggleTheme: () => {},
 });
 

@@ -127,7 +127,7 @@ const Projects: React.FC = () => {
                     className="dark:bg-slate-800 bg-slate-300  border dark:border-slate-600 border-slate-400 relative h-[350px] col-span-1 dark:text-blue-100 text-blue-950 rounded-md shadow-md z-10 "
                   >
                     <a
-                      className="flex flex-col h-full w-full "
+                      className="flex flex-col h-full w-full"
                       href={project.html_url}
                       target="_blank"
                     >
@@ -140,12 +140,18 @@ const Projects: React.FC = () => {
                       />
                       <div className="flex flex-col justify-between items-start gap-3 px-3 py-2">
                         <div className="flex flex-col gap-2">
-                          <h2 className="text-xl font-bold">{project.name}</h2>
-                          <p className="text-sm">
-                            {project.description || "No description"}
+                          <h2 className="text-lg dark:text-blue-300 text-blue-800  font-bold line-clamp-2">
+                            {project.name}
+                          </h2>
+                          <p className="text-sm line-clamp-3">
+                            {project.description}
                           </p>
                         </div>
-                        <div className="absolute left-0 bottom-0 text-sm dark:text-slate-900 text-slate-100 px-2 py-1 rounded-full dark:bg-slate-400 bg-slate-700 font-semibold m-4">
+                        <div
+                          className={`absolute ${
+                            project.language == null ? "hidden" : ""
+                          } left-0 bottom-0 text-sm dark:text-slate-900 text-slate-100 px-2 py-1 rounded-full dark:bg-slate-400 bg-slate-700 font-semibold m-4`}
+                        >
                           {project.language}
                         </div>
                       </div>
