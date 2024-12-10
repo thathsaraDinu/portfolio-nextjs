@@ -20,25 +20,26 @@ export default function Wrapper() {
       style={{
         backgroundImage: theme == "dark" ? `url('images/background.svg')` : "",
       }}
-      className="bg-gray-200 md:scroll-mt-navbar bg-fixed bg-center bg-no-repeat bg-cover dark:bg-slate-900"
     >
-      <div className="font-inter">
-        {/* Always load NavBar and Hero */}
-        <NavBar toggleTheme={toggleTheme} />
-        <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
-        <Hero theme={theme} />
-        <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
-        <About />
-        <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
-        <Skills theme={theme} />
-        <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
-        <Education /> {/* Loaded immediately */}
-        <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
-        <Projects />
-        <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
-        <Contact theme={theme} />
-        <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
-        <Footer /> {/* Loaded immediately */}
+      <div className="bg-gray-200 bg-fixed bg-center bg-no-repeat bg-cover dark:bg-slate-900">
+        <div className="font-inter">
+          {/* Always load NavBar and Hero */}
+          <NavBar toggleTheme={toggleTheme} />
+          <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
+          <Hero theme={theme} />
+          <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
+          <About />
+          <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
+          <Skills theme={theme} />
+          <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
+          <Education /> {/* Loaded immediately */}
+          <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
+          <Projects />
+          <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
+          <Contact theme={theme} />
+          <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />
+          <Footer /> {/* Loaded immediately */}
+        </div>
       </div>
     </div>
   );
