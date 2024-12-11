@@ -1,5 +1,11 @@
 import { ThemeProvider } from "@/context/theme-context";
 import "./globals.css";
+import { Roboto } from "next/font/google";
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "700"], // Customize weights
+});
 
 export default function RootLayout({
   children,
@@ -12,7 +18,7 @@ export default function RootLayout({
         <title>Thathsara Dinuwan Portfolio</title>
         <link rel="icon" href="/icons/logo-icon.webp" type="image/webp" />
       </head>
-      <body className="font-inter">
+      <body className={roboto.className}>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
