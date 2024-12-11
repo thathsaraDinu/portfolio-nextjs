@@ -1,3 +1,4 @@
+import { ThemeProvider } from "@/context/theme-context";
 import "./globals.css";
 
 export default function RootLayout({
@@ -11,7 +12,9 @@ export default function RootLayout({
         <title>Thathsara Dinuwan Portfolio</title>
         <link rel="icon" href="/icons/logo-icon.webp" type="image/webp" />
       </head>
-      <body>{children}</body>
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }
