@@ -20,8 +20,8 @@ export default function HeroContent() {
         className="md:w-1/2  flex flex-col gap-5 items-start max-w-[600px]"
       >
         <div className="flex flex-col gap-3 font-raleway dark:text-blue-200 text-blue-950 font-bold">
-          <div className="text-2xl">Crafting code, building solutions</div>
-          <div className="text-5xl">Welcome to my digital portfolio.</div>
+          <div className="text-xl">Crafting code, building solutions</div>
+          <div className="text-4xl">Welcome to my digital portfolio.</div>
         </div>
         <p className="dark:text-blue-200 text-blue-950 text-lg">
           Hi, I&apos;m <span className="font-bold"> Thathsara Dinuwan</span>, a
