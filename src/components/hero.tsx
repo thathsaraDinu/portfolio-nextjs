@@ -1,5 +1,8 @@
+"use client"
 
-import HeroContent from "@/components/hero-content";
+import dynamic from "next/dynamic";
+
+const HeroContent = dynamic(() => import("./hero-content"), { ssr: false });
 
 export default function Hero() {
   return (

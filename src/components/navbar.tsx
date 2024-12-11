@@ -220,7 +220,7 @@ export default function NavBar() {
             </button>
           </div>
 
-          <div className="flex items-center font-medium">
+          <div className="flex items-center font-semibold">
             {menuItems.map((item, index) => (
               <Link
                 key={index}
