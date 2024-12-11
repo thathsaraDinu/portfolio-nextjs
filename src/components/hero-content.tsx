@@ -1,7 +1,7 @@
 "use client";
 import { ScrollAnimation } from "@/animation/scroll-animation";
-import Lottie from "lottie-react";
-import animation from "@/assets/3monitors-and-phone-optimized.json";
+// import Lottie from "lottie-react";
+// import animation from "@/assets/3monitors-and-phone-optimized.json";
 
 export default function HeroContent() {
   const handleOpenPdf = () => {
@@ -120,15 +120,15 @@ export default function HeroContent() {
         initial={{ opacity: 0, x: 50 }}
         className="md:w-1/2 hidden md:block"
       >
-        <Lottie
+        <div className="max-w-[550px] w-[460px]"></div>
+        {/* <Lottie
           loop={true}
           autoplay={true}
           animationData={animation}
           rendererSettings={{
             preserveAspectRatio: "xMidYMid slice",
           }}
-          className="max-w-[550px]"
-        />
+        /> */}
       </ScrollAnimation>
     </div>
   );

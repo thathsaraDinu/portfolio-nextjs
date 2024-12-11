@@ -12,7 +12,7 @@ export default function RootLayout({
         <title>Thathsara Dinuwan Portfolio</title>
         <link rel="icon" href="/icons/logo-icon.webp" type="image/webp" />
       </head>
-      <body>
+      <body className="font-inter">
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
