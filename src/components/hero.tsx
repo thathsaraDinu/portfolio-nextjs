@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="md:scroll-mt-navbar h-screen md:h-[calc(100vh-50px)] py-20 flex flex-col justify-center md:px-10 px-5"
+      className="md:scroll-mt-navbar h-[calc(100vh-50px)] py-20 flex flex-col justify-center md:px-10 px-5"
     >
       <HeroContent />
     </section>
