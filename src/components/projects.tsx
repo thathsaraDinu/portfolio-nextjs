@@ -106,7 +106,7 @@ const Projects: React.FC = () => {
             {!loading &&
               !error &&
               projectsToShow.map((project: GitHubProject, index: number) => {
-                const newLocal = `https://raw.githubusercontent.com/thathsaraDinu/${project.name}/main/project-image.jpg`;
+                const newLocal = `https://raw.githubusercontent.com/thathsaraDinu/${project.name}/main/project-image.webp`;
                 // Constructing the image URL for each project from GitHub
                 const imageUrl = newLocal;
                 return (
