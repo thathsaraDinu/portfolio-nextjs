@@ -132,28 +132,33 @@ const Projects: React.FC = () => {
                       target="_blank"
                     >
                       <Image
-                        className="h-[150px] rounded-t-md object-cover"
-                        alt="project_image"
-                        src={imageUrl}
-                        width={400}
-                        height={150}
+                      className="h-[150px] rounded-t-md object-cover"
+                      alt="project_image"
+                      src={imageUrl}
+                      width={400}
+                      height={150}
+                      onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+                        const target = e.target as HTMLImageElement;
+                        target.onerror = null; // Prevent infinite loop in case the fallback image is also invalid
+                        target.src = "images/no_image_placeholder.png"; // Fallback image
+                      }}
                       />
                       <div className="flex flex-col justify-between items-start gap-3 px-3 py-2">
-                        <div className="flex flex-col gap-2">
-                          <h2 className="text-lg dark:text-blue-300 text-blue-800  font-bold line-clamp-2">
-                            {project.name}
-                          </h2>
-                          <p className="text-sm line-clamp-3">
-                            {project.description}
-                          </p>
-                        </div>
-                        <div
-                          className={`absolute ${
-                            project.language == null ? "hidden" : ""
-                          } left-0 bottom-0 text-sm dark:text-slate-900 text-slate-100 px-2 py-1 rounded-full dark:bg-slate-400 bg-slate-700 font-semibold m-4`}
-                        >
-                          {project.language}
-                        </div>
+                      <div className="flex flex-col gap-2">
+                        <h2 className="text-lg dark:text-blue-300 text-blue-800  font-bold line-clamp-2">
+                        {project.name}
+                        </h2>
+                        <p className="text-sm line-clamp-3">
+                        {project.description}
+                        </p>
+                      </div>
+                      <div
+                        className={`absolute ${
+                        project.language == null ? "hidden" : ""
+                        } left-0 bottom-0 text-sm dark:text-slate-900 text-slate-100 px-2 py-1 rounded-full dark:bg-slate-400 bg-slate-700 font-semibold m-4`}
+                      >
+                        {project.language}
+                      </div>
                       </div>
                     </a>
                   </motion.div>
