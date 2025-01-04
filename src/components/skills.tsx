@@ -30,25 +30,25 @@ const skills: Skill[] = [
   },
   {
     name: "React",
-    level: 85,
+    level: 90,
     description:
       "Skilled in hooks, state management, component lifecycle, and building scalable web applications.",
   },
   {
     name: "Node.js",
-    level: 75,
+    level: 80,
     description:
       "Knowledgeable in server-side development, Express.js, and RESTful APIs.",
   },
   {
     name: "MongoDB",
-    level: 75,
+    level: 80,
     description:
       "Experienced in database design, querying, and working with aggregation pipelines.",
   },
   {
     name: "Tailwind CSS",
-    level: 80,
+    level: 90,
     description:
       "Adept at creating responsive designs, custom utility classes, and optimizing CSS for modern web apps.",
   },
