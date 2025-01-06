@@ -6,10 +6,7 @@ export default function Footer() {
           <div className="text-sm">&copy; 2024 All rights reserved</div>
         </div>
         <div className="text-center text-sm">
-          Designed and Developed by{" "}
-          <a href="#" className="underline">
-            Thathsara Dinuwan
-          </a>
+          Thathsara Dinuwan
         </div>
       </div>
     </footer>
