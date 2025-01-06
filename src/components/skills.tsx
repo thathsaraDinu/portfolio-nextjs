@@ -117,12 +117,12 @@ const chartOptions: ChartOptions<"doughnut"> = {
   cutout: "70%", // Adjust inner radius here (e.g., "50%", "70%", or a pixel value like 50)
 };
 
-type SkillsProps = {
+type SkillSetProps = {
   title: string;
   skills?: Skill[];
 };
 
-const Skills: React.FC<SkillsProps> = () => {
+const Skills = () => {
   return (
     <section id="skills" className="md:scroll-mt-navbar py-20 px-5">
       <div className="max-w-screen-xl mx-auto flex flex-col gap-10">
@@ -149,7 +149,10 @@ const Skills: React.FC<SkillsProps> = () => {
   );
 };
 
-const SkillSet: React.FC<SkillsProps> = ({ title, skills }: SkillsProps) => {
+const SkillSet: React.FC<SkillSetProps> = ({
+  title,
+  skills,
+}: SkillSetProps) => {
   return (
     <div className="flex flex-col gap-5 items-center">
       <h1 className="text-lg text-black dark:text-white font-semibold">
