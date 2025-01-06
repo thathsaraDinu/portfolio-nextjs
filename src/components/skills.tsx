@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useEffect, useRef, useState, useMemo, memo } from "react";
 import { Doughnut } from "react-chartjs-2";
@@ -11,6 +11,7 @@ import {
 } from "chart.js";
 import { ScrollAnimation } from "@/animation/scroll-animation";
 import { useTheme } from "@/context/theme-context";
+import Image from "next/image";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -18,39 +19,78 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 interface Skill {
   name: string;
   level: number;
-  description: string;
+  svg?: string;
 }
 
-const skills: Skill[] = [
+const languages: Skill[] = [
+  {
+    name: "JavaScript",
+    level: 90,
+    svg: "javascript-original",
+  },
+  {
+    name: "TypeScript",
+    level: 85,
+    svg: "typescript-original",
+  },
+  {
+    name: "Dart",
+    level: 85,
+    svg: "dart-original",
+  },
+];
+
+const other: Skill[] = [
+  {
+    name: "Git",
+    level: 90,
+    svg: "git-original",
+  },
+  {
+    name: "VS Code",
+    level: 90,
+    svg: "visualstudiocode-original",
+  },
+  {
+    name: "Postman",
+    level: 85,
+    svg: "postman-original",
+  },
+];
+
+const frameworks: Skill[] = [
   {
     name: "Flutter",
     level: 85,
-    description:
-      "Proficient in building cross-platform apps, state management, and integrating Firebase.",
+    svg: "flutter-original",
   },
   {
     name: "React",
-    level: 90,
-    description:
-      "Skilled in hooks, state management, component lifecycle, and building scalable web applications.",
+    level: 80,
+    svg: "react-original",
   },
   {
-    name: "Node.js",
-    level: 80,
-    description:
-      "Knowledgeable in server-side development, Express.js, and RESTful APIs.",
+    name: "Next.js",
+    level: 85,
+    svg: "next-original",
   },
+];
+
+const tools: Skill[] = [
   {
     name: "MongoDB",
     level: 80,
-    description:
-      "Experienced in database design, querying, and working with aggregation pipelines.",
+    svg: "mongodb-original",
+  },
+  {
+    name: "Firebase",
+    level: 80,
+    svg: "firebase-original",
   },
   {
     name: "Tailwind CSS",
     level: 90,
-    description:
-      "Adept at creating responsive designs, custom utility classes, and optimizing CSS for modern web apps.",
+    svg: "tailwindcss-original",
   },
 ];
 
@@ -74,10 +114,13 @@ const chartOptions: ChartOptions<"doughnut"> = {
     mode: "nearest",
     intersect: false,
   },
-  cutout: "60%", // Adjust inner radius here (e.g., "50%", "70%", or a pixel value like 50)
+  cutout: "70%", // Adjust inner radius here (e.g., "50%", "70%", or a pixel value like 50)
 };
 
-type SkillsProps = object;
+type SkillsProps = {
+  title: string;
+  skills?: Skill[];
+};
 
 const Skills: React.FC<SkillsProps> = () => {
   return (
@@ -93,15 +136,32 @@ const Skills: React.FC<SkillsProps> = () => {
             Tools and Technologies I Use
           </div>
         </ScrollAnimation>
+        <div className="grid sm:grid-cols-2 grid-cols-1 gap-10">
+          <SkillSet title="Frameworks/Libraries" skills={frameworks} />
+          <SkillSet title="Languages" skills={languages} />
+          <SkillSet title="Tools" skills={tools} />
+          <SkillSet title="Other" skills={other} />
+        </div>
 
         {/* Skills Section */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-10">
-          {skills.map((skill) => (
-            <MemoizedSkillChart key={skill.name} skill={skill} />
-          ))}
-        </div>
       </div>
     </section>
+  );
+};
+
+const SkillSet: React.FC<SkillsProps> = ({ title, skills }: SkillsProps) => {
+  return (
+    <div className="flex flex-col gap-5 items-center">
+      <h1 className="text-lg text-black dark:text-white font-semibold">
+        {title}
+      </h1>
+      <hr className="dark:border-white w-1/4 border-black"></hr>
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3  gap-10">
+        {skills?.map((skill: Skill) => (
+          <MemoizedSkillChart key={skill.name} skill={skill} />
+        ))}
+      </div>
+    </div>
   );
 };
 
@@ -158,17 +218,29 @@ const SkillChart: React.FC<SkillChartProps> = ({ skill }) => {
       ref={chartRef}
       className="flex flex-col items-center justify-center p-2 rounded-lg"
     >
-      <h3 className="text-sm font-semibold text-center mb-5 dark:text-white text-blue-950">
-        {skill.name}
-      </h3>
       <div className="w-32 h-32 mb-5">
         {hasAnimated && (
-          <Doughnut data={generateChartData} options={chartOptions} />
+          <div className="relative">
+            <div>
+              <Doughnut
+                data={generateChartData}
+                options={chartOptions}
+                className="z-20"
+              />
+              <div className="absolute inset-0 flex items-center justify-center z-10">
+                <Image
+                  src={`/icons/${skill.svg}.svg`}
+                  alt={skill.name}
+                  width={50}
+                  height={50}
+                />
+              </div>
+            </div>
+
+            <div className="absolute z-0 p-12 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center bg-white rounded-full"></div>
+          </div>
         )}
       </div>
-      <p className="text-center dark:text-white text-blue-950 text-sm leading-relaxed">
-        {skill.description}
-      </p>
     </div>
   );
 };
