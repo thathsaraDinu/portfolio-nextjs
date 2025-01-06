@@ -228,7 +228,6 @@ const SkillChart: React.FC<SkillChartProps> = ({ skill }) => {
               <Doughnut
                 data={generateChartData}
                 options={chartOptions}
-                className="z-20"
               />
               <div className="absolute inset-0 flex items-center justify-center z-10">
                 <Image
@@ -239,8 +238,7 @@ const SkillChart: React.FC<SkillChartProps> = ({ skill }) => {
                 />
               </div>
             </div>
-
-            <div className="absolute z-0 p-12 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center bg-white rounded-full"></div>
+            <div className="absolute z-0 p-12 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  items-center justify-center hidden dark:flex bg-white rounded-full"></div>
           </div>
         )}
       </div>
