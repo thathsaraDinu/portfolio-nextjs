@@ -60,7 +60,7 @@ const Projects: React.FC = () => {
     {
       name: "WasteWise waste management mobile app",
       description:
-        "healthcare web app, for book and manage appointments, manage doctors and analysis and documentation of the hospital stats with role based access.",
+        "A mobile app made for waste pickup schedule management and purchasing recycled items.",
       html_url:
         "https://raw.githubusercontent.com/thathsaradinu/wastewise-waste-management-android-app-flutter/main/project-image.webp",
       techs: ["Dart", "Firebase"],
@@ -150,7 +150,9 @@ const Projects: React.FC = () => {
                         <Github size={20} />
                         <span>GitHub</span>
                       </Link>
-                      {project.webUrl === "" ? <></> : (
+                      {project.webUrl === "" ? (
+                        <></>
+                      ) : (
                         <Link
                           href={project.webUrl}
                           target="_blank"
