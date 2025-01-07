@@ -233,8 +233,8 @@ const SkillChart: React.FC<SkillChartProps> = ({ skill }) => {
                 <Image
                   src={`/icons/${skill.svg}.svg`}
                   alt={skill.name}
-                  width={50}
-                  height={50}
+                  width={60}
+                  height={60}
                 />
               </div>
             </div>
