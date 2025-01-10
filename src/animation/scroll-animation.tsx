@@ -14,7 +14,7 @@ interface ScrollAnimationProps {
 
 export const ScrollAnimation = ({
   children,
-  initial = { opacity: 0, y: 0 },
+  initial = { opacity: 0, y: 0, scale: 1 },
   animate = { opacity: 1, y: 0, x: 0, scale: 1 },
   transition = { duration: 1 },
   className,
