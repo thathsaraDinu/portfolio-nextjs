@@ -43,17 +43,17 @@ const languages: Skill[] = [
 const other: Skill[] = [
   {
     name: "Git",
-    level: 90,
+    level: 95,
     svg: "git-original",
   },
   {
     name: "VS Code",
-    level: 90,
+    level: 95,
     svg: "visualstudiocode-original",
   },
   {
     name: "Postman",
-    level: 85,
+    level: 90,
     svg: "postman-original",
   },
 ];
@@ -61,12 +61,12 @@ const other: Skill[] = [
 const frameworks: Skill[] = [
   {
     name: "Flutter",
-    level: 85,
+    level: 90,
     svg: "flutter-original",
   },
   {
     name: "React",
-    level: 80,
+    level: 90,
     svg: "react-original",
   },
   {
@@ -79,7 +79,7 @@ const frameworks: Skill[] = [
 const tools: Skill[] = [
   {
     name: "MongoDB",
-    level: 80,
+    level: 85,
     svg: "mongodb-original",
   },
   {
@@ -88,9 +88,9 @@ const tools: Skill[] = [
     svg: "firebase-original",
   },
   {
-    name: "Tailwind CSS",
-    level: 90,
-    svg: "tailwindcss-original",
+    name: "SQLite",
+    level: 75,
+    svg: "sqlite-original",
   },
 ];
 
@@ -139,8 +139,8 @@ const Skills = () => {
         <div className="grid sm:grid-cols-2 grid-cols-1 gap-10">
           <SkillSet title="Frameworks/Libraries" skills={frameworks} />
           <SkillSet title="Languages" skills={languages} />
-          <SkillSet title="Tools" skills={tools} />
-          <SkillSet title="Other" skills={other} />
+          <SkillSet title="Databases" skills={tools} />
+          <SkillSet title="Tools" skills={other} />
         </div>
 
         {/* Skills Section */}
