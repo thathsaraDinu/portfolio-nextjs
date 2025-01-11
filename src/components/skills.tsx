@@ -89,7 +89,7 @@ const tools: Skill[] = [
   },
   {
     name: "SQLite",
-    level: 75,
+    level: 80,
     svg: "sqlite-original",
   },
 ];
