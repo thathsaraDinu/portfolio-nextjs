@@ -1,6 +1,6 @@
 "use client";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo } from "react";
 import { loadSlim } from "@tsparticles/slim"; // Install this package for slim configuration
 import { useTheme } from "@/context/theme-context"; // Import your theme context
 
@@ -10,20 +10,14 @@ interface ParticlesComponentProps {
 
 const ParticlesComponent = (props: ParticlesComponentProps): JSX.Element => {
   const { theme } = useTheme(); // Access the current theme
-  const [init, setInit] = useState(false);
 
   // Initialize particles engine once
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
     }).then(() => {
-      setInit(true);
     });
   }, []);
-
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
 
   // Dynamic particle options based on theme
   const options = useMemo(
@@ -67,10 +61,10 @@ const ParticlesComponent = (props: ParticlesComponentProps): JSX.Element => {
           width: 1,
         },
         move: {
-          direction: "none",
+          direction: "none" as const,
           enable: true,
           outModes: {
-            default: "bounce",
+            default: "bounce" as const,
           },
           random: true,
           speed: 1,
@@ -97,7 +91,7 @@ const ParticlesComponent = (props: ParticlesComponentProps): JSX.Element => {
     [theme] // Recompute options when the theme changes
   );
 
-  return <Particles id={props.id} init={particlesLoaded} options={options} />;
+  return <Particles id={props.id} options={options} />;
 };
 
 export default ParticlesComponent;
