@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {
       scrollMargin: {
-        navbar: "50px", // Define your custom value
+        navbar: "48px", // Define your custom value
       },
       fontFamily: {
         outfit: ["Outfit", "sans-serif"],

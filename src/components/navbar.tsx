@@ -166,7 +166,7 @@ export default function NavBar() {
       {/* desktop */}
       <nav
         id="desktop"
-        className="hidden scroll-mt-navbar md:flex justify-between px-5 dark:bg-slate-950 bg-slate-100 bg-opacity-95 sticky top-0 z-50"
+        className="hidden scroll-mt-navbar md:flex justify-between px-5 backdrop-blur-sm dark:bg-slate-950 bg-slate-100 bg-opacity-50 dark:bg-opacity-50 sticky top-0 z-50"
       >
         <div className="bg-transparent h-full dark:text-blue-200 text-blue-950 gap-2 flex justify-between items-center w-full max-w-screen-xl mx-auto">
           <div className="flex gap-10 h-full items-center">
@@ -227,7 +227,7 @@ export default function NavBar() {
                 href={`/#${links[index]}`}
                 className={`transition-all duration-200 group px-5 py-3 dark:text-blue-100 text-blue-950 dark:hover:text-blue-600 hover:text-blue-600 ${
                   selectedItem === links[index]
-                    ? "dark:bg-gray-800 bg-gray-300"
+                    ? "dark:text-slate-900 bg-gray-200"
                     : ""
                 }`}
                 onClick={() => handleItemClick(links[index])}

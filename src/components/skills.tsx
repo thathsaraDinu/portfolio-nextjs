@@ -238,7 +238,6 @@ const SkillChart: React.FC<SkillChartProps> = ({ skill }) => {
                 />
               </div>
             </div>
-            <div className="absolute z-0 p-12 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  items-center justify-center hidden dark:flex bg-white rounded-full"></div>
           </div>
         )}
       </div>

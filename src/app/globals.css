@@ -28,3 +28,10 @@ html {
   src: url('/fonts/Raleway-Bold.woff2') format('woff2');
   font-display: swap;
 }
+
+#particles{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}

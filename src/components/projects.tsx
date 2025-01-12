@@ -115,7 +115,7 @@ const Projects: React.FC = () => {
                   viewport={{ once: true }}
                   initial="initial"
                   whileInView="animate" // Animate when in view
-                  className="dark:bg-slate-800 bg-slate-300  border dark:border-slate-600 border-slate-400 relative  col-span-1 dark:text-blue-100 text-blue-950 rounded-md shadow-md z-10 "
+                  className="dark:bg-slate-900 bg-slate-200  border dark:border-slate-600 border-slate-400 relative  col-span-1 dark:text-blue-100 text-blue-950 rounded-md shadow-md z-10 "
                 >
                   <Image
                     className="h-[200px] rounded-t-md object-cover"
