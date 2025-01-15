@@ -27,7 +27,7 @@ const Projects: React.FC = () => {
       description:
         "healthcare web app, for book and manage appointments, manage doctors and analysis and documentation of the hospital stats with role based access.",
       html_url:
-        "https://raw.githubusercontent.com/thathsaradinu/smart-medix-healthcare-system/main/project-image.webp",
+        "https://raw.githubusercontent.com/thathsaradinu/smart-medix-healthcare-system/main/client/screenshots/homepage.webpp",
       techs: ["JavaScript", "Tailwind CSS"],
       technology: "MERN",
       githubUrl:
