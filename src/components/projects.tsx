@@ -23,15 +23,16 @@ const Projects: React.FC = () => {
       webUrl: "https://movieverseweb.vercel.app/",
     },
     {
-      name: "Smart HealthCare web app",
+      name: "Smart Medix web app",
       description:
         "healthcare web app, for book and manage appointments, manage doctors and analysis and documentation of the hospital stats with role based access.",
       html_url:
-        "https://raw.githubusercontent.com/thathsaradinu/smart-healthcare-system/main/project-image.webp",
+        "https://raw.githubusercontent.com/thathsaradinu/smart-medix-healthcare-system/main/project-image.webp",
       techs: ["JavaScript", "Tailwind CSS"],
       technology: "MERN",
-      githubUrl: "https://github.com/thathsaraDinu/smart-healthcare-system",
-      webUrl: "https://smart-healthcare-system.vercel.app/",
+      githubUrl:
+        "https://github.com/thathsaraDinu/smart-medix-healthcare-system",
+      webUrl: "https://smart-medix.vercel.app/",
     },
     {
       name: "ShopEase E-commerce mobile app",
