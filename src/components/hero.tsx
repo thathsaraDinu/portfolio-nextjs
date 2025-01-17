@@ -7,7 +7,7 @@ import animation from "@/assets/desktop-animation.json";
 
 export default function Hero() {
   const handleOpenPdf = () => {
-    const pdfUrl = "/Thathsara Dinuwan CV.pdf"; // Replace with the actual URL to your CV PDF
+    const pdfUrl = "/Thathsara Dinuwan resume.pdf"; // Replace with the actual URL to your CV PDF
     const newTab = window.open(pdfUrl, "_blank");
     if (newTab) {
       newTab.focus();
