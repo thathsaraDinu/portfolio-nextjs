@@ -15,7 +15,7 @@ const Projects = dynamic(() => import("@/components/projects"));
 
 export default function Home() {
   return (
-    <div className=" bg-fixed bg-center bg-no-repeat bg-cover   dark:bg-fixed dark:bg-center dark:bg-no-repeat dark:bg-cover">
+    <div>
       <ParticlesComponent id="particles" />
       <NavBar />
       <hr className="max-w-screen-xl mx-auto dark:border-white border-black" />

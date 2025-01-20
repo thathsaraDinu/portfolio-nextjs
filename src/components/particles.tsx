@@ -1,8 +1,9 @@
 "use client";
+
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { useEffect, useMemo } from "react";
 import { loadSlim } from "@tsparticles/slim"; // Install this package for slim configuration
-import { useTheme } from "@/context/theme-context"; // Import your theme context
+import { useTheme } from "next-themes";
 
 interface ParticlesComponentProps {
   id: string;
@@ -15,18 +16,12 @@ const ParticlesComponent = (props: ParticlesComponentProps): JSX.Element => {
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
-    }).then(() => {
-    });
+    }).then(() => {});
   }, []);
 
   // Dynamic particle options based on theme
   const options = useMemo(
     () => ({
-      background: {
-        color: {
-          value: theme === "dark" ? "#020617" : "#ffffff", // Dark or light background
-        },
-      },
       fpsLimit: 120,
       interactivity: {
         events: {
@@ -91,7 +86,13 @@ const ParticlesComponent = (props: ParticlesComponentProps): JSX.Element => {
     [theme] // Recompute options when the theme changes
   );
 
-  return <Particles id={props.id} options={options} />;
+  return (
+    <Particles
+      className="bg-slate-100 dark:bg-slate-950 -z-10"
+      id={props.id}
+      options={options}
+    />
+  );
 };
 
 export default ParticlesComponent;

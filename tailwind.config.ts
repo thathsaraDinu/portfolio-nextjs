@@ -22,7 +22,7 @@ export default {
       },
     },
   },
-  darkMode: "class", // Enables class-based dark mode
+  darkMode: ["class"],
   plugins: [
     function ({
       addComponents,

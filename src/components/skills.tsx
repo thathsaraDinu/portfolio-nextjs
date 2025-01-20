@@ -10,7 +10,7 @@ import {
   ChartOptions,
 } from "chart.js";
 import { ScrollAnimation } from "@/animation/scroll-animation";
-import { useTheme } from "@/context/theme-context";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -225,10 +225,7 @@ const SkillChart: React.FC<SkillChartProps> = ({ skill }) => {
         {hasAnimated && (
           <div className="relative">
             <div>
-              <Doughnut
-                data={generateChartData}
-                options={chartOptions}
-              />
+              <Doughnut data={generateChartData} options={chartOptions} />
               <div className="absolute inset-0 flex items-center justify-center z-10">
                 <Image
                   src={`/icons/${skill.svg}.svg`}
