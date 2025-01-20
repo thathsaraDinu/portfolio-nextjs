@@ -89,7 +89,7 @@ export default function NavBar() {
                 className="  hover:bg-gray-300 p-1 rounded-md dark:hover:bg-gray-800"
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               >
-                {mounted ? (
+                {!mounted ? (
                   <></>
                 ) : theme === "dark" ? (
                   <Sun className="h-5 w-5" />
@@ -161,7 +161,7 @@ export default function NavBar() {
               className="  hover:bg-gray-300 p-1 rounded-md dark:hover:bg-gray-800"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             >
-              {mounted ? (
+              {!mounted ? (
                 <></>
               ) : theme === "dark" ? (
                 <Sun className="h-5 w-5" />
