@@ -4,11 +4,14 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import Link from "next/link";
-import { Moon, Sun } from "lucide-react";
+import {  Menu, Moon, Sun, X } from "lucide-react";
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState<string>("");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   const menuItems = ["About", "Skills", "Education", "Projects", "Contact"];
 
@@ -86,12 +89,12 @@ export default function NavBar() {
                 className="  hover:bg-gray-300 p-1 rounded-md dark:hover:bg-gray-800"
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               >
-                {theme === "dark" ? (
-                  <Sun className="h-5 w-5" />
-                ) : theme === "light" ? (
-                  <Moon className="h-5 w-5" />
-                ) : (
+                {mounted ? (
                   <></>
+                ) : theme === "dark" ? (
+                  <Sun className="h-5 w-5" />
+                ) : (
+                  <Moon className="h-5 w-5" />
                 )}
                 <span className="sr-only">Toggle theme</span>
               </button>
@@ -100,29 +103,8 @@ export default function NavBar() {
               className="cursor-pointer flex justify-end"
               onClick={() => setMenuOpen(!menuOpen)}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {menuOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16m-7 6h7"
-                  />
-                )}
-              </svg>
+             { menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" /> }
+             
             </div>
           </div>
         </div>
@@ -179,12 +161,12 @@ export default function NavBar() {
               className="  hover:bg-gray-300 p-1 rounded-md dark:hover:bg-gray-800"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             >
-              {theme === "dark" ? (
-                <Sun className="h-5 w-5" />
-              ) : theme === "light" ? (
-                <Moon className="h-5 w-5" />
-              ) : (
+              {mounted ? (
                 <></>
+              ) : theme === "dark" ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
               )}
               <span className="sr-only">Toggle theme</span>
             </button>
