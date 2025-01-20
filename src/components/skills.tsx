@@ -112,7 +112,8 @@ const chartOptions: ChartOptions<"doughnut"> = {
   },
   interaction: {
     mode: "nearest",
-    intersect: false,
+    intersect: true,
+    axis: "xy", // ensures tooltips appear on hover over either axis
   },
   cutout: "70%", // Adjust inner radius here (e.g., "50%", "70%", or a pixel value like 50)
 };
@@ -225,8 +226,8 @@ const SkillChart: React.FC<SkillChartProps> = ({ skill }) => {
         {hasAnimated && (
           <div className="relative">
             <div>
-              <Doughnut data={generateChartData} options={chartOptions} />
-              <div className="absolute inset-0 flex items-center justify-center z-10">
+              <Doughnut data={generateChartData} options={chartOptions}/>
+              <div className="absolute inset-0 -z-10 flex justify-center items-center">
                 <Image
                   src={`/icons/${skill.svg}.svg`}
                   alt={skill.name}
