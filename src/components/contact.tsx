@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { ScrollAnimation } from "@/animation/scroll-animation";
 import emailjs from "emailjs-com";
-import dynamic from "next/dynamic";
-const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
-import animation from "@/assets/contactanimation.json";
+// import dynamic from "next/dynamic";
+// const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+// import animation from "@/assets/contactanimation.json";
 
 export default function Contact() {
   const [formData, setFormData] = useState({

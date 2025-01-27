@@ -1,9 +1,9 @@
 "use client"
 
-import dynamic from "next/dynamic";
 import { ScrollAnimation } from "@/animation/scroll-animation";
-const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
-import animation from "@/assets/desktop-animation.json";
+// import dynamic from "next/dynamic";
+// const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+// import animation from "@/assets/desktop-animation.json";
 
 export default function Hero() {
   const handleOpenPdf = () => {
