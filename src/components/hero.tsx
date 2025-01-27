@@ -1,9 +1,9 @@
 "use client"
 
+import dynamic from "next/dynamic";
 import { ScrollAnimation } from "@/animation/scroll-animation";
-// import dynamic from "next/dynamic";
-// const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
-// import animation from "@/assets/desktop-animation.json";
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+import animation from "@/assets/animation2.json";
 
 export default function Hero() {
   const handleOpenPdf = () => {
@@ -123,7 +123,7 @@ export default function Hero() {
             </a>
           </div>
         </ScrollAnimation>
-        {/* <ScrollAnimation
+        <ScrollAnimation
           initial={{ opacity: 0, x: 50 }}
           className="md:w-2/5 hidden md:block"
         >
@@ -136,7 +136,7 @@ export default function Hero() {
             }}
             className="max-w-[550px]"
           />
-        </ScrollAnimation> */}
+        </ScrollAnimation>
       </div>
     </section>
   );
