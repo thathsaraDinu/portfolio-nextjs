@@ -123,7 +123,7 @@ export default function Hero() {
             </a>
           </div>
         </ScrollAnimation>
-        <ScrollAnimation
+        {/* <ScrollAnimation
           initial={{ opacity: 0, x: 50 }}
           className="md:w-2/5 hidden md:block"
         >
@@ -136,7 +136,7 @@ export default function Hero() {
             }}
             className="max-w-[550px]"
           />
-        </ScrollAnimation>
+        </ScrollAnimation> */}
       </div>
     </section>
   );

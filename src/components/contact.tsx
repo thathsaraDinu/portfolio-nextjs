@@ -79,12 +79,12 @@ export default function Contact() {
           className="flex flex-col md:flex-row justify-center items-center md:gap-20 w-full md:px-20 mx-auto"
         >
           <div className=" flex justify-center flex-col items-center w-full mb-10">
-            <Lottie
+            {/* <Lottie
               loop={true}
               autoplay={true}
               animationData={animation}
               className="max-w-[400px]"
-            />
+            /> */}
             <hr className="hidden md:block md:w-full dark:border-white border-black h-0  mb-10"></hr>
             <div className="flex gap-10 justify-center items-center">
               <a
