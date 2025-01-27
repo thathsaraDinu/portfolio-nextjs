@@ -43,10 +43,10 @@ export default function Education() {
                 Software Engineering
               </div>
               <div className="text-base dark:text-blue-100 text-blue-900">
-                Sri Lanka Institute of Technology (SLIIT)
+                Sri Lanka Institute of Technology (SLIIT), Malabe, Sri Lanka
               </div>
-              <div className="text-sm dark:text-white text-blue-900">
-                Malabe, Sri Lanka
+              <div className="text-base dark:text-white text-blue-900 font-bold">
+                Dean&rsquo;s Lister for Academic Excellence
               </div>
             </div>
           </ScrollAnimation>

@@ -1,9 +1,10 @@
-"use client"
+"use client";
 
 import dynamic from "next/dynamic";
 import { ScrollAnimation } from "@/animation/scroll-animation";
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 import animation from "@/assets/animation2.json";
+import { TypeAnimation } from "react-type-animation";
 
 export default function Hero() {
   const handleOpenPdf = () => {
@@ -35,10 +36,27 @@ export default function Hero() {
             a software engineer specializing in mobile and full-stack
             development, building scalable solutions with clean, efficient code.
           </p>
+          <TypeAnimation
+            sequence={[
+              "Full Stack Devlope",
+              200,
+              "Full Stack Developer",
+              1000,
+              "Mobile App Developer",
+              1000,
+              "Software Engineer",
+              1000,
+            ]}
+            repeat={Infinity}
+            speed={50}
+            cursor={true}
+            wrapper="span"
+            className="bg-transparent text-2xl text-red-400 font-raleway"
+          />
           <div className=" flex gap-5 text-sm font-semibold">
             <button
               onClick={handleOpenPdf}
-              className="transition-all flex items-center gap-2 duration-200 px-4 py-2 mt-4 rounded dark:bg-slate-100 bg-blue-950  dark:text-blue-950 text-blue-100  dark:hover:bg-blue-300 hover:bg-blue-800"
+              className="transition-all flex items-center gap-2 duration-200 px-4 py-2 rounded dark:bg-slate-100 bg-blue-950  dark:text-blue-950 text-blue-100  dark:hover:bg-blue-300 hover:bg-blue-800"
             >
               <span>Download CV</span>
               <svg
@@ -55,7 +73,7 @@ export default function Hero() {
               </svg>
             </button>
             <a href="#contact">
-              <button className="transition-all duration-200 px-4 py-2 mt-4 rounded dark:bg-slate-950 bg-slate-100 border dark:border-white border-black dark:text-blue-100 text-blue-950 dark:hover:bg-slate-100 hover:bg-blue-950 dark:hover:text-blue-950 hover:text-blue-100 ">
+              <button className="transition-all duration-200 px-4 py-2 rounded dark:bg-slate-950 bg-slate-100 border dark:border-white border-black dark:text-blue-100 text-blue-950 dark:hover:bg-slate-100 hover:bg-blue-950 dark:hover:text-blue-950 hover:text-blue-100 ">
                 Contact Me
               </button>
             </a>
