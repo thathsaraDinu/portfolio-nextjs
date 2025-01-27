@@ -19,31 +19,33 @@ const About: React.FC = () => {
               </div>
             </div>
           </ScrollAnimation>
-          <ScrollAnimation initial={{ opacity: 0, x: 0, y: 0, scale: 0.9 }}>
-            <div className=" text-blue-950 dark:text-white text-lg">
-              I’m{" "}
-              <span className="font-bold text-blue-900 dark:text-blue-300">
-                {" "}
-                Thathsara Dinuwan
-              </span>
-              , a 23-year-old third-year Software Engineering undergraduate at
-              the Sri Lanka Institute of Information Technology (SLIIT). I’m
-              proficient in both full-stack web development and mobile
-              application development, with the help of the proficiency in MERN
-              Stack, Next.js and Flutter.
-              <br />
-              <br />
-              <div>
-                {" "}
-                Always eager to learn and explore new technologies, I aim to
-                create impactful solutions and enhance user experiences. Feel
-                free to connect!
-              </div>
-            </div>
-            {/* <button className="transition-all text-sm font-semibold duration-200 rounded py-2 px-4 mt-4 dark:bg-slate-100 bg-blue-950  dark:text-blue-950 text-blue-100  dark:hover:bg-blue-300 hover:bg-blue-800">
+
+          <div className=" text-blue-950 dark:text-white text-lg">
+            <ScrollAnimation initial={{ opacity: 0, x: 0, y: 50 }}>
+              I&apos;m a 23-year-old third-year Software Engineering
+              undergraduate at the Sri Lanka Institute of Information Technology
+              (SLIIT). I’m proficient in both full-stack web development and
+              mobile application development, with the help of the proficiency
+              in MERN Stack, Next.js and Flutter.
+            </ScrollAnimation>
+            <br />
+            <ScrollAnimation initial={{ opacity: 0, x: 0, y: 50 }}>
+              I have a strong passion for developing software solutions that are
+              not only efficient and scalable but also user-friendly. I enjoy
+              working on projects that challenge me to think outside the box and
+              push my limits to create something new and innovative.
+            </ScrollAnimation>
+            <br />
+            <ScrollAnimation initial={{ opacity: 0, x: 0, y: 50 }}>
+              {" "}
+              Always eager to learn and explore new technologies, I aim to
+              create impactful solutions and enhance user experiences. Feel free
+              to connect!
+            </ScrollAnimation>
+          </div>
+          {/* <button className="transition-all text-sm font-semibold duration-200 rounded py-2 px-4 mt-4 dark:bg-slate-100 bg-blue-950  dark:text-blue-950 text-blue-100  dark:hover:bg-blue-300 hover:bg-blue-800">
             Know more
           </button> */}
-          </ScrollAnimation>
         </div>
         {/* <ScrollAnimation
           className="md:block hidden w-1/3"
