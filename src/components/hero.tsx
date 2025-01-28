@@ -100,7 +100,7 @@ export default function Hero() {
               </svg>
             </a>
             <a
-              href="http://www.linkedin.com/in/thathsara-dinuwan-6872bb2ab/"
+              href="http://www.linkedin.com/in/thathsaradinuwan/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:-translate-y-1 transition-all duration-200"
