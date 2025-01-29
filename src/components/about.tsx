@@ -15,7 +15,7 @@ const About: React.FC = () => {
                 Know who am I
               </div>
               <div className="custom-third-topic  dark:text-blue-100">
-                My Journey in few words
+                My self in few words
               </div>
             </div>
           </ScrollAnimation>
