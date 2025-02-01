@@ -29,9 +29,9 @@ const languages: Skill[] = [
     svg: "javascript-original",
   },
   {
-    name: "TypeScript",
+    name: "Java",
     level: 85,
-    svg: "typescript-original",
+    svg: "java-original",
   },
   {
     name: "Dart",
