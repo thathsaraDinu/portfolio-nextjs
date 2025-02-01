@@ -24,9 +24,9 @@ const About: React.FC = () => {
             <ScrollAnimation initial={{ opacity: 0, x: 0, y: 50 }}>
               I&apos;m a 23-year-old third-year Software Engineering
               undergraduate at the Sri Lanka Institute of Information Technology
-              (SLIIT). I’m proficient in both full-stack web development and
-              mobile application development, with the help of the proficiency
-              in MERN Stack, Next.js and Flutter.
+              (SLIIT). I specialize in full-stack web and mobile application
+              development, with expertise in the MERN stack, Next.js, and
+              Flutter.
             </ScrollAnimation>
             <br />
             <ScrollAnimation initial={{ opacity: 0, x: 0, y: 50 }}>
@@ -38,9 +38,9 @@ const About: React.FC = () => {
             <br />
             <ScrollAnimation initial={{ opacity: 0, x: 0, y: 50 }}>
               {" "}
-              Always eager to learn and explore new technologies, I aim to
-              create impactful solutions and enhance user experiences. Feel free
-              to connect!
+              I&apos;m always excited to learn new technologies. I focus on
+              solving problems and creating impactive solutions. Feel free
+              to connect with me!
             </ScrollAnimation>
           </div>
           {/* <button className="transition-all text-sm font-semibold duration-200 rounded py-2 px-4 mt-4 dark:bg-slate-100 bg-blue-950  dark:text-blue-950 text-blue-100  dark:hover:bg-blue-300 hover:bg-blue-800">
