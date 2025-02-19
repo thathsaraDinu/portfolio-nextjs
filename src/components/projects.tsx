@@ -15,8 +15,7 @@ const Projects: React.FC = () => {
       name: "Movie Verse App",
       description:
         "A website with responsive and theme-based design to view all about your favorite movies. Made using tmdb-api.",
-      html_url:
-        "https://raw.githubusercontent.com/thathsaradinu/movie-verse-web-app/main/project-image.webp",
+      html_url: "/images/Screenshot 2025-02-19 213127.png",
       techs: ["TypeScript", "Tailwind CSS"],
       technology: "Next.js",
       githubUrl: "https://github.com/thathsaraDinu/Movie-verse-web-app",
@@ -26,8 +25,7 @@ const Projects: React.FC = () => {
       name: "Smart Medix web app",
       description:
         "healthcare web app, for book and manage appointments, manage doctors and analysis and documentation of the hospital stats with role based access.",
-      html_url:
-        "https://raw.githubusercontent.com/thathsaradinu/smart-medix-healthcare-system/main/client/screenshots/admin_dashboard.webp",
+      html_url: "/images/Screenshot 2025-02-19 214632",
       techs: ["JavaScript", "Tailwind CSS"],
       technology: "MERN",
       githubUrl:
