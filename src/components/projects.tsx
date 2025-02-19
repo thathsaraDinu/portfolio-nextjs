@@ -48,7 +48,7 @@ const Projects: React.FC = () => {
       name: "Shopiflow shopping mall web app",
       description:
         "A fully responsive web app for shopping mall management with virtual queue for customers, product management, promotion management and shop management.",
-      html_url: "/images/mac_laptop3_960.png",
+      html_url: "/images/Screenshot 2025-02-19 221701.png",
       techs: ["JavaScript", "Tailwind CSS"],
       technology: "MERN",
       githubUrl:
