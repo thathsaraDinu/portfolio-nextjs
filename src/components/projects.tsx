@@ -25,7 +25,7 @@ const Projects: React.FC = () => {
       name: "Smart Medix web app",
       description:
         "healthcare web app, for book and manage appointments, manage doctors and analysis and documentation of the hospital stats with role based access.",
-      html_url: "/images/Screenshot 2025-02-19 214632",
+      html_url: "/images/Screenshot 2025-02-19 214632.png",
       techs: ["JavaScript", "Tailwind CSS"],
       technology: "MERN",
       githubUrl:
@@ -48,8 +48,7 @@ const Projects: React.FC = () => {
       name: "Shopiflow shopping mall web app",
       description:
         "A fully responsive web app for shopping mall management with virtual queue for customers, product management, promotion management and shop management.",
-      html_url:
-        "https://raw.githubusercontent.com/thathsaradinu/shopiflow-shopping-mall-application/main/project-image.webp",
+      html_url: "/images/mac_laptop3_960.png",
       techs: ["JavaScript", "Tailwind CSS"],
       technology: "MERN",
       githubUrl:
