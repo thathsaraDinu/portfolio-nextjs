@@ -115,22 +115,24 @@ const Projects: React.FC = () => {
                   viewport={{ once: true }}
                   initial="initial"
                   whileInView="animate" // Animate when in view
-                  className="dark:bg-slate-900 bg-slate-200  border dark:border-slate-600 border-slate-400 relative  col-span-1 dark:text-blue-100 text-blue-950 rounded-md shadow-md z-10 "
+                  className="dark:bg-slate-900 bg-slate-200 group border dark:border-slate-600 border-slate-400 relative col-span-1 dark:text-blue-100 text-blue-950 rounded-md shadow-md z-10 overflow-hidden"
                 >
-                  <Image
-                    className="h-[200px] rounded-t-md object-cover"
-                    alt="project_image"
-                    src={project.html_url}
-                    width={600}
-                    height={150}
-                    onError={(
-                      e: React.SyntheticEvent<HTMLImageElement, Event>
-                    ) => {
-                      const target = e.target as HTMLImageElement;
-                      target.onerror = null; // Prevent infinite loop in case the fallback image is also invalid
-                      target.src = "images/no_image_placeholder.png"; // Fallback image
-                    }}
-                  />
+                  <div className="overflow-hidden">
+                    <Image
+                      className="h-[200px] rounded-t-md object-cover group-hover:scale-105 transition-transform duration-200"
+                      alt="project_image"
+                      src={project.html_url}
+                      width={600}
+                      height={150}
+                      onError={(
+                        e: React.SyntheticEvent<HTMLImageElement, Event>
+                      ) => {
+                        const target = e.target as HTMLImageElement;
+                        target.onerror = null; // Prevent infinite loop in case the fallback image is also invalid
+                        target.src = "images/no_image_placeholder.png"; // Fallback image
+                      }}
+                    />
+                  </div>
                   <div className="flex flex-col justify-between items-start gap-8 px-3 py-4">
                     <div className="flex flex-col gap-2">
                       <h2 className="text-lg w-full text-center dark:text-blue-300 text-blue-800  font-bold line-clamp-2">
