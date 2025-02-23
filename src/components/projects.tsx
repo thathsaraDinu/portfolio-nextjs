@@ -15,7 +15,8 @@ const Projects: React.FC = () => {
       name: "Movie Verse App",
       description:
         "A website with responsive and theme-based design to view all about your favorite movies. Made using tmdb-api.",
-      html_url: "/images/Screenshot 2025-02-19 213127.png",
+      html_url:
+        "/images/FireShot Capture 001 - Multi Device Website Mockup Generator - [techsini.com].png",
       techs: ["TypeScript", "Tailwind CSS"],
       technology: "Next.js",
       githubUrl: "https://github.com/thathsaraDinu/Movie-verse-web-app",
@@ -48,7 +49,8 @@ const Projects: React.FC = () => {
       name: "Shopiflow shopping mall web app",
       description:
         "A fully responsive web app for shopping mall management with virtual queue for customers, product management, promotion management and shop management.",
-      html_url: "/images/Screenshot 2025-02-19 221701.png",
+      html_url:
+        "/images/FireShot Capture 003 - Multi Device Website Mockup Generator - [techsini.com].png",
       techs: ["JavaScript", "Tailwind CSS"],
       technology: "MERN",
       githubUrl:
