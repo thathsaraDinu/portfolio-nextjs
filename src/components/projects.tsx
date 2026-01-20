@@ -34,6 +34,17 @@ const Projects: React.FC = () => {
       webUrl: "https://smart-medix.vercel.app/",
     },
     {
+      name: "Atlaso web app",
+      description:
+        "A responsive web application that allows users to search, filter, and explore country data by language, currency, or country code using a public REST API.",
+      html_url: "/images/FireShot Capture 005 - Multi Device Website Mockup Generator - [techsini.com].png",
+      techs: ["JavaScript", "Tailwind CSS"],
+      technology: "Vite + React",
+      githubUrl:
+        "https://github.com/thathsaraDinu/atlaso-web-app",
+      webUrl: "https://atlaso.vercel.app/",
+    },
+    {
       name: "ShopEase E-commerce mobile app",
       description:
         "ShopEase New York is an online shopping mobile app with product catalog, shopping cart, product wishlist and user authentication using firebase-auth.",

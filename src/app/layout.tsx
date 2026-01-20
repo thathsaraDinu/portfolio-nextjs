@@ -1,11 +1,11 @@
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
-import { Roboto } from "next/font/google";
+import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 
-const roboto = Roboto({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "700"], // Customize weights
+  weight: ["300", "400", "500", "600"], // Customize weights
 });
 
 export default function RootLayout({
@@ -19,7 +19,7 @@ export default function RootLayout({
         <title>Thathsara Dinuwan Portfolio</title>
         <link rel="icon" href="/icons/logo-icon.webp" type="image/webp" />
       </head>
-      <body className={roboto.className}>
+      <body className={inter.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

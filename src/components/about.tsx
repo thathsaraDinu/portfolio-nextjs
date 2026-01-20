@@ -22,7 +22,7 @@ const About: React.FC = () => {
 
           <div className=" text-blue-950 dark:text-white text-lg">
             <ScrollAnimation initial={{ opacity: 0, x: 0, y: 50 }}>
-              I&apos;m a 23-year-old third-year Software Engineering
+              I&apos;m a 24-year-old fourth-year Software Engineering
               undergraduate at the Sri Lanka Institute of Information Technology
               (SLIIT). I specialize in full-stack web and mobile application
               development, with expertise in the MERN stack, Next.js, and
