@@ -8,7 +8,7 @@ import { TypeAnimation } from "react-type-animation";
 
 export default function Hero() {
   const handleOpenPdf = () => {
-    const pdfUrl = "/resume with photo.pdf"; // Replace with the actual URL to your CV PDF
+    const pdfUrl = "/Thathsara_Dinuwan_CV.pdf"; // Replace with the actual URL to your CV PDF
     const newTab = window.open(pdfUrl, "_blank");
     if (newTab) {
       newTab.focus();

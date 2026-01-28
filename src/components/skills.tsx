@@ -22,75 +22,75 @@ interface Skill {
   svg?: string;
 }
 
-const languages: Skill[] = [
+const backend: Skill[] = [
   {
-    name: "JavaScript",
-    level: 90,
-    svg: "javascript-original",
+    name: "node.js",
+    level: 100,
+    svg: "nodejs-original",
   },
   {
-    name: "Java",
-    level: 85,
-    svg: "java-original",
+    name: "spring-boot",
+    level: 100,
+    svg: "springboot-original",
   },
   {
-    name: "Dart",
-    level: 85,
-    svg: "dart-original",
-  },
-];
-
-const other: Skill[] = [
-  {
-    name: "Git",
-    level: 95,
-    svg: "git-original",
-  },
-  {
-    name: "VS Code",
-    level: 95,
-    svg: "visualstudiocode-original",
-  },
-  {
-    name: "Postman",
-    level: 90,
-    svg: "postman-original",
-  },
-];
-
-const frameworks: Skill[] = [
-  {
-    name: "Flutter",
-    level: 90,
-    svg: "flutter-original",
-  },
-  {
-    name: "React",
-    level: 90,
-    svg: "react-original",
-  },
-  {
-    name: "Next.js",
-    level: 85,
-    svg: "next-original",
+    name: "nest.js",
+    level: 100,
+    svg: "nestjs-original",
   },
 ];
 
 const tools: Skill[] = [
   {
-    name: "MongoDB",
-    level: 85,
+    name: "git",
+    level: 100,
+    svg: "git-original",
+  },
+  {
+    name: "aws",
+    level: 100,
+    svg: "aws-original",
+  },
+  {
+    name: "postman",
+    level: 100,
+    svg: "postman-original",
+  },
+];
+
+const frontend: Skill[] = [
+  {
+    name: "react",
+    level: 100,
+    svg: "react-original",
+  },
+  {
+    name: "next.js",
+    level: 100,
+    svg: "next-original",
+  },
+  {
+    name: "flutter",
+    level: 100,
+    svg: "flutter-original",
+  },
+];
+
+const databases: Skill[] = [
+  {
+    name: "mongodb",
+    level: 100,
     svg: "mongodb-original",
   },
   {
-    name: "Firebase",
-    level: 80,
+    name: "firebase",
+    level: 100,
     svg: "firebase-original",
   },
   {
-    name: "SQLite",
-    level: 80,
-    svg: "sqlite-original",
+    name: "postgresql",
+    level: 100,
+    svg: "postgresql-original",
   },
 ];
 
@@ -101,7 +101,7 @@ const chartOptions: ChartOptions<"doughnut"> = {
       display: false,
     },
     tooltip: {
-      enabled: true,
+      enabled: false,
       callbacks: {
         label: (context) => {
           const level = context.raw as number;
@@ -121,6 +121,7 @@ const chartOptions: ChartOptions<"doughnut"> = {
 type SkillSetProps = {
   title: string;
   skills?: Skill[];
+  skillType: string;
 };
 
 const Skills = () => {
@@ -138,10 +139,10 @@ const Skills = () => {
           </div>
         </ScrollAnimation>
         <div className="grid sm:grid-cols-2 grid-cols-1 gap-10">
-          <SkillSet title="Frameworks/Libraries" skills={frameworks} />
-          <SkillSet title="Languages" skills={languages} />
-          <SkillSet title="Databases" skills={tools} />
-          <SkillSet title="Tools" skills={other} />
+          <SkillSet title="Frontend" skills={frontend} skillType="Frontend" />
+          <SkillSet title="Backend" skills={backend} skillType="Backend" />
+          <SkillSet title="Databases" skills={databases} skillType="Databases" />
+          <SkillSet title="Tools" skills={tools} skillType="Tools" />
         </div>
 
         {/* Skills Section */}
@@ -153,6 +154,7 @@ const Skills = () => {
 const SkillSet: React.FC<SkillSetProps> = ({
   title,
   skills,
+  skillType,
 }: SkillSetProps) => {
   return (
     <div className="flex flex-col gap-5 items-center">
@@ -162,7 +164,7 @@ const SkillSet: React.FC<SkillSetProps> = ({
       <hr className="dark:border-white w-1/4 border-black"></hr>
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3  gap-10">
         {skills?.map((skill: Skill) => (
-          <MemoizedSkillChart key={skill.name} skill={skill} />
+          <MemoizedSkillChart key={skill.name} skill={skill} skillType={skillType} />
         ))}
       </div>
     </div>
@@ -171,9 +173,10 @@ const SkillSet: React.FC<SkillSetProps> = ({
 
 interface SkillChartProps {
   skill: Skill;
+  skillType: string;
 }
 
-const SkillChart: React.FC<SkillChartProps> = ({ skill }) => {
+const SkillChart: React.FC<SkillChartProps> = ({ skill, skillType }) => {
   const { theme } = useTheme();
   const [hasAnimated, setHasAnimated] = useState(false);
   const chartRef = useRef<HTMLDivElement>(null);
@@ -199,8 +202,18 @@ const SkillChart: React.FC<SkillChartProps> = ({ skill }) => {
       }
     };
   }, [hasAnimated]);
-
-  const themeColor = theme == "dark" ? "#66a9ff" : "#002f6b";
+  // Determine theme color based on skill type and current theme
+  let themeColor = "";
+  if (skillType === "Frontend") {
+    themeColor = theme == "dark" ? "#368dff" : "#004eb5";
+  } else if (skillType === "Backend") {
+    themeColor = theme == "dark" ? "#ff4545" : "#e30000";
+  } else if (skillType === "Databases") {
+    themeColor = theme == "dark" ? "#00ff55" : "#00c000";
+  }
+  else if (skillType === "Tools") {
+    themeColor = theme == "dark" ? "#ffff00" : "#e2cb00";
+  }
 
   const generateChartData = useMemo(
     () => ({
@@ -208,7 +221,7 @@ const SkillChart: React.FC<SkillChartProps> = ({ skill }) => {
       datasets: [
         {
           data: [skill.level, 100 - skill.level],
-          backgroundColor: [themeColor, "rgba(0, 0, 0, 0)"],
+          backgroundColor: [ themeColor, "rgba(0, 0, 0, 0)"],
           hoverBackgroundColor: [themeColor, "rgba(0, 0, 0, 0)"],
           borderWidth: 0,
         },
