@@ -20,7 +20,7 @@ const Projects: React.FC = () => {
       techs: ["TypeScript", "Tailwind CSS"],
       technology: "Next.js",
       githubUrl: "https://github.com/thathsaraDinu/Movie-verse-web-app",
-      webUrl: "https://movie-verse-web.netlify.app/",
+      webUrl: "https://movieverseweb.vercel.app/",
     },
     {
       name: "Smart Medix web app",
