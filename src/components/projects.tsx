@@ -42,7 +42,7 @@ const Projects: React.FC = () => {
       technology: "Vite + React",
       githubUrl:
         "https://github.com/thathsaraDinu/atlaso-web-app",
-      webUrl: "https://atlaso.vercel.app/",
+      webUrl: "https://atlaso-web.netlify.app/",
     },
     {
       name: "ShopEase E-commerce mobile app",
