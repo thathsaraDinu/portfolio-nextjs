@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { ScrollAnimation } from "@/animation/scroll-animation";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { Github, Globe } from "lucide-react";
 import Link from "next/link";
 
@@ -94,7 +93,7 @@ const Projects: React.FC = () => {
   ];
 
   // Calculate the number of projects to show based on the "showAll" state
-  const projectsToShow = showAll ? allProjects : allProjects.slice(0, 3); // Show 4 projects initially
+  const projectsToShow = showAll ? allProjects : allProjects.slice(0, 3); // Show 3 projects initially
 
   return (
     <section id="projects" className="py-20 md:px-10 px-5 ">
@@ -129,24 +128,22 @@ const Projects: React.FC = () => {
                   className="dark:bg-slate-900 bg-slate-200 group border dark:border-slate-600 border-slate-400 relative col-span-1 dark:text-blue-100 text-blue-950 rounded-md shadow-md z-10 overflow-hidden"
                 >
                   <div className="overflow-hidden">
-                    <Image
-                      className="h-[200px] rounded-t-md object-cover group-hover:scale-105 transition-transform duration-200"
+                    <img
+                      className="h-[200px] w-full rounded-t-md object-cover group-hover:scale-105 transition-transform duration-200"
                       alt="project_image"
                       src={project.html_url}
-                      width={600}
-                      height={150}
                       onError={(
                         e: React.SyntheticEvent<HTMLImageElement, Event>
                       ) => {
                         const target = e.target as HTMLImageElement;
                         target.onerror = null; // Prevent infinite loop in case the fallback image is also invalid
-                        target.src = "images/no_image_placeholder.png"; // Fallback image
+                        target.src = "/images/no_image_placeholder.png"; // Fallback image
                       }}
                     />
                   </div>
                   <div className="flex flex-col justify-between items-start gap-8 px-3 py-4">
                     <div className="flex flex-col gap-2">
-                      <h2 className="text-lg w-full text-center dark:text-blue-300 text-blue-800  font-bold line-clamp-2">
+                      <h2 className="text-lg w-full text-center dark:text-blue-300 text-blue-800 font-bold line-clamp-2">
                         {project.name}
                       </h2>
                       <p className="text-sm line-clamp-3">
@@ -206,7 +203,7 @@ const Projects: React.FC = () => {
         {/* View All Button */}
         <ScrollAnimation initial={{ opacity: 0, y: 50 }}>
           <button
-            className="transition-all text-sm font-semibold duration-200  px-4 py-2 mt-4 rounded dark:bg-slate-100 bg-blue-950  dark:text-blue-950 text-blue-100  dark:hover:bg-blue-300 hover:bg-blue-800"
+            className="transition-all text-sm font-semibold duration-200 px-4 py-2 mt-4 rounded dark:bg-slate-100 bg-blue-950 dark:text-blue-950 text-blue-100 dark:hover:bg-blue-300 hover:bg-blue-800"
             onClick={() => setShowAll((prevState) => !prevState)} // Toggle the showAll state
           >
             {showAll ? "View less" : "View all"}
