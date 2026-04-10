@@ -15,7 +15,7 @@ const Projects: React.FC = () => {
       description:
         "A website with responsive and theme-based design to view all about your favorite movies. Made using tmdb-api.",
       html_url:
-        "/images/FireShot Capture 001 - Multi Device Website Mockup Generator - [techsini.com].png",
+        "/images/movieverse.png",
       techs: ["TypeScript", "Tailwind CSS"],
       technology: "Next.js",
       githubUrl: "https://github.com/thathsaraDinu/Movie-verse-web-app",
@@ -25,7 +25,7 @@ const Projects: React.FC = () => {
       name: "Smart Medix web app",
       description:
         "healthcare web app, for book and manage appointments, manage doctors and analysis and documentation of the hospital stats with role based access.",
-      html_url: "/images/Screenshot 2025-02-19 214632.png",
+      html_url: "/images/smartmedix.png",
       techs: ["JavaScript", "Tailwind CSS"],
       technology: "MERN",
       githubUrl:
@@ -36,7 +36,7 @@ const Projects: React.FC = () => {
       name: "Atlaso web app",
       description:
         "A responsive web application that allows users to search, filter, and explore country data by language, currency, or country code using a public REST API.",
-      html_url: "/images/FireShot Capture 005 - Multi Device Website Mockup Generator - [techsini.com].png",
+      html_url: "/images/atlaso.png",
       techs: ["JavaScript", "Tailwind CSS"],
       technology: "Vite + React",
       githubUrl:
@@ -60,7 +60,7 @@ const Projects: React.FC = () => {
       description:
         "A fully responsive web app for shopping mall management with virtual queue for customers, product management, promotion management and shop management.",
       html_url:
-        "/images/FireShot Capture 003 - Multi Device Website Mockup Generator - [techsini.com].png",
+        "/images/shopiflow.png",
       techs: ["JavaScript", "Tailwind CSS"],
       technology: "MERN",
       githubUrl:
