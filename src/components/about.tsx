@@ -20,29 +20,31 @@ const About: React.FC = () => {
             </div>
           </ScrollAnimation>
 
-          <div className=" text-blue-950 dark:text-white text-lg">
-            <ScrollAnimation initial={{ opacity: 0, x: 0, y: 50 }}>
-              I&apos;m a 24-year-old final-year Software Engineering
-              undergraduate at the Sri Lanka Institute of Information Technology
-              (SLIIT). I specialize in full-stack web and mobile application
-              development, with expertise in the MERN stack, Next.js, and
-              Flutter.
-            </ScrollAnimation>
-            <br />
-            <ScrollAnimation initial={{ opacity: 0, x: 0, y: 50 }}>
-              I have a strong passion for developing software solutions that are
-              not only efficient and scalable but also user-friendly. I enjoy
-              working on projects that challenge me to think outside the box and
-              push my limits to create something new and innovative.
-            </ScrollAnimation>
-            <br />
-            <ScrollAnimation initial={{ opacity: 0, x: 0, y: 50 }}>
-              {" "}
-              I&apos;m always excited to learn new technologies. I focus on
-              solving problems and creating impactive solutions. Feel free
-              to connect with me!
-            </ScrollAnimation>
-          </div>
+          <div className="text-blue-950 dark:text-white text-lg">
+  <ScrollAnimation initial={{ opacity: 0, x: 0, y: 50 }}>
+    I&apos;m a recent graduate of the Sri Lanka Institute of Information Technology
+    (SLIIT), where I completed my Bachelor of Science (Hons) in Information Technology,
+    specializing in Software Engineering.
+  </ScrollAnimation>
+
+  <br />
+
+  <ScrollAnimation initial={{ opacity: 0, x: 0, y: 50 }}>
+    I am a full-stack developer focused on building modern, scalable web applications
+    using Next.js, Node.js, and TypeScript. I have hands-on experience with PostgreSQL,
+    Prisma ORM, and cloud services such as Firebase and AWS, gained through academic
+    projects and my internship at Kingteza Software Solutions.
+  </ScrollAnimation>
+
+  <br />
+
+  <ScrollAnimation initial={{ opacity: 0, x: 0, y: 50 }}>
+    I enjoy solving real-world problems through software engineering, building
+    user-friendly and high-performance systems, and continuously learning new technologies.
+    I&apos;m always eager to collaborate, contribute, and grow as a developer.
+    Feel free to connect with me!
+  </ScrollAnimation>
+</div>
           {/* <button className="transition-all text-sm font-semibold duration-200 rounded py-2 px-4 mt-4 dark:bg-slate-100 bg-blue-950  dark:text-blue-950 text-blue-100  dark:hover:bg-blue-300 hover:bg-blue-800">
             Know more
           </button> */}
