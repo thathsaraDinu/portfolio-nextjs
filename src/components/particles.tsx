@@ -15,6 +15,7 @@ const ParticlesComponent = (props: ParticlesComponentProps): JSX.Element => {
   // Initialize particles engine once
   useEffect(() => {
     initParticlesEngine(async (engine) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       await loadSlim(engine as any);
     }).then(() => {});
   }, []);
