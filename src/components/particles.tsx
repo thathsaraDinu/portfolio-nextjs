@@ -15,7 +15,7 @@ const ParticlesComponent = (props: ParticlesComponentProps): JSX.Element => {
   // Initialize particles engine once
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
+      await loadSlim(engine as any);
     }).then(() => {});
   }, []);
 

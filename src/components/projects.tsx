@@ -5,6 +5,7 @@ import { ScrollAnimation } from "@/animation/scroll-animation";
 import { motion } from "framer-motion";
 import { Github, Globe } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Projects: React.FC = () => {
   const [showAll, setShowAll] = useState<boolean>(false);
@@ -137,17 +138,15 @@ const Projects: React.FC = () => {
                   whileInView="animate" // Animate when in view
                   className="dark:bg-slate-900 bg-slate-200 group border dark:border-slate-600 border-slate-400 relative col-span-1 dark:text-blue-100 text-blue-950 rounded-md shadow-md z-10 overflow-hidden"
                 >
-                  <div className="overflow-hidden">
-                    <img
-                      className="h-[200px] w-full rounded-t-md object-cover group-hover:scale-105 transition-transform duration-200"
+                  <div className="overflow-hidden h-[200px] w-full">
+                    <Image
+                      className="rounded-t-md object-cover group-hover:scale-105 transition-transform duration-200"
                       alt="project_image"
                       src={project.html_url}
-                      onError={(
-                        e: React.SyntheticEvent<HTMLImageElement, Event>
-                      ) => {
-                        const target = e.target as HTMLImageElement;
-                        target.onerror = null; // Prevent infinite loop in case the fallback image is also invalid
-                        target.src = "/images/no_image_placeholder.png"; // Fallback image
+                      width={500}
+                      height={200}
+                      onError={() => {
+                        // Fallback handling could be added here if needed
                       }}
                     />
                   </div>
