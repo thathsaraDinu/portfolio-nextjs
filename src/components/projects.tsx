@@ -11,6 +11,16 @@ const Projects: React.FC = () => {
 
   const allProjects = [
     {
+      name: "Operion Workforce Operations Platform",
+      description:
+        "A comprehensive workforce management API built with Spring Boot that provides employee management, attendance tracking, leave management, project management, and task management capabilities.",
+      html_url: "/images/operion.png",
+      techs: ["Java", "MySQL", "JWT", "Spring Security"],
+      technology: "Spring Boot",
+      githubUrl: "https://github.com/thathsaraDinu/operion-api",
+      webUrl: "",
+    },
+    {
       name: "Movie Verse App",
       description:
         "A website with responsive and theme-based design to view all about your favorite movies. Made using tmdb-api.",
@@ -19,7 +29,7 @@ const Projects: React.FC = () => {
       techs: ["TypeScript", "Tailwind CSS"],
       technology: "Next.js",
       githubUrl: "https://github.com/thathsaraDinu/Movie-verse-web-app",
-      webUrl: "https://movieverseweb.vercel.app/",
+      webUrl: "https://movie-verse-web.netlify.app/",
     },
     {
       name: "Smart Medix web app",
