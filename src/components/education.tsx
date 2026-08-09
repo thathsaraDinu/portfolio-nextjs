@@ -39,7 +39,7 @@ export default function Education() {
                 Jul 2022 - Present
               </div>
               <div className="text-lg font-semibold dark:text-white text-blue-950">
-                Bachelor of Science in Information Technology specializing in
+                Bachelor of Science (Hons) in Information Technology specializing in
                 Software Engineering
               </div>
               <div className="text-base dark:text-blue-100 text-blue-900">
