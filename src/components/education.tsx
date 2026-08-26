@@ -36,7 +36,7 @@ export default function Education() {
 
             <div className="flex flex-col justify-start items-start gap-5">
               <div className="py-2 px-4 transition-all text-base font-semibold duration-200 rounded-lg dark:bg-slate-100 bg-blue-950  dark:text-blue-950 text-blue-100  dark:hover:bg-blue-300 hover:bg-blue-800">
-                Jul 2022 - Present
+                Jul 2022 - May 2026
               </div>
               <div className="text-lg font-semibold dark:text-white text-blue-950">
                 Bachelor of Science (Hons) in Information Technology specializing in
