@@ -73,7 +73,7 @@ export default function Hero() {
             </button>
             <a href="#contact">
               <button className="transition-all duration-200 px-6 py-3 rounded-lg dark:bg-transparent bg-transparent border-2 dark:border-blue-400 border-blue-950 dark:text-blue-400 text-blue-950 font-semibold hover:dark:bg-blue-400 hover:dark:text-blue-950 hover:bg-blue-950 hover:text-white">
-                Let's Talk
+                Let&apos;s Talk
               </button>
             </a>
           </div>
