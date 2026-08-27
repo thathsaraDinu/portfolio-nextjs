@@ -28,7 +28,7 @@ export default function Hero() {
           className="md:w-3/5  flex flex-col gap-6 items-start "
         >
           <div className="flex flex-col gap-4">
-            <h1 className="text-4xl md:text-6xl font-bold dark:text-blue-100 text-blue-950 leading-tight">
+            <h1 className="font-raleway text-4xl md:text-6xl font-bold dark:text-blue-100 text-blue-950 leading-tight">
               Hi, I&apos;m <span className="dark:text-blue-400 text-blue-600">Thathsara</span>
             </h1>
             <TypeAnimation
@@ -46,10 +46,10 @@ export default function Hero() {
               speed={50}
               cursor={true}
               wrapper="h2"
-              className="text-2xl md:text-3xl dark:text-blue-200 text-blue-800 font-semibold"
+              className="font-outfit text-2xl md:text-3xl dark:text-blue-200 text-blue-800 font-semibold"
             />
           </div>
-          <p className="dark:text-blue-300 text-blue-700 text-lg max-w-lg leading-relaxed">
+          <p className="font-inter dark:text-blue-300 text-blue-700 text-lg max-w-lg leading-relaxed">
             Turning ideas into reality through code. Let&apos;s build something amazing together.
           </p>
           <div className="flex gap-4">
