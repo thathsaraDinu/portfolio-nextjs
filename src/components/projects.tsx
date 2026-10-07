@@ -12,6 +12,16 @@ const Projects: React.FC = () => {
 
   const allProjects = [
     {
+      name: "DevCore",
+      description:
+        "A personal technical knowledge system for organizing and learning software development concepts through notes, questions, snippets, resources, and mistakes.",
+      html_url: "/images/devcore.png",
+      techs: ["TypeScript", "PostgreSQL", "Tailwind CSS"],
+      technology: "Next.js",
+      githubUrl: "https://github.com/thathsaraDinu/devcore",
+      webUrl: "https://devcorelab.vercel.app/",
+    },
+    {
       name: "Operion Workforce Operations Platform",
       description:
         "A comprehensive workforce management API built with Spring Boot that provides employee management, attendance tracking, leave management, project management, and task management capabilities.",
@@ -25,8 +35,7 @@ const Projects: React.FC = () => {
       name: "Movie Verse App",
       description:
         "A website with responsive and theme-based design to view all about your favorite movies. Made using tmdb-api.",
-      html_url:
-        "/images/movieverse.png",
+      html_url: "/images/movieverse.png",
       techs: ["TypeScript", "Tailwind CSS"],
       technology: "Next.js",
       githubUrl: "https://github.com/thathsaraDinu/Movie-verse-web-app",
@@ -50,8 +59,7 @@ const Projects: React.FC = () => {
       html_url: "/images/atlaso.png",
       techs: ["JavaScript", "Tailwind CSS"],
       technology: "Vite + React",
-      githubUrl:
-        "https://github.com/thathsaraDinu/atlaso-web-app",
+      githubUrl: "https://github.com/thathsaraDinu/atlaso-web-app",
       webUrl: "https://atlaso-web.netlify.app/",
     },
     {
@@ -70,8 +78,7 @@ const Projects: React.FC = () => {
       name: "Shopiflow shopping mall web app",
       description:
         "A fully responsive web app for shopping mall management with virtual queue for customers, product management, promotion management and shop management.",
-      html_url:
-        "/images/shopiflow.png",
+      html_url: "/images/shopiflow.png",
       techs: ["JavaScript", "Tailwind CSS"],
       technology: "MERN",
       githubUrl:
