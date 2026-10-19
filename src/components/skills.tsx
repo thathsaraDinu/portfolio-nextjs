@@ -84,20 +84,16 @@ function SkillSet({ category }: { category: SkillCategory }) {
 
 export default function Skills() {
   return (
-    <section id="skills" className="w-full py-16 md:py-20">
-      <div className="mx-auto w-full max-w-screen-xl px-5">
-        <ScrollAnimation>
-          <div className="mb-10 flex flex-col gap-3 text-center">
-            <p className="text-sm font-semibold tracking-[0.2em] text-primary">
-              SKILLS
-            </p>
-
-            <h2 className="text-3xl font-bold md:text-4xl">My Expertise</h2>
-
-            <p className="mx-auto max-w-2xl text-sm leading-6 text-muted-foreground md:text-base">
-              Technologies and tools I use to build web applications, backend
-              services, and mobile applications.
-            </p>
+    <section id="skills" className="md:scroll-mt-navbar py-20 px-5">
+      <div className="max-w-screen-xl mx-auto flex flex-col gap-10">
+        {/* Title Section */}
+        <ScrollAnimation className="flex flex-col justify-center items-center gap-2">
+          <div className="custom-top-topic dark:text-lime-200">SKILLS</div>
+          <div className="custom-second-topic dark:text-blue-400">
+            My Expertise
+          </div>
+          <div className="custom-third-topic dark:text-blue-100">
+            Tools and Technologies I Use
           </div>
         </ScrollAnimation>
 
