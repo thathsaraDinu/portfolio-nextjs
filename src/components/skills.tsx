@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import ScrollAnimation from "./ScrollAnimation";
+import { ScrollAnimation } from "@/animation/scroll-animation";
 
 interface Skill {
   name: string;
