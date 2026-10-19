@@ -20,12 +20,12 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="md:scroll-mt-navbar h-[calc(100vh-50px)] py-20 flex flex-col justify-center md:px-10 px-5"
+      className="md:scroll-mt-navbar min-h-[calc(100svh-50px)] py-16 md:py-20 flex flex-col justify-center px-5 md:px-10"
     >
-      <div className="max-w-screen-xl mx-auto gap-5 flex justify-between items-center px-5">
+      <div className="max-w-screen-xl w-full mx-auto gap-5 flex flex-col md:flex-row justify-between items-center px-0 md:px-5">
         <ScrollAnimation
           initial={{ opacity: 0, x: -50 }}
-          className="md:w-3/5  flex flex-col gap-6 items-start "
+          className="w-full md:w-3/5 flex flex-col gap-6 items-start"
         >
           <div className="flex flex-col gap-4">
             <h1 className="font-raleway text-4xl md:text-6xl font-bold dark:text-blue-100 text-blue-950 leading-tight">
@@ -34,29 +34,34 @@ export default function Hero() {
                 Thathsara
               </span>
             </h1>
+
+            <h2 className="font-raleway text-3xl md:text-5xl font-bold dark:text-blue-100 text-blue-950 leading-tight">
+              Software Engineer
+            </h2>
+
             <TypeAnimation
               sequence={[
-                "I build digital experiences",
-                1000,
-                "I craft scalable solutions",
-                1000,
-                "I solve complex problems",
-                1000,
-                "I ship quality products",
-                1000,
+                "Building with React & Next.js",
+                1500,
+                "Developing APIs with Java & Node.js",
+                1500,
+                "Creating full-stack applications",
+                1500,
               ]}
               repeat={Infinity}
               speed={50}
               cursor={true}
-              wrapper="h2"
-              className="font-outfit text-2xl md:text-3xl dark:text-blue-200 text-blue-800 font-semibold"
+              wrapper="h3"
+              className="font-outfit text-xl md:text-3xl dark:text-blue-200 text-blue-800 font-semibold"
             />
           </div>
+
           <p className="font-inter dark:text-blue-300 text-blue-700 text-lg max-w-lg leading-relaxed">
-            Turning ideas into reality through code. Let&apos;s build something
-            amazing together.
+            Software Engineering graduate building web applications with modern
+            frontend and backend technologies.
           </p>
-          <div className="flex gap-4">
+
+          <div className="flex flex-wrap gap-4">
             <button
               onClick={handleOpenPdf}
               className="transition-all flex items-center gap-2 duration-200 px-6 py-3 rounded-lg dark:bg-blue-400 bg-blue-950 dark:text-blue-950 text-white font-semibold hover:dark:bg-blue-300 hover:bg-blue-800"
@@ -146,9 +151,10 @@ export default function Hero() {
             </a>
           </div>
         </ScrollAnimation>
+
         <ScrollAnimation
           initial={{ opacity: 0, x: 50 }}
-          className="md:w-2/5 hidden md:block"
+          className="hidden md:block md:w-2/5"
         >
           <Lottie
             loop={true}
