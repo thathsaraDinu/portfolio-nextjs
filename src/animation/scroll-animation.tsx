@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { motion, Target, Transition } from "framer-motion";
 import { ReactNode, useRef } from "react";
@@ -23,7 +23,7 @@ export const ScrollAnimation = ({
 
   return (
     <motion.div
-    ref={ref}
+      ref={ref}
       whileInView={animate}
       viewport={{ once: true }}
       initial={initial}

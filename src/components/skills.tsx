@@ -102,7 +102,7 @@ export default function Skills() {
         </ScrollAnimation>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10">
-          {skillCategories.map((category, index) => (
+          {skillCategories.map((category) => (
             <ScrollAnimation key={category.title}>
               <SkillSet category={category} />
             </ScrollAnimation>
