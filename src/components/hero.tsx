@@ -35,7 +35,7 @@ export default function Hero() {
               </span>
             </h1>
 
-            <h2 className="font-raleway text-3xl md:text-5xl font-bold dark:text-blue-100 text-blue-950 leading-tight">
+            <h2 className="font-raleway text-2xl md:text-5xl font-bold dark:text-blue-100 text-blue-950 leading-tight">
               Software Engineer
             </h2>
 
